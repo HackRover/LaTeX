@@ -1,0 +1,161 @@
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage{graphicx} %%Good primer on this see:  https://www.youtube.com/watch?v=Ax9RCvjpI8E
+
+\usepackage{geometry} %%To set basic page parameters. See also: https://www.overleaf.com/learn/latex/Page_size_and_margins
+\geometry{a4paper, portrait, margin=1in}
+
+%%Use this when you want to change colors eventually: https://tex.stackexchange.com/questions/75667/change-colour-on-chapter-section-headings-lyx
+
+%%This is a function I found on stack overflow when I looked up
+%%'How can I change the margins for only part of the text?'
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]} 
+\let\endchangemargin=\endlist 
+%%Use it sparingly.
+
+\renewcommand \thesection {\Alph{section}} %%Defines section numberings (A.1.1, etc)
+
+\begin{document}
+
+\begin{titlepage}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=.8]{HackRoverlogolofi}
+	\end{figure}
+
+	\begin{center}
+		\vspace*{1cm}
+	
+		\Huge
+		\textbf{HackRover}\\[10pt]
+	
+	
+		\large
+		\textbf{Capstone MegaDoc}\\[40pt]
+
+		\begin{changemargin}{10pt}{10pt} 
+		\begin{center}
+		\normalsize
+		Justin Heinzig, Danny Kha, Jacob Park
+	
+		Advisor; Mentor; Sponsor: Pierre Mourad\\[150pt]
+		\end{center}
+		\end{changemargin}
+	\end{center}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=.8]{UWLogo}
+	\end{figure}		
+	
+\end{titlepage}
+
+\pagebreak{}
+
+\tableofcontents
+
+\pagebreak{}
+
+\section{Design Strategy}
+	YOU CAN TYPE WORDS HERE 
+	
+	DOUBLE CARRIAGE RETURN PUTS AN ENTER
+	\subsection{User Insights and Research}
+		AND HERE
+		\subsubsection{Consumer Journey Map}
+			AND EVEN HERE!
+		\subsubsection{Stakeholder Framing}
+			
+		\subsubsection{User Scenarios and Personas}
+		\subsubsection{User Insight Report}
+	\subsection{Problem Understanding}
+		\subsubsection{Product Assumptions}
+		\subsubsection{Functional Assumptions}
+		\subsubsection{High Level Usability Constraints}
+		\subsubsection{Final Need Statement and User Outcomes}
+		\subsubsection{Hypothesis Statement}
+		\subsubsection{Possible Inventions and Business Model}
+		\subsubsection{Planning Roadmap}
+		
+\pagebreak
+		
+\section{Experience Design \- Human Interface Design}
+	\subsection{User Workflow}
+	\subsection{Environmental Analysis}
+	\subsection{Cultural Factors Mapping}
+	\subsection{Information Architecture and Hierarchy}
+	\subsection{Interface Design}
+	\subsection{Graphic User Interface Design}
+	\subsection{Best Use Practices Report}
+	\subsection{Usability Requirements Document}
+	
+\pagebreak
+	
+\section{Design}
+	\subsection{Decisions and Rationale}
+	\subsection{Tier 1 Schematics}
+	\subsection{Tier 2 Schematics}
+	\subsection{Tier 3 Schematics}
+	Electrical Team (EE Capstone):
+	
+The electrical schematic of the puzzle panel will start with a wall wart which would output a specified amount of voltage to the PDS. The PDS will be made up of three levels, each level containing rows of buck modules that are placed in parallel and their function is to step-down the input voltage from the wall wart, down to the amount that is needed for an electrical component. Each buck module will distribute different amounts of voltage due to each electrical component within the actual puzzle panel, requiring different levels of voltage.
+
+The rover will be powered by lithium batteries that can provide enough voltage or power to the whole rover. The power will be distributed with buck modules to power each component at its needed level. And the step-downed power will then be sent to the Raspberry Pi, Jetson Nano, and Motor controllers which will run the whole rover. A PCB will be constructed to ensure a simple and controlled designed connection of essential components on a single panel.
+
+	\subsection{Estimation of Cost of Goods}
+	\subsection{Schedule}
+	
+\pagebreak	
+
+\section{Concept Development}
+The electrical system of the rover will consist of many different electrical components that are connected to each other and that can send signal communication to other devices. The system is designed to distribute power to different components from a battery or a single power source.
+	
+The list of hardware components (bound to change after testing and possible redesigns):
+
+PCB or power distribution system
+
+- The PCB is designed to distribute power to every electrical hardware from a single power source or battery. And as well as, provide the signal connections for the hardware as they are essential in controlling the functionality of every component.
+
+Raspberry Pi
+
+- The Raspberry Pi is a microprocessor that is designed to control the motors by controlling the motor controllers that control the drivetrain.
+
+Jetson Nano
+
+- The Jetson Nano is a small computer that is designed to run multiple neural networks like image processing, object detection, etc. 
+
+LM2596 Buck Converters
+
+- The buck converters are designed to step down or drop down the voltage that is needed by the electrical components to be able to functionally run.
+
+LiDAR camera
+
+- The LiDAR camera is tasked to provide image mapping to the rover.
+
+BTS7960 Motor Controller
+
+- The motor controller is used to receive signals from the Raspberry Pi and delivers it to the actual motors of the drivetrain.
+
+Rover wiring schematic
+
+- The final rover wiring schematic will be provided after tests and final redesigns have been done. 
+
+Risk identification
+
+1. One of the major risks or dangers for the electrical system is the probability of overheating which will cause a fire hazard. This will cause permanent damage to many of the components on the rover. The battery and the components that needed the most power are at risk of this danger, so sufficient protection for these parts will lower the risk of this danger.
+
+2. The risk of the motors running too much or insufficient torque will cause different amounts of currents to be drawn from the battery. This current spike will cause damage to the electrical hardware that is directly connected to the battery and cause a fire hazard. The mechanical components will also face damage as a result.
+
+
+	\subsection{Technology Mapping, Risk Analysis, and Feasibility}
+	\subsection{Design Strategy, Concept Development, and Concept Risk Identification \& Mitigation}
+		\subsubsection{Technology Mapping, Component Technology Research}
+		\subsubsection{Electrical}
+		\subsubsection{Mechanical}
+		\subsubsection{Firmware and Software}
+		\subsubsection{Human Interaction Models}
+		\subsubsection{System Interface Modeling, Testing, and Risk Analysis}
+
+	
+\end{document}
