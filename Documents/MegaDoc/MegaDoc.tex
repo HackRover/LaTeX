@@ -265,7 +265,12 @@ The limiting factor for electrical engineers is understanding the buck modules, 
 The limiting factor for computer engineers/scientists is really just understanding the software and operating system we're working with. We have all the components for the rover, we just have to take them one at a time and integrate them effectively.
 
 	\subsection{Tier 1 Schematics}
+	Electrical team (EE Capstone):
 	
+The puzzle panel will be powered by a wall wart which is the power source that will connect to a power distribution system (PDS) that will power the actual puzzle panel game. The PDS itself will be able to power each and every hardware with enough power.
+
+	The rover will need a power source that can provide enough power connected to every hardware and also, has a power source that can be efficient and reliable. A power distribution system will be needed to safely distribute enough power to each hardware and also, size of the PDS will be dependent on what the final size of the mechanical system will provide for the PDS to fit in.  
+
 	\subsection{Tier 2 Schematics}
 	Electrical Team (EE Capstone):
 	
@@ -287,7 +292,7 @@ Figure 2 shown above describes the interaction between controllers (Xbox, Playst
 	
 The electrical schematic of the puzzle panel will start with a wall wart which would output a specified amount of voltage to the PDS. The PDS will be made up of three levels, each level containing rows of buck modules that are placed in parallel and their function is to step-down the input voltage from the wall wart, down to the amount that is needed for an electrical component. Each buck module will distribute different amounts of voltage due to each electrical component within the actual puzzle panel, requiring different levels of voltage.
 
-The rover will be powered by lithium batteries that can provide enough voltage or power to the whole rover. The power will be distributed with buck modules to power each component at its needed level. And the step-downed power will then be sent to the Raspberry Pi, Jetson Nano, and Motor controllers which will run the whole rover. A PCB will be constructed to ensure a simple and controlled designed connection of essential components on a single panel.
+The rover will be powered by lithium batteries that can provide enough voltage or power to the whole rover. The power will be distributed with buck modules to power each component at its needed level. And the step-downed power will then be delivered to the Raspberry Pi, Jetson Nano, Motor controllers, and other components which will run the whole rover. A PCB will be constructed to ensure a simple and controlled designed connection of essential components on a single panel. And digital connections between the hardware will need to be to be accurate with no misplacement of any connection as each wire/bus is responsible for sending essential signals/information to every hardware to ensure proper operation of the rover.     
 
 	Software Team (CE Capstone):
 	
