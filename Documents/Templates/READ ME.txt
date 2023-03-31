@@ -1,4 +1,4 @@
-This is the working paper template. Working papers are written after a project (or iteration of a project) is totally complete.
+This is the READ ME for the working paper template. Working papers are written after a project (or iteration of a project) is totally complete.
 A working paper 'summarizes' the contents of standard project notes in around 5 pages maximum; one should never be written if project notes don't exist for a project.
 The purpose is to create a succinct summary of any project completed for future reference. Further, the format allows us to quickly 'grab' information that can be subbed into the MegaDoc, such that we circumvent our forgetfulness of choices made, and don't have to comb through (pootentially) pages of standard notes document.
 The working paper template was based on the IEEE conference paper package. In this folder you will find two templates: (1) IEEE conference, entirely for reference, DO NOT TOUCH, and (2) the working paper template, which connstantly evolves according to the former, and IS TO BE USED.
