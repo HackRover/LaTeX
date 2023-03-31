@@ -1,0 +1,150 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+% The below lines are included as seen in the conference paper, don't remove them, and DON'T WORRY IF YOU NEED TO KNOW THEIR USE.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    
+   
+\begin{document}
+
+\title{Working Paper Title*\\
+{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
+should not be used}
+\thanks{Identify applicable funding agency here. If none, delete this.}
+}
+
+\author{
+\IEEEauthorblockN{1\textsuperscript{st} Name Surname}
+\IEEEauthorblockA{\textit{dept. name} \\
+\textit{school name}\\
+email address}
+\and %Use this if you'd like to add additional authors.
+\IEEEauthorblockN{2\textsuperscript{st} Name Surname}
+\IEEEauthorblockA{\textit{dept. name} \\
+\textit{school name}\\
+email address}
+\and
+\IEEEauthorblockN{3\textsuperscript{st} Name Surname}
+\IEEEauthorblockA{\textit{dept. name} \\
+\textit{school name}\\
+email address}
+}
+
+\maketitle
+
+\begin{abstract}
+This document is a model for the HackRover working paper for \LaTeX. It was based on the IEEE format. This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, or Math in Paper Title or Abstract.
+
+Additional inspiration is taken from the CMU RISS project papers. Most of the headers are based on many of those.
+The abstract is a breif summary of the project. It shouldn't ever be more than one-third this left column.
+\end{abstract}
+
+\begin{IEEEkeywords}
+%These are words which describe a project. It's common practice in IEEE research paper to think of some 'search engine' type terms. YOU CAN DELETE THIS ENTIRELY.
+component, formatting, style, styling, insert
+\end{IEEEkeywords}
+
+\section{Introduction}
+This document is a model and instructions for \LaTeX.
+Please observe the conference page limits. 
+
+\section{Related Works}
+This is a summary of the related works. General fields of engineering, related projects, points of engineering, etc. This is a pretty abstract section and might be hard to understand at first. Try to reference existing working papers as much as possible to understand how to write this entire section.
+
+This summary can be as long as you want. Remember to break paragraphs by a simple `double enter'.
+
+\subsection{An example general related work}
+Here you might talk about a general related work to get more specific about the nuances of your own project.  These general related works could be sub-disciplines of engineering (mechatronics, controls, etc), or companies or groups for which compare.
+
+\subsection{An example specific related  work}
+Here you might talk about a very specific related work. Maybe a group that works on a limited scope of projects, or a single project or product itself that compares. For example, if I were writing a working paper on a puzzle panel, I could pick a FIRST robotics competition prop; if I were writing on a wash station I could pick an actual, purchasable wash station.
+
+\section{Method}
+This section needs to address any and all methods you used to accomplish the project. You can structure this sort of as you wish, but \textbf{CONSIDER} either
+
+%By the way, this is how you make an itemized list.
+\begin{itemize}
+\item Make sub-sections according to each discipline - mechanical, electrical, computer, control, etc - and then write the method for each of those.
+\item Make a sub-section for each distinct `component' of the solution or method used. You need to understand how you came about your solution logically.
+\end{itemize}
+
+\subsection{OPTION 1: Mechanical}
+Here I talk about the mechanical methods for completing the project. I detail what major decisions were made, and possibly mention alternatives that didn't make the cut.
+
+\subsubsection{MECHANICAL SUBSUBSECTION}
+Maybe I need to break things down even further.
+
+\subsection{OPTION 1: Electrial}
+This is just another example subsection. I can talk about whatever I'd like that pertains to the electrical engineer and their contributions to the method.
+
+\subsection{OPTION 1: Computer}
+Again, another example subsection. Don't be afraid to add more than just threse three disciplines.
+
+\subsection{OPTION 2: The first aspect of the method}
+Here I might think back on the order in which I completed the project, and talk about the first major design stretch as though it were an aspect of the method.
+
+\subsection{OPTION 2: The next aspect, with a witty title of course}
+\ldots and so it continues. Now I talk of the next aspect.
+
+\section{Results}
+This section should just talk about the results of the method. How your final project performed. It should not talk of the journey, only the results. Perhaps mention some test reports as a subsection of this section.
+
+\section{Conclusion}
+This section should be a simple, one or two paragraph combination of your method and results. It - like the abstract - should be able to tell the whole story, except that it can (and should be) much longer. 
+
+If the reader wasn't satisfied with the abstract but didn't want to read through the method or results, the conclusion should suffice to provide them with everything they need.
+
+\section{Future Work}
+This section talks about what you plan to do in the future in reasonable detail. This   section is especially important for iterating projects where a new version is confirmed. Subsubsections can be used if you'd like.
+
+
+
+\section*{Acknowledgment} %It's important you use the asterisk here to remove numbering.
+
+Put sponsor acknowledgments in the unnumbered footnote on the first page.
+
+\section*{References} %<--- REMOVE THIS HEADER ENTIRELY!
+
+Please number citations consecutively within brackets \cite{b1}. The 
+sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
+number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
+the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
+
+Number footnotes separately in superscripts. Place the actual footnote at 
+the bottom of the column in which it was cited. Do not put footnotes in the 
+abstract or reference list. Use letters for table footnotes.
+
+Unless there are six authors or more give all authors' names; do not use 
+``et al.''. Papers that have not been published, even if they have been 
+submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
+that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
+Capitalize only the first word in a paper title, except for proper nouns and 
+element symbols.
+
+For papers published in translation journals, please give the English 
+citation first, followed by the original foreign-language citation \cite{b6}.
+
+%ALL THE WAY DOWN TO HERE. REMOVE IT. This is just instructions.
+
+%By simply beginning the bibliography the IEEE format will entirely take care of all typesetting. You don't even have to type the section 'References'.
+
+\begin{thebibliography}{00}
+\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
+\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
+\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
+\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
+\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
+\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
+\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+\end{thebibliography}
+
+
+\end{document}
