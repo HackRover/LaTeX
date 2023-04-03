@@ -97,6 +97,73 @@ Here I might think back on the order in which I completed the project, and talk 
 \section{Results}
 This section should just talk about the results of the method. How your final project performed. It should not talk of the journey, only the results. Perhaps mention some test reports as a subsection of this section.
 
+\subsection{Equations}
+The following was an excerpt from the original IEEE format on creating equations. For more information consult the amsmath package. Below are some IEEE specific formatting rules. 
+
+Number equations consecutively. To make your 
+equations more compact, you may use the solidus (~/~), the exp function, or 
+appropriate exponents. Italicize Roman symbols for quantities and variables, 
+but not Greek symbols. Use a long dash rather than a hyphen for a minus 
+sign. Punctuate equations with commas or periods when they are part of a 
+sentence, as in:
+
+%Note the use of label involve equation names: eq1 and eq2. Come up with more clever names, of course.
+\begin{equation}
+a+b=\gamma\label{eq1}
+\end{equation}
+
+\begin{equation}
+c+d=\gamma\label{eq2}
+\end{equation}
+
+Be sure that the 
+symbols in your equation have been defined before or immediately following 
+the equation. Use ``\eqref{eq1}'', not ``Eq.~\eqref{eq1}'' or ``equation \eqref{eq1}'', except at 
+the beginning of a sentence: ``Equation \eqref{eq1} is . . .''
+
+\subsection{Figures and Tables}
+%Note the application of the 'paragraph' tag directly below. It serves to distinguish paragraphs with a letter.
+
+\paragraph{Positioning Figures and Tables} Place figures and tables at the top and 
+bottom of columns. Avoid placing them in the middle of columns. Large 
+figures and tables may span across both columns. Figure captions should be 
+below the figures; table heads should appear above the tables. Insert 
+figures and tables after they are cited in the text. Use the abbreviation 
+``Fig.~\ref{fig}'', even at the beginning of a sentence.
+
+\begin{table}[htbp]
+\caption{Table Type Styles}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
+\cline{2-4} 
+\textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
+\hline
+copy& More table copy$^{\mathrm{a}}$& &  \\
+\hline
+\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics{fig1.png}}
+\caption{Example of a figure caption.}
+\label{fig}
+\end{figure}
+
+Figure Labels: Use 8 point Times New Roman for Figure labels. Use words 
+rather than symbols or abbreviations when writing Figure axis labels to 
+avoid confusing the reader. As an example, write the quantity 
+``Magnetization'', or ``Magnetization, M'', not just ``M''. If including 
+units in the label, present them within parentheses. Do not label axes only 
+with units. In the example, write ``Magnetization (A/m)'' or ``Magnetization 
+\{A[m(1)]\}'', not just ``A/m''. Do not label axes with a ratio of 
+quantities and units. For example, write ``Temperature (K)'', not 
+``Temperature/K''.
+
 \section{Conclusion}
 This section should be a simple, one or two paragraph combination of your method and results. It - like the abstract - should be able to tell the whole story, except that it can (and should be) much longer. 
 
