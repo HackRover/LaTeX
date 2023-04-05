@@ -49,15 +49,15 @@ A modular puzzle panel would be easy to arrange electrically and mechanically an
 		\subsubsection{Puzzle Panel and Mounting}
 		There was a variety of early designs for mounting, but the obvious winner involved two part velcro. However the panel was to be constructed, it would host a sheet of tough velcro that would allow puzzle elements - fitted with soft velcro - to adhere and be removed easily.
 		
-		Some spare plywood and 2x4's  were found at Justin Heinzig's house, so he repurposed them to create the panel body. Two, perpendicular plywood faces, (18'' square and 9'' by 18'') act as mounting surfaces for puzzle elements. Velcro is fitted to the vertical face in the form of 6x18, sticky backed strips.
+		Some spare plywood and 2x4's  were found at Justin Heinzig's house, so he re-purposed them to create the panel body. Two, perpendicular plywood faces, (18'' square and 9'' by 18'') act as mounting surfaces for puzzle elements. Velcro is fitted to the vertical face in the form of 6x18, sticky backed strips.
 		\textbf{INCLUDE IMAGE OF PUZZLE PANEL}
 		
 		\subsubsection{Puzzle components}
-		As mentioned in the related works, puzzle elements were designed to be arranged in conjunction with one another to create a puzzle. The ideas for iteration one were a: button, potentiometer, ultrasound sensor, servo, and light strips. Each element recieved a housing which modified it to become velcro mountable and/or enhance it's function and interfacability with rovers. The first three elements are purely sensory, the fourth is actuative, and the fifth is visual aid.
+		As mentioned in the related works, puzzle elements were designed to be arranged in conjunction with one another to create a puzzle. The ideas for iteration one were a: button, potentiometer, ultrasound sensor, servo, and light strips. Each element received a housing which modified it to become velcro mountable and/or enhance it's function and interfacability with rovers. The first three elements are purely sensory, the fourth is actuative, and the fifth is visual aid.
 		\textbf{INCLUDE IMAGE OF AN EXAMPLE PUZZLE COMPONENT}
 
-	\subsection{Electrial}
-	The first iteration puzzle panel is powered by a rudimentary power distribution system (PDS); this was intended as practice in basic electronics for our electrical engineers. The purpose of the PDS was to recieve power from a wall wart, convert voltage to a meaningful value, and convey power in a controlled fashion to easily acccessible pins.
+	\subsection{Electrical}
+	The first iteration puzzle panel is powered by a rudimentary power distribution system (PDS); this was intended as practice in basic electronics for our electrical engineers. The purpose of the PDS was to receive power from a wall wart, convert voltage to a meaningful value, and convey power in a controlled fashion to easily accessible pins.
 	\textbf{POSSIBLY INCLUDE IMAGE OF SCHEMATICS}
 	
 	A port, buck modules, and female pin headers were all soldered to GikFun solderable bread boards. The port serves to convey power from the wall wart, through bread board traces, and to the buck modules. Buck modules are electronic devices capable of stepping down voltage from some higher value to a lower one. In our case, 5V was a pretty common voltage output. Current is also presumably limited in some fashion by the buck module. Finally, the female pin headers give students modular access to power for powering Arduino-compatible electromechanical devices. There is also an output port from the PDS which delivers clean, 5V power to the Arduino sitting atop. 
@@ -72,14 +72,22 @@ A modular puzzle panel would be easy to arrange electrically and mechanically an
 \section{Results}
 In like fashion to the methods, results will be presented according to discipline.
 	\subsection{Mechanical}
-	Both the panel and elements were a success. Some improvements could be made in the woodframe panel design by considering construction procedure, as it was a bit difficult to affix everything together. The velcro operated nicely as intended.
+	Both the panel and elements were a success. Some improvements could be made in the wood-frame panel design by considering construction procedure, as it was a bit difficult to affix everything together. The velcro operated nicely as intended.
 	
 	The puzzle elements turned out nicely with regard to construction. Aesthetically they appeared dissimilar, so work could be done there.
 	
 	\subsection{Electrical}
-	\textbf{TALK ABOUT THE RESULTS AND PERFORMANCE OF THE PDS. Perhaps break things up according to tests. Have subsubsections that each represent a different test}
+	\textbf{TALK ABOUT THE RESULTS AND PERFORMANCE OF THE PDS. Perhaps break things up according to tests. Have subsections that each represent a different test}
 		\subsubsection{Testing to ensure good current flow}
-		\subsubsection{Testing to ensure desireably power output}
+		
+		The testing of the PDS to ensure good current flow was a success. We utilized a 12V power brick or wall wart to power the PDS which would step down to a much lower voltage. We adjusted the potentiometer for the buck module to step down the voltage to 5V. We decided to use a general 1kohm resistor as the reference load. Utilizing the Ohm's Law equation: V=I*R, the amount of current flowing through the reference load should be 5mA.
+		
+		\indent To verify this calculation, the reference load will be measured with a Multimeter that will be placed in series with the load. In the measuring process, the resulting current was around 5mA. As a result, we successfully ensured stable current flow.
+		
+		\subsubsection{Testing to ensure desirably power output}
+		The testing to ensure desirable power output was a success. We decided to use an LED or light-emitting diode to be powered directly from the PDS. The general range of power for an LED to operate or emit light is approximately 1.2V to 3.6V. We decided to power the LED with 2V which is within the preferred range. We proceeded to use the same 12V wall wart from the previous test. And we adjusted the potentiometer of one of the buck module to step down the voltage to 2V. Connecting the resulting voltage to the LED, the electrical component was able to emit light. There were no signs of issues coming from the PDS or the LED.
+		
+		\indent Knowing that the PDS is able to power the LED with the desirable voltage, we proceeded to power the Arduino Uno directly from the PDS. The general range of power for an Arduino Uno to operate is 7V to 12V, so 8V was the preferred amount needed. We used the same 12V wall wart from the previous test. And we again adjusted the potentiometer of one of the buck module to step the voltage down to 8V. Connecting the stepped down voltage output of 8V to the hardware, the Arduino Uno turned on and was able to normally operate. There were no signs of issues coming from the PDS or the Arduino Uno.   
 		
 	\subsection{Computer}
 	\textbf{To be written by Long}
