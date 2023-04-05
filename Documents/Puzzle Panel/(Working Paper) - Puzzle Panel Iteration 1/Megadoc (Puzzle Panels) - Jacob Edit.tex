@@ -1,0 +1,104 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+% The below lines are included as seen in the conference paper, don't remove them, and DON'T WORRY IF YOU NEED TO KNOW THEIR USE.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    
+   
+\begin{document}
+
+\title{Puzzle Panel Iteration 1\\}
+\author{
+\IEEEauthorblockN{1\textsuperscript{st} Justin Heinzig}
+\IEEEauthorblockA{\textit{Mechanical Engineering} \\
+\textit{University of Washington}\\
+justinheinzigbusiness@gmail.com}
+}
+
+\maketitle
+
+\begin{abstract}
+This document reviews the purpose and creation of the first iteration of puzzle panels for the HackRover Autonomous Robotics Competition (HARC). Puzzle panels host  puzzle elements that work together to constitute a puzzle. We designed 3D printable, electromechanicial puzzle elements that simple rovers can readily interact with. Control is accomplished via Arduino, and power is provided through a simple power distribution system (PDS). This paper explores design choices on various fronts throughout the development of iteration 1. 
+\end{abstract}
+
+\section{Introduction}
+Puzzle panels are competition 'props' which rovers can interact with to score points. Our early goals were to create something modular, quickly iterable, and electrically robust. We wanted to ensure unique puzzles could be created without too much down time. We also considered human and AI solvability such that present and future competitions could proceed in the event of person or computer-assisted competitors.
+
+A modular puzzle panel would be easy to arrange electrically and mechanically and program in something like an Arduino IDE. A quickly iterable puzzle panel would be capable of displaying a distinct, unsolved puzzle in short time, related to concepts of physical/logical modularity. An electrically robust panel would ensure power is delivered to all devices in a clean and reliable fashion with low risk for failure.
+
+\section{Related Works}
+	\subsection{Portal Series}
+	Inspiration was taken from Portal and Portal 2 game development principles. Portal is a series of puzzle games where the player must make their way through a robotics facility `testing' the function of a portal gun through the completion of electromechanical puzzles. The puzzles in the game consist of distinct components which all interact with one another to constitute a larger puzzle. With about 20 distinct puzzle components/elements, game developers can create an infinity of puzzles which can be immediately attempted by anyone who has spent 15 minutes playing the game; this was our main point of inspiration.
+	\textbf{INCLUDE IMAGE OF SIMPLE PORTAL 2 PUZZLE IDENTIFYING PARTS}
+
+
+\section{Method}
+	For the first iteration, efforts were sectioned into Mechanical, Electrical, and Software, with the mechanical role dictating most of the design parameters.
+
+	\subsection{Mechanical}
+	The complete puzzle panel was designed in two parts: (1) physical panel and mounting, (2) the puzzle components.  
+
+		\subsubsection{Puzzle Panel and Mounting}
+		There was a variety of early designs for mounting, but the obvious winner involved two part velcro. However the panel was to be constructed, it would host a sheet of tough velcro that would allow puzzle elements - fitted with soft velcro - to adhere and be removed easily.
+		
+		Some spare plywood and 2x4's  were found at Justin Heinzig's house, so he repurposed them to create the panel body. Two, perpendicular plywood faces, (18'' square and 9'' by 18'') act as mounting surfaces for puzzle elements. Velcro is fitted to the vertical face in the form of 6x18, sticky backed strips.
+		\textbf{INCLUDE IMAGE OF PUZZLE PANEL}
+		
+		\subsubsection{Puzzle components}
+		As mentioned in the related works, puzzle elements were designed to be arranged in conjunction with one another to create a puzzle. The ideas for iteration one were a: button, potentiometer, ultrasound sensor, servo, and light strips. Each element recieved a housing which modified it to become velcro mountable and/or enhance it's function and interfacability with rovers. The first three elements are purely sensory, the fourth is actuative, and the fifth is visual aid.
+		\textbf{INCLUDE IMAGE OF AN EXAMPLE PUZZLE COMPONENT}
+
+	\subsection{Electrical}
+	The first iteration puzzle panel is powered by a rudimentary power distribution system (PDS); this was intended as practice in basic electronics for our electrical engineers. The purpose of the PDS was to receive power from a wall wart, convert voltage to a meaningful value, and convey power in a controlled fashion to easily accessible pins.
+	\textbf{POSSIBLY INCLUDE IMAGE OF SCHEMATICS}
+	
+	A port, buck modules, and female pin headers were all soldered to GikFun solderable bread boards. The port serves to convey power from the wall wart, through bread board traces, and to the buck modules. Buck modules are electronic devices capable of stepping down voltage from some higher value to a lower one. In our case, 5V was a pretty common voltage output. Current is also presumably limited in some fashion by the buck module. Finally, the female pin headers give students modular access to power for powering Arduino-compatible electromechanical devices. There is also an output port from the PDS which delivers clean, 5V power to the Arduino sitting atop. 
+	\textbf{INCLUDE IMAGE OF BREADBOARD}
+	
+	All breadboards are mounted on racks in a plastic housing.
+	\textbf{INCLUDE IMAGE OF HOUSING}
+
+	\subsection{Computer}
+	\textbf{TO BE WRITTEN BY LONG PRESUMABLY}
+
+\section{Results}
+In like fashion to the methods, results will be presented according to discipline.
+	\subsection{Mechanical}
+	Both the panel and elements were a success. Some improvements could be made in the woodframe panel design by considering construction procedure, as it was a bit difficult to affix everything together. The velcro operated nicely as intended.
+	
+	The puzzle elements turned out nicely with regard to construction. Aesthetically they appeared dissimilar, so work could be done there.
+	
+	\subsection{Electrical}
+	\textbf{TALK ABOUT THE RESULTS AND PERFORMANCE OF THE PDS. Perhaps break things up according to tests. Have subsections that each represent a different test}
+		\subsubsection{Testing to ensure good current flow}
+		
+		The testing of the PDS to ensure good current flow was a success. We utilized a 12V power brick or wall wart to power the PDS which would step down to a much lower voltage. We adjusted the potentiometer for the buck module to step down the voltage to 5V. We decided to use a general 1kohm resistor as the reference load. Utilizing the Ohm's Law equation: V=I*R, the amount of current flowing through the reference load should be 5mA.
+		
+		\indent To verify this calculation, the reference load will be measured with a Multimeter that will be placed in series with the load. In the measuring process, the resulting current was around 5mA. As a result, we successfully ensured stable current flow.
+		
+		\subsubsection{Testing to ensure desirably power output}
+		The testing to ensure desirable power output was a success. We decided to use an LED or light-emitting diode to be powered directly from the PDS. The general range of power for an LED to operate or emit light is approximately 1.2V to 3.6V. We decided to power the LED with 2V which is within the preferred range. We proceeded to use the same 12V wall wart from the previous test. And we adjusted the potentiometer of one of the buck module to step down the voltage to 2V. Connecting the resulting voltage to the LED, the electrical component was able to emit light. There were no signs of issues coming from the PDS or the LED.
+		
+		\indent Knowing that the PDS is able to power the LED with the desirable voltage, we proceeded to power the Arduino Uno directly from the PDS. The general range of power for an Arduino Uno to operate is 7V to 12V, so 8V was the preferred amount needed. We used the same 12V wall wart from the previous test. And we again adjusted the Potentiometer of one of the buck module to step the voltage down to 8V. Connecting the stepped down voltage output of 8V to the hardware, the Arduino Uno turned on and was able to normally operate. There were no signs of issues coming from the PDS or the Arduino Uno.   
+		
+	\subsection{Computer}
+	\textbf{To be written by Long}
+
+\section{Conclusion}
+	\textbf{TO BE WRITTEN AT A FUTURE TIME WHEN THE PROJECT IS CONCLUDED}
+
+\section{Future Work}
+Future improvements could be made to the design of the puzzle panels, either by making them larger (in 6'' horizontal increments ideally), and/or by considering how they will be constructed. Little mind paid to how the different pieces would affix to one another led to dangerous construction positions.
+
+\section*{Acknowledgment} 
+	\textbf{TO BE WRITTEN AT A FUTURE TIME}
+
+\end{document}
