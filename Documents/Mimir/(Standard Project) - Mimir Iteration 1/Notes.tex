@@ -1,0 +1,56 @@
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+	citecolor=green,
+}
+
+%Replace title
+\title{Mimir Electromech Iteration 1 Standard Notes}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\section{Chassis Design}
+This section covers the design of the Mimir chassis. The chassis includes mounting for all devices and motors. This is a purely mechanical section. 
+
+	\subsection{FIRST DATE IGNORE}
+		\subsubsection{Summary}
+		
+	\subsection{References/Resources}
+	
+\section{Power Distribution System}
+This section covers the design of the power distribution system (PDS) including the design of the PCB, electronic component selection, and battery selection. 
+
+	\subsection{4/7/23}
+		\subsubsection{Summary}
+		Today we went through early design and component selection of the Mimir PDS. 
+		
+		\subsubsection{Roadblock: Multiple Batteries or DC-DC Conversion}
+		The rover generally needs two voltages: 12V and 5V. The current LiPo batteries supply 14.8V, thus a buck module which can step the voltage down from 14.8V to 12V and/or 5V is needed. Alternatively, we can use two new batteries: 12V and 5V. The belief was that two batteries would be less expensive than a buck module, this turned out to not be true. Also, two batteries made the circuit diagrams easier, but they were significantly less compact and centralized.
+		
+		After determining industrial buck modules were cheaper than 2 new batteries (by almost \$ 50), we agreed to the buck modules. Even though the circuit board will be more complex, the physical system will be more compact. Further, the buck modules allow us the ability to swap out the batteries for any other battery (obviously given it's above 12V and has the same connector), so if we design to swap out in the future for higher power deliverance or storage we can do so freely. As a side note, the buck modules we purchased have a variable input voltage for some set output; some devices (not desired) have both set input and output.
+		
+		The final circuit will convey the battery's power to two variable-to-12V buck modules. The exact model we're looking at right now has a 10A maximum throughput, so we'll probably get 2 and place them in parallel. Both modules will contribute to power delivered to the motors; but, only 1 buck module will (in parallel) feed into yet another buck module that will step the voltage down to 5V. This 5V will feed through to the computers and Stewart platform.
+		
+		\subsubsection{Roadblock: Yet \textbf{unsolved} problems}
+		We need to determine if there's a way to limit how many amps the motors are allowed to pull. The buck modules can deliver 20A, and the motors will likely pull 6A; but, under some insane condition each motor could draw upwards of 20A (for a total of 80A with 4 motors). If possible, we need to implement electronics or circuitry that only ever lets the motor pull at most 14A, and save 6A for the computers and Stewart platform; this 14:6 ratio is tentative and definitely subject to change.
+		
+		We also need to determine the behavior of our Stewart platform servo motors. In a similar fashion to the previous paragraph, servo motors may be able to draw undesirable amounts of current under `stuck' conditions. The selected servos are quoted for 5V and 3A; does this mean they will pull a maximum of 3A? Or that they always pull 3A and operate full torque, regardless of loading conditions? Either way it's wise to have a system that circumvents high current which isn't a fuse.
+		
+	\subsection{References/Resources}
+
+\end{document} 
