@@ -38,7 +38,7 @@ The goal being established is to the end of making the basic mechanical model of
 			\centering
 			\includegraphics[scale=0.2]{early_mechanical}
 			\caption{Mechanical sketches seen at the right}
-			\label{fig_1}
+			\label{basic_mechanical}
 		\end{figure}
 	
 		The first version of the eye will probably just be for practice controls and mechanical effectiveness. The first and final will share the same motors, joints, and most mounting; however, the final will include additional mounting for fixture to the rover, improved linkages, and additional components to make the whole assembly water/rubble resistant. 
@@ -49,7 +49,21 @@ The goal being established is to the end of making the basic mechanical model of
 	
 	\subsection{4/7/23}
 		\subsubsection{Summary}
-		Continued research, like yesterday.
+		Continued research, like yesterday. Some part selection and purchasing based on my current knowledge. Didn't purchase ball joint linkages, but instead came up with a method of grabbing the 3D file desired from McMaster-Carr and printing; see an explanation below.
+		
+		\subsubsection{Roadblock: Horrible Prices...}
+		In the design of the Stewart platform some threaded ball joint linkages were needed. Note that ball joint linkages and ball joints are different in that the former has a linkage built into the ball of the joint. When I tried to purchase these online I saw prices of \textbf{\$ 18.00 each}... and I need 12 of these minimum. Obviously this won't do, and plastic hobby ones found for resale on Ebay appear incredibly sketchy.
+		
+		Instead, I pick the ball joint linkage size I desire from McMaster-Carr, then press `download 3D model', (make sure it's set to download the STEP file). From there I can model with the STEP in Fusion360, or use an online, free converted to convert to STL, then print it. For things like ball joint linkages I strongly encourage you to use a resin printer, since it can print high resolution and threads pretty well.
+		
+		\begin{figure} [h]
+			\centering
+			\includegraphics[scale=0.75]{mcmaster_models}
+			\caption{Selecting a part, then file type, then download}
+			\label{getting_models}
+		\end{figure}
+		
+		When modeling with STEP files in Fusion360, it's advised to make slight modifications and redesigns for the purpose of 3D printing. Make sure to save both a Fusion360 part file and an STL version. If I do this with the ball joint linkages I'll detail and snapshot how I edited them.
 
 	\subsection{References/Resources}
 	\begin{itemize}
@@ -82,9 +96,14 @@ The goal being established is to the end of making the basic mechanical model of
 			\centering
 			\includegraphics[scale=0.2]{early_electrical}
 			\caption{Rudimentary electrical sketches}
-			\label{fig_2}
+			\label{basic_electrical}
 		\end{figure}
 		
+	\subsection{4/7/23}
+		\subsubsection{Summary}
+		Some thought worth noting was put into the electrical. A 3D model of the complete circuit will be completed, and then a housing created. The printable housing will act as a sort of 'guide' for soldering components. 
+		
+		Because of it's superior clock speed, RAM, and electronics, we'll be opting to use the Arduino Due over the Mega. The Due has the exact same footprint as the Mega so nothing will change in the schematics.
 	\subsection{References/Resources}
 
 \end{document}
