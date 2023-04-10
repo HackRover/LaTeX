@@ -1,6 +1,7 @@
 \documentclass[a4paper, 10pt]{article}
 
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{hyperref}
 
 \hypersetup{
@@ -64,7 +65,57 @@ The goal being established is to the end of making the basic mechanical model of
 		\end{figure}
 		
 		When modeling with STEP files in Fusion360, it's advised to make slight modifications and redesigns for the purpose of 3D printing. Make sure to save both a Fusion360 part file and an STL version. If I do this with the ball joint linkages I'll detail and snapshot how I edited them.
+		
+	\subsection{4/9/23}
+		\subsubsection{Summary}
+		Continued research and mechanical modelling today. I found many parts through McMaster-Carr and GrabCAD so I didn't have to model them myself. The entire first iteration was modelled. Custom ball joints and servo horns were created.
+		
+		Models were output in the discord server to be printed; ball joints and horns on the resin printer, major jig on the FDM printer. Future developments in the 'sleekness' of the LiDAR housing, the mounting of servos, and some tolerances (especially for wires) should be considered.
+		
+		\subsubsection{Roadblock: Tricky Design Parameters}
+		In designing on paper I found myself running into lots of intricately related design parameters. The mount that holds the LiDAR must obviously be based on the LiDAR's major diameter; however, it must also roughly match, yet be smaller, than the `circular' array of servos; by which I mean the circle that circumscribes all points on the triangle the servo's are placed on. The reason is to not occupy a large default angle, giving us more room for motion. Assuming this to be the case then the servos have to be arranged first, the horns have to be placed, and the linkages placed on the horns. From there a circle slightly smaller than the servos' circle is created some appreciable distance away from the face of the servo housing; this circle defines the location of the attach points for the upper platform. The rest of the upper platform is built around this.
+		
+		The design involves plenty of reference and construction geometry. The base servo circle was referenced from \textbf{another} circle which transcribed all 6 vertices of the unequal hexagon, whos larger side length was based on 2 servo lengths, 1 gap length, and 2 constants for a total length of a kind number. You can see this hexagonal shape in the very first sketch created in the assembly file. From there some `wings' were extruded to support the servos. From platform center to furthest vertex a radius of roughly 7'' extends. A smaller, driven cradle was then created slightly smaller in radius of roughly 6'', placed such that the face of the LiDAR sits 5'' above the baseplate. Note that this LiDAR distance isn't set in stone, the linkages will dictate the final location. The details of design are self explanitory through the Fusion360 design history.
 
+\clearpage
+
+		The final product can be seen in figure \ref{3D_view} with the LiDAR, servos, and ball joint linkages visualized; though the linkages connecting the two platforms are not visible.
+		
+		\begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.35]{complete_assembly}
+			\caption{A 3D view of the completed first iteration}
+			\label{3D_view}
+		\end{figure}
+
+		If you look down from the top (as seen in figure \ref{top_down}) you might be able to pick out the two triangles fashioned to the Star of David. Note that the closest, adjacent ball joint linkages will be connected.
+		
+		\begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.4]{assembly_top_down}
+			\caption{Selecting a part, then file type, then download}
+			\label{top_down}
+		\end{figure}
+		
+		\subsubsection{Roadblock: Unfit Ball Joint Linkages}
+		The ball joint linkages were presumably manufactured to just be balls in an close fit socket, rotating on their contact. This wouldn't work for 3D printing (as the slicer would bring the ball and socket together), so modifications had to be made. The socket was designed to actually house a ball that has a printable gap. I also made sure to shrink the ball neck as to give more motion. Finally, the bottoms were extended and lined up to permit easy printing; only the threads of the stud should need support. Visuals can be seen in  figure \ref{ball_joint}.
+		
+		\begin{figure*}[h]
+			\centering
+			\begin{subfigure}[h]{0.34\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{section_ball_joint}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[h]{0.65\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{ball_joint}
+			\end{subfigure}
+			\centering
+			\caption{Section of the ball joint showing no interference, next to its 3D model}
+			\label{ball_joint}
+		\end{figure*}
+		
 	\subsection{References/Resources}
 	\begin{itemize}
 		\item A great example which includes a lot of mention of kinematics is seen \href{https://ntrs.nasa.gov/api/citations/19910007810/downloads/19910007810.pdf}{here}
