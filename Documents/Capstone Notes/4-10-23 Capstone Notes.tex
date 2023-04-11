@@ -1,0 +1,62 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{graphicx}
+
+%Replace title
+\title{Capstone Notes}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Status Update}
+%%This section should include content like: what is the status of the major projects, what major/noteworthy events have occured in the previous week, and any changes made to the expectations of capstone, etc.
+
+Stewart platform is being planned and modeled. Rough draft for the PCB rover PDS is being designed. Puzzle panel PCB schematic is being designed.
+
+\section*{What's been done since last week?}
+%%This section focuses on actual stuff that's been accomplished on specific projects since the previous week; make sure you note what has been missed.
+	\subsection*{Project 1: Stewart Platform}
+	First iteration of the Stewart platform is finished. Ready to order parts. 
+		
+	\subsection*{Project 2: Electrical for Motor/Motor Controllers}
+	Arduino Uno for 2 motor controllers. Enable pins for allowing motors to run or not. Alarm pins to interrupt for when too much current is drawn; safety measures in case of short circuits.
+		
+	\subsection*{Project 3: Rover PDS}	
+	None. Rover PDS PCB is being determined.
+		
+	\subsection*{Project 4: Puzzle Panel PDS}
+	Using barrel jack for connection from wall outlet to PCB PDS. Making PCB design. 
+		
+	\subsection*{Project 5: Software for Motor/Motor Controllers}
+	Nano is connected to the Arduino, which is connected to the motor controller and to the motor. Displayed by Danny that the motor runs properly through the Nano. Joystick will control the rover's movements.
+		
+	\subsection*{Project 6: Image Processing}
+	High level architecture for the 2D image processing is designed.
+	
+\section*{What's the plan for next week?}
+%%Should provide not only the deliverables for the next week, but also some rationale for those deliverables.
+	\subsection*{Project 1: Stewart Platform}
+	By next week, the first electromechanical model needs to be completed. Have the major components printed by Thursday. Mario will attempt to finish the electrical by Friday, so we can setup physically and have the model complete by Monday.
+	
+	We're in need of more CS students. May turn project into research assignment to get math students for Stewart platform modeling and future ideas.
+	
+	\subsection*{Project 2: Electrical for Motor/Motor Controllers}	
+	Iteration 2 involves Arduino Due for 4 motor controllers, but iteration 3 involves RBPi and Nano for WiFi connections. Iteration 3 is for next capstone team.
+	
+	\subsection*{Project 3: Rover PDS}	
+	Figure out how to power 2 Arduinos, Nano, and camera. Order buck modules
+		
+	\subsection*{Project 4: Puzzle Panel PDS}
+	Include 4 female USB ports. Finish up PCB design. Get ready to send off schematic to print and order PCB. Justin will print the housing for the PDS PCB.
+	
+	\subsection*{Project 5: Software for Motor/Motor Controllers}
+	Will need to test 2 motors serially. Finishing Mission Control website for GUI control of the rover.
+		
+	\subsection*{Project 6: Image Processing}
+	Consider how are the puzzle elements connected and how that feeds into the decision-making. There should be limitations on each of the distinct puzzle element shapes. Bound the puzzle arrangement problem. Consider having observation phase where the rover tests out the function for each puzzle element. The solving phase is for when the rover determines the optimal solution for the puzzle arrangement. 
+	
+	Design low level architecture. Implement the 2D object detection system. Get the LiDAR puck from Justin. Get the puzzle panel element housings from Viz.
+		
+	\subsection*{Project 7: Inventory}
+	Tear down old rovers and inventory them.	
+\end{document}
