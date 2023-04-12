@@ -6,7 +6,7 @@
 \usepackage{subcaption}
 \usepackage{url} 
 
-[Incomplete] Note shuffling in progress... 
+[Incomplete] Note shuffling in progress, sources incoming... \\
 \title{``Raspberry Pi Introduction'' Standard Notes}
 \date{2021-2023}
 
@@ -17,7 +17,9 @@
 \pagebreak
 
 \tableofcontents
-\pagebreak
+
+ %=============================================================
+ \pagebreak
 
 \section{``READ ME FIRST''}
 	\subsection*{``Warnings going forward''}
@@ -55,6 +57,8 @@
             While the raspberry pi is booting, be careful not to hit any keys, as it may stop the autoboot.
 
  %=============================================================
+ 
+
  \pagebreak
 
 
@@ -155,6 +159,7 @@
 
             \subsubsection{What is an IP address?}
                 An (IP) Internet Protocol Address is a digital address that identifies your device’s location.
+                A \textbf{protocol} is set of rules and messages that form the internet standard. 
                 Your device directly requests your Internet Service Provider (ISP), which grants it access to the web. \\
 
                 There is a vast number of available IP addresses, and reserving some addresses or ranges (called blocks) can simplify management of DHCP (Dynamic Host Configuration Protocol) Servers, prevent programming conflicts and improve network security and efficiency. 
@@ -167,36 +172,72 @@
 
                 \noindent Ergo, do NOT change or remove the line ‘127.0.0.1 localhost’ in the hosts file.
 
+            \subsubsection{Static IPs}
+                (handy for headless setup, but prone to security issues and other troubles. also less flexible)
+
             \subsubsection{Architecture: Peer-to-Peer vs. Server-Client}
             \subsubsection{What is SSH?}
                 The Secure Shell Protocol is a Communication Protocol (like http, https, ftp, etc) that allows access to a remote computer while encrypting your traffic. Similar services (such as telnet) are not as secure because they’re not encrypted. This included file editing, installation/running programs, deploying applications, setting up web servers, etc. It’s mostly done via a remote command line terminal, but can also be used with SCP (Secure File Copy) & GUI (Graphical User Interface) programs that allows you to drag and drop files (such as WinSCP for Windows, or FileZilla (an FTP client)). \\
-    
+
+                \underline{\textbf{Server Requirements:}}
                 Not any machine can be logged into. The server must have sshd installed and running. SSHD (Open SSH Daemon, which listens for SSH connections) is the server, and SSH is the client.\\
                 \textbf{Daemons} are programs that continuously run as background processes and wake up to handle periodic service requests. They behave as servers in a client server model.\\
 
                 Ubuntu operating systems automatically have sshd installed. 
 
-                The server contains a sshd config file that can be edited. For ex, it can be used to disable passwords (to prevent brute-force attacks).
+                The server contains a sshd config file that can be edited. One use case is editing it to disable passwords (to prevent brute-force attacks).\\
 
-                There are multiple authentication methods for logging in with SSH:
+                \underline{\textbf{Client Requirements:}}
+                Additionally, to access a remote server from a private laptop, a software is needed to run SSH.
+                On MacOS and Linux, you can enter \texttt{ssh} in the terminal.\\
+                On windows, a Linux subsystem for Windows can be installed from the Microsoft Store. However, using an application like PuTTy is more convenient.\\
+                PuTTy can be installed from \ur{http://putty.org}. Beware of fake putty programs, which rather that connecting to the server, share your private key with a 3rd party who can then access your server as you.\\
+
+                There are multiple authentication methods for logging in with SSH: 
                 \begin{itemize}
-                \item Password (default):\\
+                \item \textbf{Password (default):}\\
+                    This method is prone to brute-force attacks or password leaks.\\
+                    
                     A user exists on the remote server, and a password for that user.\\
                     Login with: \texttt{ssh <username>@<local\_ip\_address\_of\_server>} \\
                     Then enter password after prompt.\\ 
-                    Prone to brute-force attacks or leaks.
                 
-                \item SSH Keys (Public / Private Key pair):\\
-                    Same login as with password but bypass the password. This is done by generating a set of public & private keys on your machine.
+                \item \textbf{SSH Keys (Public / Private Key pair):}\\
+                Same login as with password but bypass the password. This is done by generating a set of public & private keys on your machine.\\
+
+                    Two files are stored on your device. One contains the private key (do NOT share), and the other has the public key. The public key can be calculated from the private key, but not vice versa, so it doesn't matter if the public key is shared.\\
+
+                    When initiating a connection, the SSH client on your local machine reads the private key, then requests the server to connect.\\ 
+                    The client provides that public equivalent of the private key. \\
+                    Once the server receives the public key and accepts, it generate a random stream of characters and numbers, then uses an algorithm that encrypts that string using the public key, and can only be decrypted with the private one. \\  
+
+                    The server sends the encrypted stream to the client, which preforms a calculation on the string and returns a result to the server. This result isn't exactly the same as the original, but can prove the client has the private key. \\
+
+                    If the server authenticates the result, the client is allowed access.      
+                    
                 
-                \item Host-based: \\
-                    It goes by the host. The machine contains a file called hosts that stores any hosts that are allowed to connect to it.
-                \end{itemize}
-                
-                Connecting to a Raspberry Pi via SSH is not a peer-to-peer (P2P) network. In a p2p network, each peer is equal to the others, with no admin. Each computer behaves as a client and a server.
+                \item \textbf{Host-based:} \\
+                    It goes by the host. The machine contains a file called hosts that stores any hosts that are allowed to connect to it.\\
+                \end{itemize}                
+
+                Connecting to a Raspberry Pi via SSH does not follow a peer-to-peer (P2P) architecture. In a p2p network, each peer is equal to the others, with no admin. Each computer behaves as a client and a server.
                 
                 Connecting to the Raspberry Pi via SSH is a Client-Server model. When you enter the ssh command on your PC’s terminal, it plays the role of a client (or “host”). It sends a request to the server (the RP) which accepts the connection and allows the client access.
 
+        \subsubsection{TCP/IP Protocol Suite}
+            \textbf{Note:}\\
+            This section is not a pre-requisite for setting up the raspberry pi, but may come in handy for understanding ROS. Feel free to skip this section for now and return later.\\ 
+        
+            TCP/IP is a network model designed to support network communication, even for computers with different manufacturers.\\ 
+
+            \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=1.2\textwidth]{media/temp_tcpip_notes.jpg}
+            \label{fig:TCP/IP Notes placeholder}
+            \caption{Coming soon}
+            \end{figure}
+
+        
     \subsection{Initial Configuration: Burning an OS, Images, and Related}  
         \subsubsection{Reasoning behind using the Ubuntu Server 20.04 LTS (64-bit) OS}
             Further explanation will be given later on what ROS is and the decision behind using ROS2. For now, know that ROS (Robot Operating System) is a popular middleware (not an actual OS) as it tremendously supports development with its libraries and tools, and is free.
@@ -204,8 +245,23 @@
             All ROS distributions are supported by a version Ubuntu LTS, and foxy needs Ubuntu 2.04 LTS (long-term support). Because the raspberry pi will be boarded, the desktop version is unnecessary as it contains unneeded packages. 
 
         \subsection{Reformatting the SD into FAT32}
+            \subsubsection{What is a partition?}
+                A \textbf{partition} is a logical division of a hard disk drive. Usually when working with a "drive", you're actually working with a partition that's assigned a drive letter (for ex, W:/). Not all partitions are assigned a drive letter, such as a recovery partition if created.\\
+
+                Partitions are necessary for operating an OS, which needs a place to store it's file, including it's root directory.\\
+
+                4 \underline{primary partitions} can...
+                
+            \subsubsection{What is a file system?}
+            \subsubsection{Why FAT32?}
+            \subsubsection{Formatting the SD}
+            \subsubsection{Common Problems}
+                \begin{itemize}
+                    \item Fixing read-only (physical/not)
+                    \item Recovering data from formatted SD
+                \end{itemize}
         
-        \subsubsection{Burning images onto the SD card}
+        \subsection{Burning images onto the SD card}
             There are two popular imagers for flashing the SD card, balenaEtcher - a fast and reliable imager, and the raspberry pi imager, which makes it easy to set up the hostname, user, password, WiFi and ssh before boot. \\
 
         \underline{\textbf{Method A: Raspberry Pi Imager}}\\
@@ -251,8 +307,6 @@
         Do not eject the SD card yet, since SSH configurations must be done \underline{before} the first boot.
         Follow additional instructions to set up user after starting up the display. \\
         
-    
-    \subsubsection{Backing up images}
 
     \subsection{\textbf{Optional:} Connecting a Display to the RP}
             \subsubsection{\textbf{Method 1: HDMI}}
@@ -348,6 +402,7 @@
             ls -alh /etc/netplan
         \end{lstlisting}
 
+    \subsection{Backing up images}
     \subsection{Debugging}
     sshing with -v, -vv, -vvv...
     
@@ -388,6 +443,20 @@
         \item (TCP/IP function, layers vs OSI model) \url{https://www.techtarget.com/searchnetworking/definition/TCP-IP}
         \item (DNS) \url{https://www.howtogeek.com/122845/htg-explains-what-is-dns/}
         \item \url{https://www.digitalcitizen.life/}
+        \item \url{https://www.lifewire.com/what-is-a-partition-2625958}
+        \item \url{https://www.easeus.com/diskmanager/file-system.html}
+        \item \url{https://www.lifewire.com/virtual-machine-4147598}
+        \item \url{https://www.lifewire.com/what-is-a-root-folder-or-root-directory-2625989}
+        \item \url{https://raspberrypi.stackexchange.com/questions/44074/raspberry-pi-3-why-the-fat-partition}
+        \item \url{https://www.tomshardware.com/reviews/local-area-network-wi-fi-wireless,3020-2.html}
+        \item \url{https://www.cloudflare.com/learning/ddos/glossary/tcp-ip/}
+        \item \url{https://www.cloudflare.com/learning/network-layer/what-is-a-lan/}
+        \item \url{https://www.networkstraining.com/peer-to-peer-vs-client-server-network/}
+        \item \url{https://youtu.be/0Sffl7YO0aY}
+        \item \url{https://www.geeksforgeeks.org/tcp-server-client-implementation-in-c/}
+        \item \url{https://www.hostinger.com/tutorials/what-is-ubuntu}
+        \item (Headless Ubuntu Setup) \url{https://www.youtube.com/watch?v=ZE2HmyI0t7U}
+        \item \url{https://netplan.io/examples}
         \end{itemize}
 
 
@@ -398,7 +467,7 @@
 \section{``ROS2''}
 \subsection*{Summary}
 	\subsection{``Popular open-source robotics frameworks''}
-	ROS and YARP
+	ROS and YARP...
 
         \subsection{``What is ROS?''}
         Although ROS stands for Robot Operating System, it’s not an OS  like Ubuntu or Raspbian. According to its documentation, ROS is an open-source meta-operating system that’s build on top of the operating system.\\
