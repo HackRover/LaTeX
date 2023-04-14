@@ -5,6 +5,8 @@
 \usepackage{multirow} 
 \usepackage{subcaption}
 \usepackage{url} 
+\usepackage{lipsum} 
+\usepackage[]{mdframed}
 
 [Incomplete] Note shuffling in progress, sources incoming... \\
 \title{``Raspberry Pi Introduction'' Standard Notes}
@@ -54,7 +56,7 @@
             \subsubsection{Be patient with the boot}
             It can take the raspberry pi up to 5 minutes to finish it's first boot. It's fine, do not try to turn it off.
 
-            While the raspberry pi is booting, be careful not to hit any keys, as it may stop the autoboot.
+            While the raspberry pi is booting, be careful not to hit any keys, as it may stop the auto boot.
 
  %=============================================================
  
@@ -344,7 +346,7 @@
             \item When asked to set a new password, you are first asked to enter the current password. Enter "ubuntu", then type in the new password.
         \end{itemize}
         
-        \noindent Create a new admin user:\\
+        \textbf{Create a new admin user:}\\
         \texttt{sudo adduser <username>} \\
 
         \noindent Sample: \\
@@ -372,7 +374,7 @@
         \texttt{su - <username>}\\
         Sample: \texttt{su - piparty} \\
         
-        \noindent \textbf{Change hostname }(optional)\\
+        \underline{\textbf{Change hostname }}(optional)\\
         \textbf{Enter root user:} \texttt{sudo su} \\
         \textbf{Edit hostname files:} \texttt{nano /etc/hostname} \\
         
@@ -389,7 +391,41 @@
         \noindent Sample hostname: hrrp2 (for:  HackRover raspberry pi 2)\\
          
         \noindent\textbf{Save:} Ctrl+S \\
-        \textbf{Exit:} Ctrl+X 
+        \textbf{Exit:} Ctrl+X \\
+        
+        \begin{mdframed}
+            \underline{\textbf{Disabling default user:}}\\ 
+
+            \begin{tabular}{ll}
+                \textbf{Switch to root user:} & \texttt{sudo su}\\
+                \textbf{Lock root user’s password:} & \texttt{passwd -l ubuntu}\\
+            \end{tabular}\\
+            
+            If successful, the following message will be displayed: \\
+            \texttt{passwd: password expiry information changed.}\\
+
+           \textbf{ Exit root user:} \texttt{         exit}\\
+
+           Until the root user is re-enabled, it will no longer be possible to ssh into the raspberry pi with just the IP Since it automatically try to log in as root (which's password you disabled).\\
+           (\texttt{ssh <ip>} will no longer work).\\
+
+           You will need to specify the user with\\ \texttt{ssh <username>@<ip-address>}\\
+
+        \end{mdframed}\\
+
+        \begin{mdframed}
+            \underline{\textbf{Re-enabling default user:}}\\ 
+            \begin{tabular}{ll}
+                Switch to root user: & \texttt{sudo su}\\
+                Unlock root (“ubuntu”) user’s password: & \texttt{passwd -u ubuntu}\\
+                Exit root user: & \texttt{exit}\\
+            \end{tabluar}\\
+
+        \end{mdframed}\\
+
+
+    
+
 
     \subsection{Configuring Network and Remotely Accessing the RP via SSH}
         It is necessary to first find which tool is managing the network interface:
@@ -487,6 +523,26 @@
 		\subsubsection{ROS2 on the raspberry pi}
 
 		\subsubsection{ROS2 on VirtualBox (PC)}
+
+            \subsection{Installation Issues}
+            \begin{itemize}
+                \item \textbf{E: Unable to locate package ros-foxy-ros-base}\\
+                Check your version of Ubuntu: 
+                \begin{verbatim}
+                    lsb_release -a
+                \end{verbatim}\\
+
+
+                It should be \underline{version 22.04 LTS}, with \underline{codename focal}. If that's not the case, the SD card will need to be re-burned with the correct image.
+
+                \item \textbf{ModuleNotFoundError: No module named 'RPi'}\\
+                Install with\\
+                \begin{verbatim}
+                    sudo apt-get update
+                    sudo apt-get install python3-rpi.gpio
+                \end{verbatim}\\
+
+            \end{itemize}
 
     \subsection{References/Resources}
         \begin{itemize}
