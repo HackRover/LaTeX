@@ -53,5 +53,18 @@ This section covers the design of the power distribution system (PDS) including 
 		
 	\subsection{References/Resources}
 		[1] Infineon Technologies, ``High Current PN Half Bridge'', BTS7960 datasheet, Mar. 2004 [Revised Dec. 2004]
-		
+  
+\section{Programming}
+    \subsection{4/10/23}
+        \subsubsection{Summary}
+        Meeting notes with the team, specifically Ryan Miller and Joonsu Park (EE team) on the connections between the electronic components will be laid out.
+
+        \subsubsection{Roadblock: Determine the connection between NVIDIA Jetson and Arduino}
+        In this meeting we spoke about the pros and cons of how we will connect the NVIDIA Jetson and the two Arduino's that will be used for the motor controllers and Stewart platform. Our main idea is to utilize a USB hub for serial communication between the devices and using the NVIDIA Jetson as the main node that talks to the two Arduino's. The problem we have understood with this design is that USB also provides power as well as serial data, so this may create a circular loop of power. Both the Arduino's being powered by the USB and by the power distribution system. We believe it should be okay, since the other method of using the data pins on the Jetson and Arduino's would consider us to redesign the already built ROS serial libraries. 
+        
+    \subsection{References/Resources}
+		[1] Schwind, Johan. “Mobile Robot Teleoperation with the Jetson Nano and Ros.” Medium, Medium, 22 Feb. 2021, https://johanschwind.medium.com/mobile-robot-teleoperation-with-the-jetson-nano-and-ros-d72b4b57e9be. 
+
+
+  
 \end{document} 
