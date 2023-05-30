@@ -1,0 +1,69 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{lipsum}
+\usepackage[]{mdframed}
+
+\title{``HackRover marketing initiative'' Standard Notes}
+\date{April 2023-May 2023}
+
+\setlength{\parindent}{0pt}
+\begin{document}
+\maketitle
+
+\pagebreak
+
+\tableofcontents
+
+
+
+%=============================================================
+\pagebreak
+
+\section{``Introduction''}
+\subsection{``Planning''}
+\subsubsection*{Summary}
+The Association for Computing Machinery club (ACM) hosted a hackathon from May 5th to May 7th, and they invited other clubs to join them in promoting this event as well as their clubs. The officer of ACM (Breanna) reached out to Justin to promote hackrover, and as a result he (Justin) reached out to me to help him in promote our club. I expressed my interest and began to reach out to the Breanna and other members of hackrover to help me out.
+
+\subsubsection*{``Contributions before attending hackathon event''}
+After I discussed with Breanna to promote hackrover through social media, she offered some ways on how ACM can help us in return. I told her that they can promote hackrover on social media by posting an invitation for the clubs disord server on the ACM's server as well as their hackathon server. I also aksed if they can provide a table for us during the day of hackathon and if we can bring promotional materials.I believed that by promoting our club in person, we can spread our message more effectively to the participants, also it would help us network with people who are promoting their clubs in the event. Networking would enhance our ability to spread the message about our club.
+
+\subsubsection{``Creating Promotional Materials''}
+I collaborated with Long and Joshua to promote our club on the hackathon. Long helped me promote the club on social media, as well as offered some ideas on promotional materials (creating a brochure vs pamphlet). As we approached the dates of competition, I leveraged Joshua to help me create the brochure. He created and brought the brochure to the competition.
+
+\subsubsection{``Competition''}
+Joshua and I went to promote our club on Saturday, May 6th. We passed out all the brochure materials printed to the participants of Hackathon and delivered the message about our club. Later on, I delivered a speech that gave the participants overview as well as about the Computer Science(CS) aspect of our project (giving brief overview about Stewart Control, ROS2 operating system, Computer vision models and architecture, AI and Path Planning, and Networking and Signal Processing). Since most participants in the hackathon wanted to pursue a CS related, I wanted to explain about the scope of CS in our clubn and how we would like more participants to join our club. We also networked with other clubs in the event to spread the message and got their contacts in discord since they were interested to learn more about our club. I believe that this hackathon helped us spread information about the club to various participants, and hope we see more members from the Computer Science and other STEM fields joining our club.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
