@@ -86,73 +86,76 @@
 \section{Design Strategy}
 	\subsection{User Insights and Research} 
 		\subsubsection{Consumer Journey Map}
-		The unique nature of our project makes consumer analysis difficult, as product consumption occurs at multiple levels: faculty staff, students, companies, disaster responders, etc. Here we'll speak lightly of most and provide consumer journey maps for students and disaster responders: the key subjects of our capstone project.
+		The unique nature of our project makes consumer analysis difficult, as product consumption occurs at multiple levels: faculty, students, companies, disaster responders, etc. Here we'll speak lightly of most and provide consumer journey maps for students and disaster responders: the key subjects of our capstone project.
 		
 		When structuring education, university faculty seek useful pedegogical tools; such tools will provide  interdisciplinary education, equip students with life skills, and possibly generate research/products that enrich the name and wealth of the school. Students, specifically engineering ones, look to develop their skills while in school through participation in clubs, projects, and research. They're often pulled in many directions as their educational appetite is wide but options are slim/focused.
 		
 		-----NEED IMAGE OF STUDENT CONSUMER MAP: The student should look for extracurriculars, see options, have to pick an option, each option should have different benefits. Something like that.
 		
-		Seen above is a student consumer map cataloguing the journey a student experiences as they seek extracurricular, educational activities which empower them. We'll be focusing mainly on robotic or control and sensing projects as that's what we are.
+		Seen above is a student consumer map cataloguing the journey a student experiences as they seek extracurricular, educational activities which empower them. A key takeaway is that the student is limited by time and must select one club with a narrow purpose. Further, these clubs demand a wealth of previous knowledge and experience to properly participate, raising the bar to entry. Broadening the scope of work for any given organization and lowering the bar to entry are obvious improvements.
 		
 		Robotic companies that develop disaster rovers are limited by the opportunities available to them and niche of their field. Disaster relief is a philanthropic endeavour for the most part, where the only money to  be made is from tech savvy local governments (an already fickle customer) or when disaster relief can be repurposed as a virtuous advertisement. Minimal money exists in prize form through government sponsored competitions or events, like DARPA's disaster relief competition. Beyond monetary opportunity, research is hard to come by; like an ouroboros, the lack of monetary gain causes people to ignore robotics research in disaster relief. This makes constructing disaster relief systems difficult all around. A disaster responder's role all of this makes R\& D even more difficult, as relying on robotic systems is a difficult and risky endeavour. You're never sure when a disaster will strike, and circumstances are unique each time. As a responder you must delegate quickly and make use of limited resources in saving as many lives and limiting damage as possible. Rovers are dependent on a human operator as well as some uptime; further, their operation needs to be clean and quick to permit a disaster responder to complete the same or better task without major risks.
 		
 		------NEED IMAGE OF STUDENT CONSUMER MAP: The disaster responder should be presented with a disaster, have to quickly assess damages, delegate  resources in a timely manner, save people, make risks. Possibly emphasize the risks they might take, and talk about the time it takes to accomplish their goal. 
 		
+		Seen above is a disaster responder consumer map cataloguing their response to a generic disaster event. Of emphasis is the risk to responder's life, a time crunch, and quick decision making with limited resources and information. Systems or methods that might remove the human operator from danger, improve operation efficiency, and maximize life-saving information and resource use are obvious improvements.
+		
 		\subsubsection{Stakeholder Framing}
 		------Need to review and improve the stakeholder framings.			
 			\begin{itemize}
 			\item
-			\textbf{Stakeholder:} \emph{Disaster Relief Operators:} A design focus of the rovers is a disaster relief rover, though they won't likely purchase the device themselves, being able to operate it effectively is a function of our good design. Operators will be able to quickly modify the rover to fit the disaster needs and fit a function that will be able to assist with disaster relief. 
+			\textbf{Stakeholder:} \emph{Government Relief Organizers:} The bottom line of these individuals is effective distribution of force and resources; inability to do this casts doubt on their ability. Any cost effective solution which improves how they distribute resources, or reduces resources needed will be a boon to them. 		
 			
 			\item
-\textbf{Stakeholder:} \emph{Government Relief Organizers:} The likely organization that would be purchasing our disaster relief rover. Making a robust cost-effective system is the most important selling point. If troops or units can be deployed inexpensively and provide vital disaster data, they're sure to sell. 
+			\textbf{Stakeholder:} \emph{Disaster Relief Operators:} Like the government organizers above, these individuals need to manage a swath of resources; albeit smaller, with more attention. Tools that can sub in for more expensive resources, have shorter uptimes, improve information gathering, accomplish rescue, and maximize human life (operator or victim) are beneficial.
+			
+			\item
+			\textbf{Stakeholder:} \emph{UW Bothell Students:} UW Students are the primary beneficiaries of our product. Prior we made clear the intent to create a product that serves UW Bothell students first and foremost, and whose reprocussive effects are benefits to disaster response. Providing students with extracurricular engineering activities that are easy to get into while simultaneously serving broad interests will nix the problem of narrow-focus clubs with steep learning curves. 
+			
+			\item
+			\textbf{Stakeholder:} \emph{UW Capstone Core Team:} Our organization already exists, but the product we create will have bearing on our success. The ability to serve a  need within the school has direct correlates to further funding and participation.
 
 			\item
-\textbf{Stakeholder:} \emph{UW Bothell Students:} UW Students are the primary users of the product. Though they haven't purchased any rovers or paid fees for admission into the competition, they nonetheless benefit from its free access.
+			\textbf{Stakeholder:} \emph{Pierre Mourad:} Pierre derives benefits from the product in the form of reputation of his person, outreach for access to students (for other projects potentially), and access to robotics systems. Our performance in this capstone cycle will affect trust in his decisions.
+			
+			\item
+			\textbf{Stakeholder:} \emph{UW Faculty:} Like Pierre, the UW faculty has a stake in this project. They've provided plenty of resources and space which might be used for something else. Further, a successful project might provide a powerful pedagogical tool in the future.
 
 			\item
-\textbf{Stakeholder:} \emph{Pierre Mourad:} Pierre derives benefits from the product in the form of reputation of his person, outreach for access to students (for other projects potentially), and access to robotics systems. Our performance in this capstone cycle will affect trust in his decisions. Beyond this, many components from the past were purchased by him in some way.
-
-			\item
-\textbf{Stakeholder:} \emph{UW Capstone Core Team:} Like UWB Students, though we have not paid for anything large, we are nonetheless a stakeholder. Our performance on this project correlates with future successes in the industry, as this capstone is a demonstration of our ability.
-
-			\item
-\textbf{Stakeholder:} \emph{UW Student Technology Fund:} The STF is the primary contributor to our organization, providing more than 3000 dollars in hardware technology. The exchange of this technology was meaningful use, future requests need to be paired with demonstration of this good use.
+			\textbf{Stakeholder:} \emph{UW Student Technology Fund:} The STF is the primary contributor to our organization, providing more than 3000 dollars in hardware technology. The exchange of this technology was meaningful use, future requests need to be paired with demonstration of this good use.
 			\end{itemize}
 			
 		\subsubsection{User Scenarios and Personas}
-		------Need to review personas. Emphasize their experience within and nature of the market here from each persona. Emphasize why needs of users and mention their goals. Needs why the scenario was realized in the first place, so explain the problems. Combine the below sections into two cohesive 3 bullet lists, the first talking about the persona, the second talking about the scenario.
+		
 		\textbf{Three Personas:}
 		
 		\begin{itemize}
 			\item
-			Students do not have enough extracurricular engineering opportunities at UW Bothell where they can apply the knowledge they have gained from courses.
+			
+			\emph{UW Student seeking a club} A prototypical UW engineering student seeking out extracurriculars to further their knowledge of mechanical, electrical, and/or computer  engineering. 
 			
 			\item
-			There are cases where there are currently no robotic devices already made or ready to be configured to be sent to certain disaster areas.
+			\emph{UW Faculty seeking new educational resource} A UW faculty member desiring to contribute to the education of their students while generating value within the school.
 			
 			\item
-			Engineering firms want students to have a more extensive education in documentation and industry-tier engineering practice.
+			\emph{Disaster responder} A diasaster responder on the ground attempting to respond to an earthquake that resulted in the collapse of multiple buildings with people inside.
 		\end{itemize}
 		
-		\textbf{Persona Explanation:}
+		\textbf{Scenarios:}
 
 		\begin{itemize}
 			\item
-			UW Bothell has funding to provide extracurricular clubs which would provide students the opportunity to apply their knowledge to a club like HackRover. Students will participate in a club that provides a timeline for increasing their marketable skills. Because the job market has always been competitive, UW Bothell students need to be competitive, and having HackRover as a background of extracurricular activity can help.
+			A students looks at a roster of available clubs and organizations to participate in with the aim of furthering their engineering ability in multiple fields and equipping them with industry-standard skills. They're met with a limited selection containing clubs that exist but don't operate well, and others which are popular; all of these clubs have a niche focus that forces the student to sacrifice some of their interests if they invest their time. The student picks a popular club and is met with a great amount of competition and steep learning curve. Everyone wants to contribute and do something cool, but resources are limited, so competition ensues. To stand out the student  must struggle to learn a massive amount of content; by the end their skills may no longer  be useful. Trying to latch onto existing projects within the club is difficult because documentation is sparse and the student can't understand decisions that were made. These circumstances aren't different for others so the project sits in gridlock: afraid to move forward in case precious resources are destroyed during the process of improvement, and a lack of confidence in how to move forward, since decisions require immennse background knowledge (which isn't well documented). The student spends most of their time jumping hurdles just to do minimal meaningful engineering, get discouraged, and use the club as a resume filler.
 
 			\item
-			Disaster relief companies need robots that are either already made for a specific scenario or a robot that can be easily configured to be made for the scenario. Companies can fund the UWB HackRover club to provide designs and testing for these types of disaster-relief robots.
-
+			A faculty member has to balance their desire to improve their students lives with forwarding their own career. They could create a product which is a horrible pedagogical tool and hyper-focuses the education of their student, but which benefits their own reputation and school image. Alternatively they create product which is great for educating students, but doesn't draw any attention or produce meaningful results/research. 
+			
 			\item
-			Engineering firms would rather students have some experience which better reflects the industry, prior to entering the job market. HackRover can provide the industry experience that engineering firms are looking for from graduates. 
+			A disaster responder is provided a small troop of men to command with limited expensive resources to save as many lives as possible in a short amount of time. If they spend too much time deliberating, hundreds may be crushed or suffocated under rubble; if they act too quickly manpower and resources will be spent inefficiently, hundreds may still die. Information collection and action must also be balanced. Any work they do also places their own team-members lives' at risk.
 		\end{itemize}
-
-		\textbf{Pain Points:}
-		HackRover is constantly iterating and the direction of the club changes as students come and go. Having extensive, yet concise documentation of what the club is about, a rulebook for the competition related to HackRover, and an onboarding pipeline would solve this pain point. \\
-
+		
 		\textbf{One Scenario Environment:}
-		The scenario that we want to focus on most is the disaster relief persona. We would be interested in creating robots that are configurable to fit different scenarios and provide first responders with better support models. Socially this would be a positive since in a disaster time is limited and having a robot that was configurable in on short notice to perform a mission would be a social positive. Further, the development context of this device provides a fun educational experience for university students. 
+		The scenario of focus is the disaster responder, since 
 
 		\subsubsection{User Insight Report}
 		------Need to discuss a hypothehtical `product' which addresses the specific problems; don't mention details of the product or the outcome. Talk about our discussions with Pierre. 	
