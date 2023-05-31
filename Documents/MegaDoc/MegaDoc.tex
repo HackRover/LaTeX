@@ -100,8 +100,8 @@
 		
 		Seen above is a disaster responder consumer map cataloguing their response to a generic disaster event. Of emphasis is the risk to responder's life, a time crunch, and quick decision making with limited resources and information. Systems or methods that might remove the human operator from danger, improve operation efficiency, and maximize life-saving information and resource use are obvious improvements.
 		
-		\subsubsection{Stakeholder Framing}
-		------Need to review and improve the stakeholder framings.			
+		
+		\subsubsection{Stakeholder Framing}		
 			\begin{itemize}
 			\item
 			\textbf{Stakeholder:} \emph{Government Relief Organizers:} The bottom line of these individuals is effective distribution of force and resources; inability to do this casts doubt on their ability. Any cost effective solution which improves how they distribute resources, or reduces resources needed will be a boon to them. 		
@@ -125,10 +125,9 @@
 			\textbf{Stakeholder:} \emph{UW Student Technology Fund:} The STF is the primary contributor to our organization, providing more than 3000 dollars in hardware technology. The exchange of this technology was meaningful use, future requests need to be paired with demonstration of this good use.
 			\end{itemize}
 			
+			
 		\subsubsection{User Scenarios and Personas}
-		
-		\textbf{Three Personas:}
-		
+		\subsubsection*{Three Personas:}
 		\begin{itemize}
 			\item
 			
@@ -141,8 +140,8 @@
 			\emph{Disaster responder} A diasaster responder on the ground attempting to respond to an earthquake that resulted in the collapse of multiple buildings with people inside.
 		\end{itemize}
 		
-		\textbf{Scenarios:}
-
+		
+		\subsubsection*{Scenarios:}
 		\begin{itemize}
 			\item
 			A students looks at a roster of available clubs and organizations to participate in with the aim of furthering their engineering ability in multiple fields and equipping them with industry-standard skills. They're met with a limited selection containing clubs that exist but don't operate well, and others which are popular; all of these clubs have a niche focus that forces the student to sacrifice some of their interests if they invest their time. The student picks a popular club and is met with a great amount of competition and steep learning curve. Everyone wants to contribute and do something cool, but resources are limited, so competition ensues. To stand out the student  must struggle to learn a massive amount of content; by the end their skills may no longer  be useful. Trying to latch onto existing projects within the club is difficult because documentation is sparse and the student can't understand decisions that were made. These circumstances aren't different for others so the project sits in gridlock: afraid to move forward in case precious resources are destroyed during the process of improvement, and a lack of confidence in how to move forward, since decisions require immennse background knowledge (which isn't well documented). The student spends most of their time jumping hurdles just to do minimal meaningful engineering, get discouraged, and use the club as a resume filler.
@@ -154,81 +153,91 @@
 			A disaster responder is provided a small troop of men to command with limited expensive resources to save as many lives as possible in a short amount of time. If they spend too much time deliberating, hundreds may be crushed or suffocated under rubble; if they act too quickly manpower and resources will be spent inefficiently, hundreds may still die. Information collection and action must also be balanced. Any work they do also places their own team-members lives' at risk.
 		\end{itemize}
 		
-		\textbf{One Scenario Environment:}
-		The scenario of focus is the disaster responder, since 
+		\subsubsection*{One Scenario Environment}
+		The environment of focus is the disaster responder since it's scenario which motivates most development decisions within the project. The student is important but accessory to the disaster responder. We've repeatedly emphasized above the time and resource intensive environment responders participate in, increased consideration to human life, and limited information. Furthermore, disaster responders are beholden to government organizers who provide resources for disaster response. Despite being the users of our product, the responders must be able to convince higher ups the acquisition is sensible and cost-effective.
 
 		\subsubsection{User Insight Report}
-		------Need to discuss a hypothehtical `product' which addresses the specific problems; don't mention details of the product or the outcome. Talk about our discussions with Pierre. 	
+		\textbf{UW students} need a product that address their lack of interdisciplinary, extracurricullar activities. acitivities provided by the product must be friendly to students of any educational background and not require them to climb a steep learning curve; documentation of past activities should be plenty yet easy to read. Clerical work should be minimized, while real engineering work is maximized. Any participation should result in industry skills being learned.
 		
-		After meeting with our sponsor, professor Pierre Mourad, he explained how current engineering firms respond to disaster relief when first responders determine that a specific rover is required. They’d rather send a specifically configured rover into the situation where a responder’s life could be seriously threatened. Disasters happen often and they end up happening fast and have limited time to save as many lives as possible. Rovers would need to be easily configurable, or at least provide enough data under small up-time to legitimize their use in the field. Further, they should be able to direct the efforts of responders as to limit lives lost.
-
-Further discussion with Mourad informed us that we might pivot HackRover to design competitions which reward designs suiting disaster situations by creating simple puzzle elements and point systems which reward the related functions. The puzzles themselves act as a springboard for our design direction. Further, multiple rovers of various configurations will be built simultaneously to see ‘what works’. This will provide first responders with an arsenal of quickly configurable rovers that can be used in any type of disaster scenario, or at least lead to the design of one ‘great’ system spread nebulously in the design of all four systems.
-
-The name of the club/the project would still be HackRover even if the ethical hacking component is not mentioned but the software component would still access the information data of the rover.
+		\textbf{UW faculty} members need a product that is both pedagogically developed and useful for producing reputable work and/or research. 		
+		
+		A given of our capstone is the development of some rover that addresses disaster responders' issues, beyond additional product components which address UW students' needs. We've made it very clear that \textbf{disaster responders} need a rover design that's cost effective, as to convince government organizers of acquisition; has a short up-time and is easy to control, to maximize efficiency; and, can provide vital information, to streamline rescue missions and better distribute resources.
+		
+		A few meetings with our sponsor, Prof. Pierre Mourad, shed light on both the school environment and state of disaster relief robotics. It seems Bothell suffers from limited engineering extracurriculars, many of which are too narrow (as per our previous mention); the only solid `rover' project is TrickFire, which sees heavy member competition. Furthermore, few pedagogical tools exist for students; many try to learn through clubs, but those often require extensive background understanding. Pierre Mourad  also discussed his understanding of disaster relief rover design: companies would rather send a specifically configured rover into the situation substitute for a responder, but close by. Rovers would need to be easily configurable or provide enough data under small up-time to legitimize their use in the field. Rovers should also have some autonomous  function so they don't have to be babysat by their operators.
 
 	\subsection{Problem Understanding}
 		\subsubsection{Product Assumptions}
-		----Needs three versions for each scenario of “a product that addresses a [problem] of a [persona/scenario] that creates a [benefit]”. Have some pretext about how you came upon these product constraints.
+			\begin{itemize}
+			\item
+			For UW Students: A product that addresses their lack of interdisciplinary, beginner-friendly extracurriculars, which improves their education, equips them with industry-standard skills, and provides an outlet for creative design. 
+				
+			\item
+			For UW Faculty: A product that addresses their lack of pedagogical tools \& reputable student projects, providing benefit in the form of an excellent learning tool they might direct students towards while simultaneously generating projects that advance the school's reputation.
 		
-		\subsubsection{Functional Assumptions}
-		-----Needs to be 3 versions of “a product that addresses a [problem] of a [persona/scenario] that creates a [benefit] via that product’s [specific functionality],”. Have some pretext about how you came upon these functional constraints.	
-		
-		\textbf{Three Needs Statements:}
-		\begin{itemize}
 			\item		
-			A product that addresses the problem of UW Bothell engineering students being unprepared post-graduation in a competitive job market that creates experienced engineering students from UW Bothell.
+			For disaster responders: A product that addresses their time \& resource constraints while responding to disasters, and concern for human life, by providing life-saving information (or even saving lives) with little up time, small cost to direct supervisors, and ease-of-use. 
+			\end{itemize}
 
-			\item
-			A product that addresses the problem of disaster relief needing specific robots for certain disaster scenarios of a world where in a disaster, every second matters that creates a benefit of saving others and reducing risk for first responders.
 
+		\subsubsection{Functional Assumptions}
+			\begin{itemize}
+			\item 
+			For UW Students: A product that addresses their lack of interdisciplinary, beginner-friendly extracurriculars, which improves their education, equips them with industry-standard skills, and provides an outlet for creative design, via that product's pedagogical methods, emphasis on industry practice, and interesting activities. 
+		
+			\item		
+			For UW Faculty: A product that addresses their lack of pedagogical tools \& reputable student projects, providing benefit in the form of an excellent learning tool they might direct students towards while simultaneously generating projects that advance the school's reputation, via that product's pedagogical methods, and activities that generate documentation and design research. 
+		
 			\item
-			A product that addresses the problem of engineering students being ill-equipped to tackle industry-level challenges within engineering firms that create an extracurricular club attached to schools that provide this industry-level experience. 
-\end{itemize}
+			For disaster responders: A product that addresses their time \& resource constraints while responding to disasters, and concern for human life, by providing life-saving information (or even saving lives) with little up time, small cost to direct supervisors, and ease-of-use, via that product's data collection systems, simple configuration, cheap yet robust construction, and intuitive controls.	
+			\end{itemize}
+		
 
 		\subsubsection{High Level Usability Constraints}
-		-------Needs to be 3 versions of “a [usable] product that addresses a [problem] of a [persona/scenario] that creates a [benefit] via that product’s [specific functionality],”. Have some pretext about how you came upon these usability constraints.
-					
-			\textbf{Three Needs Statements Successful Variable:}
 			\begin{itemize}
-				\item
-				In this needs statement that tackles the problem of UW Bothell engineering students being unprepared post-graduation, we will know that we were successful by providing a well-rounded education in the club and contacting past HackRover members post-graduation inquiring how HackRover changed their career trajectory.
-
-				\item
-				We will know that we were successful in this needs statement by creating rovers that are easy to assemble and configure for different disaster tasks. The rovers should be able to complete a set of puzzles that the HackRover competition hosts.
-
-				\item
-				In this needs statement that tackles the problem of engineering students being ill-equipped to tackle industry-level challenges, we will contact past HackRover members from other universities past graduation inquiring how HackRover changed their career trajectory. 
+			\item 
+			For UW Students: An accessible, well funded, educational product that addresses their lack of interdisciplinary, beginner-friendly extracurriculars, which improves their education, equips them with industry-standard skills, and provides an outlet for creative design, via that product's pedagogical methods, emphasis on industry practice, and interesting activities. 
+		
+			\item		
+			For UW Faculty: A well-documented, effectively managed, economically efficient educational product that addresses their lack of pedagogical tools \& reputable student projects, providing benefit in the form of an excellent learning tool they might direct students towards while simultaneously generating projects that advance the school's reputation, via that product's pedagogical methods, and activities that generate documentation and design research. 
+		
+			\item
+			For disaster responders: A short up-time, easy-to-use product that addresses their time \& resource constraints while responding to disasters, and concern for human life, by providing life-saving information (or even saving lives), and small cost to direct supervisors, via that product's data collection systems, simple configuration, cheap yet robust construction, and intuitive controls.	
 			\end{itemize}
 
 		\subsubsection{Final Need Statement and User Outcomes}
-		-----Needs a SINGLE COMBINED NEEDS STATEMENT of the form, “a [usable] product that addresses a [problem] of a [persona/scenario] that creates a [benefit] via that product’s [specific functionality]”. Have some posttext discussion.
-		
-		A product that addresses the problem of disaster relief needing specific robots for certain disaster scenarios of a world where in a disaster, every second matters that creates a benefit of saving others and reducing risk for first responders.
-
-We made this choice because after speaking with our sponsor, professor Pierre Mourad, he indicated that this need is something that he would like to see come to fruition. The users would want to see a product that is able to be configurable to any specific disaster situation. The major pain points are figuring out what kinds of disaster situations the rover should be equipped with and designing a rover that is easily configurable and accessible by first responders around the world. Our HackRover will be able to solve these pain points by having a wide variety of configurations for any type of disaster. HackRover will also be built around a robust system using the Robotic Operating System (ROS) and creating a template for first responders to utilize and configure to their needs.
+		\textit{A short up-time, easy-to-use product which considers the time \& resource constraints of disaster responders while providing life-saving information. The product will certainly be a rover, easy to configure and operate, cheap, and with robust data collection systems, altogether easy to control. The entire rover will be developed within the context of an undergraduate robotics competition, where competition props (mostly electromechanical) and guidelines will serve as pedagogical tools, and all student activities will be documented according to industry standards, (documentation technology and formats).}
+	
+		This is a tricky two-part needs statement: (1) the rover portion of the product for the disaster responders, and (2) the product satisfying the needs of the students. The aim was to direct student efforts and learning to the construction of the physical product; this directed effort is accomplished through the pedagogical tool which is the competition. 
 
 		\subsubsection{Hypothesis Statement}
-		------Needs a hypothesis about roughly what the product should be (non-exact) and what their problems are (more specifically) to be solved. 
+		For the disaster responders, the product is obviously going to be a rover. For simplicity of prototyping we're going to design a earthquake disaster response rover. We believe a system which is dust and rubble resistant, capable of semi-autonomous action, collecting and relaying data, cheap to manufacture, and easy/quick to setup will help in information collection and decision making for disaster response teams, and potentially serve functions traditionally held by human responders, preserving human life. 
 		
-		We believe our users are first responders who need a configurable rover in their arsenal to have a greater response to disasters. We will know that our solution is what they need if we see our rover perform puzzles in tight corridors and be able to have different configurations for a wide variety of puzzles.
+		This physical product will be prototyped within some educational setting which acts as the abstract, student-serving component of the product. We're the educational setting is going to be a competition, but the specifics of the guidelines are unclear as of now. The competition would be managed by our organization, which is both a club and capstone. 
 
 		\subsubsection{Possible Inventions and Business Model}
-		-----Needs a discussion of a bunch of different inventions that exist today and their shortcomings,  as  well as inventions we might create; emphasize creating inventions which satisfy one of the many needs. Use flow chart tools to visualize the inventions. 
-				
-		\textbf{Possible Inventions}
+		-----Needs a discussion of:
+		1. A bunch of different inventions that exist today and their shortcomings
+		2. Inventions WE might create; emphasize us creating inventions that only satisfy part of the problem, like a rover body with minimal sensors, then a sensor stack, etc. Or, different 'versions' of the competition which don't actually exist. Use flow chart tools to visualize the inventions. 
+			
+		Further discussion with Mourad generated ideas for the informed us that we might pivot HackRover to design competitions which reward designs suiting disaster situations by creating simple puzzle elements and point systems which reward the related functions. The puzzles themselves act as a springboard for our design direction. Further, multiple rovers of various configurations will be built simultaneously to see ‘what works’. This will provide first responders with an arsenal of quickly configurable rovers that can be used in any type of disaster scenario, or at least lead to the design of one ‘great’ system spread nebulously in the design of all four systems.		
+		
+		\subsubsection*{Possible Inventions:}
 		Current systems for disaster relief are overly-expensive, shallow attempts at a design that jerry-rig existing structures/systems to solve issues of disaster relief. What’s more is that these systems rarely provide meaningful help, have large uptimes, or return limited data back. For example, aerial systems show snapshots from a bird's eye view, but little more; they're expensive to acquire, time-consuming to deploy, and require a skilled operator. Some might argue that visual feedback is enough to trace access paths and gauge the scope of the damage, but it gives a limited understanding of victim locations, danger points, etc. Another example: most land rovers - despite being capable in their locomotion - return limited useful sensor data (compared to drones), and the current state of actuative technology is limited. The biggest thwart to effective disaster technology, however, is the context in which it's developed. Frequently made by heavy industry tech giants, the return on investment is minimal and opportunity costs are great; to them, the effort is best served elsewhere. The only place to turn to, then, is University Students who are willing and wanting to work for the low cost of a good resume and contribution to society. Here effective organizations need to be made to mobilize their talents into the creation of disaster relief robots; the best scenario is a robotics competition. Most existing competitions see students participating in events that see them designing rovers tailored to useless/limiting activities, or just working with a confining kit and no creative freedom at all. Though some break the mold, they're few and far in between, and none focus on disaster relief. To further robotic, disaster relief tech, effective student organizations must be created.
 		
 	The first obvious 'invention' of this capstone is a disaster relief-oriented competition, which we call the HackRover Autonomous Robotics Competition (HARC). Traditionally it existed to provide an outlet for interdisciplinary engineering practice and an exploration of IoT; but, as the competition itself has no context there is a point for improvement. This new iteration emphasizes the creation of puzzle panels with elements and a point system that inspires the design of autonomous systems with capable actuation, computer vision and vision processing, capable locomotion, short up-time, easy configuration, and quick access.
 
 The second main invention is a modular rover framework. In the past, the biggest hurdle for all robotic systems has been the software architecture, which must be uniquely tailored to the hardware being employed. With the help of some middleware Robotic Operating System (ROS), we can create individual software nodes and elements which can be knit together in as little as a day to create unique robotic software stacks. Our goal, then, is to create an easily understandable, well-documented, modular rover framework that supports a near-endless number of arms, locomotive systems (traditional mostly), cameras, and other sensors, limited only by the hardware being used.	
 
-The third invention is a physical disaster relief rover. Founded on the modular rover software framework (discussed as invention two), the design of the relief rover would only concern a small group of electrical and mechanical engineers configuring various pieces of third-party hardware into a physical rover capable of speedy, robust locomotion, payload delivery, actuation, and sensing. All control (arm and locomotion), sensor data processing, and additional actuative capabilities are the subject of the well-designed software framework mentioned. \\
+The third invention is a physical disaster relief rover. Founded on the modular rover software framework (discussed as invention two), the design of the relief rover would only concern a small group of electrical and mechanical engineers configuring various pieces of third-party hardware into a physical rover capable of speedy, robust locomotion, payload delivery, actuation, and sensing. All control (arm and locomotion), sensor data processing, and additional actuative capabilities are the subject of the well-designed software framework mentioned.
 
-		\textbf{Our Solution and Invention}
-		----Needs to be of the form: “a [usable] [product] that addresses a [problem] of a [persona/scenario] that creates a [benefit] via that product’s [specific functionality].”
-		The most realistic solution at this point would be the creation/hosting of the HARC at UW Bothell. Though a rover will certainly be built upon which the competition takes place, it will be nowhere near a fully-fleshed, disaster-relief rover desired, but a first iteration. Certainly, many of the components which would show up in a final disaster rover will be present, and an early version of the software framework will be present; but, it can definitely be improved upon for future iterations of the competition.
+		\subsubsection*{Our Solution and Invention}
+		\textit{An intuitively controlled disaster relief rover which considers the time \& resource constraints of disaster responders - with its short up time and inexpensive construction - while providing life-saving information from its sensor stack and various feedback mechanisms. The rover will be developed within an undergraduate robotics competition, where competition props (electromechanical) and guidelines will serve as pedagogical tools, and all student activities are documented in \LaTeX\ and akin to IEEE standards.}		
+		
+		Choosing to develop the rover within a competition setting both satisfies the needs of a pedagogical tool for UW Bothell students and produces the desired rover. The competition, we're calling the HackRover Autonomous Robotics Competition (HARC) will be held at Bothell, managed by the HackRover club and capstone project. The annual nature of the comeptition will serve as a force for iteration, making the design better year over year. The addition of hacking serves to penetration test rovers so they can't be taken advantage of while performing life-saving tasks. In a good-faith effort to bring the competition to life we will also be making puzzle-panels, which are competition props that the robotic systems interact with. These puzzle-panels are themselves pedagogical tools designed to teach students the basics of mechatronics design. Below is a representational image of the competition venue Discovery Hall for context. Puzzle elements are laid out on about four floors, accessible by stairs/elevators. Students operate rovers, attempting to solve puzzles and gain points while navigating the building effectively and hacking/slowing other competitors' rovers. Points are awarded based on solutions to puzzles, specifically designed to encourage rover designs that would be capable in disaster relief contexts.
+		
+		----------NEED  AN IMAGE HERE -----------
 	
-		Despite the apparent shortcomings in the design, the rover will serve as disaster relief in limited contexts and will provide an enriching educational engineering experience for UWB students now and for the future. Below is a representational image of the competition venue Discovery Hall for context. Puzzle elements are laid out on about four floors, accessible by stairs/elevators. Students operate rovers, attempting to solve puzzles and gain points while navigating the building effectively and hacking/slowing other competitors' rovers. Points are awarded based on solutions to puzzles, specifically designed to encourage rover designs that would be capable in disaster relief contexts.
+		Despite shortcomings early designs, the rover will serve as disaster relief in limited contexts and will provide an enriching educational engineering experience for UWB students now and for the future. The practice of documenting in \LaTeX\ will not only provide students with industry-standard skills, and aid at generating a wealth of information which might be used by other developers; but, it will also speak to the high standards of practice, and aide in on-boarding students with ease, lowering the learning curve.
 	
 		\subsubsection{Planning Roadmap}
 		----Needs to be a planning roadmap of the build of the robot itself, not the actual project.
