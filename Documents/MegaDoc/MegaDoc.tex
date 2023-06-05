@@ -305,7 +305,8 @@ Currently we are focusing on integrating the Xbox controller as our best option 
 	
 	The graphical user interface hasn’t seriously been considered at this point in the design process. Further, it depends on how much we can ‘hide away’ in the software and implicit controls of the system. Ideally the only UI will be a small status window and output of what the LiDAR sees. Buttons on the controller will let the user switch between LiDAR output modes, (distance maps, raw image, etc). There may also be a visual of the rover with diagnostic points where errors in operation are cast as simple visuals denoting failure. An early example of our Hackrover mission control GUI can be seen below.
 	
-\includegraphics[scale=0.8]{hackrover mission control}
+\begin{center}\includegraphics[scale=0.25]{hackrover mission control}
+\end{center}
 
 	\subsection{Best Use Practices Report}
 	------Needs to mainly focus, again, on computers and human interaction, not actually mechanical or electrical build. 
@@ -375,12 +376,17 @@ The puzzle panel schematic that is shown above details the connection of power f
 Software Team (CE Capstone):
 
 LIDAR System Design Diagram:
-\includegraphics[scale=0.8]{LIDAR nodes}
+\begin{center}
+\includegraphics[scale=0.5]{LIDAR nodes}
+\end{center}
 
 Figure 1 shown above describes the interaction between the Intel RealSense LIDAR L515 with the NVIDIA Xavier. The ROS node that is used as the publisher of the LIDAR image data to then be sent to a subscriber to the image data uses image\_ transport as the library to export the images from the LIDAR to the processing node in a low-bandwidth compressed format to reduce latency. The image processing node has computer vision models within the node to process the image using OpenCV, which is then sent to the Xavier as data that the Xavier will use for further motion logic or displaying the image to the user.
 
+\newpage
 Controller System Design Diagram:
-\includegraphics[scale=0.8]{controller nodes}
+\begin{center}
+\includegraphics[scale=0.5]{controller node}
+\end{center}
 
 Figure 2 shown above describes the interaction between controllers (Xbox, Playstation, etc type controllers) with the NVIDIA Xavier. There is the package that contains the motion logic that the previously mentioned LIDAR interacts with to send motion controls to the Xavier as well as a ROS node that takes controller inputs and processes them to be sent to the motion logic package. The data going from the controller to the ROS controller is analog data that Linux can already understand and there are pre-existing ROS libraries to use controllers. The controller node itself will send out motion commands to the motion logic package which will then send motion data to the Xavier. We also want to ensure that the controller node itself won't do any illegal inputs so we want to create a connection between the motion logic package and the controller node in case of inputs that were not friendly to the rovers motion.	
 	
