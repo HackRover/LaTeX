@@ -347,20 +347,28 @@ A further list of pros/cons can't be provided now since we haven't finalized our
 	The limiting factor for computer engineers/scientists is really just understanding the software and operating system we're working with. We have all the components for the rover, we just have to take them one at a time and integrate them effectively.
 
 	\subsection{Tier 1 Schematics}
-	-----This needs to be like "Switch, microcomputer, router, etc"
+
+\includegraphics[scale=0.8]{Puzzle Panel tier 1 schematic}
+\includegraphics[scale=0.8]{Rover tier 1 schematic}
+
+
 	Electrical team (EE Capstone):
 	
-The puzzle panel will be powered by a wall wart which is the power source that will connect to a power distribution system (PDS) that will power the actual puzzle panel game. The PDS itself will be able to power each and every hardware with enough power.
+The puzzle panel will be powered by a power source (wall wart) that will connect to a power distribution system (PDS) that will power the actual puzzle panel game. The PDS itself will be able to power each and every hardware with enough power.
 
 	The rover will need a power source that can provide enough power connected to every hardware and also, has a power source that can be efficient and reliable. A power distribution system will be needed to safely distribute enough power to each hardware and also, size of the PDS will be dependent on what the final size of the mechanical system will provide for the PDS to fit in.  
 
 	\subsection{Tier 2 Schematics}
-	-----This needs to be the specific devices like "Jetson Nano, LinkSys router, etc"
+\includegraphics[scale=0.8]{Puzzle panel simplified}
+\includegraphics[scale=0.8]{Rover schematic simplified}
+
+
+
 	Electrical Team (EE Capstone):
 	
 The puzzle panel schematic that is shown above details the connection of power for the puzzle panels. The connection starts from the power source which is a wall wart that we will use to power the puzzle panel. The wall wart would output its maximum voltage to the power distribution system (PDS) which then will be distributed to every electrical component. The PDS is constructed to be able to provide different ranges of voltage to meet the power requirements for any electronic component. The puzzle panel itself will be operated by Arduino or PCBs which control the function of the puzzle panel through its connection to the electrical components. Each puzzle panel differs by its own use of electrical components and by the function of its Arduino. 
 	
-	The simplified Rover Electrical Schematic details the connection from the power source to the rest of the electrical components that are present in the system. This figure is bound to change as the system can be reconfigured to fit the physical design of the rover. The entire rover will be powered by a power source that will run each component of the rover. Raspberry Pi, Xavier, and Motor controllers are necessary for the system to control both the distribution of power and as well as sending signals and information to their respective components.  
+	The simplified Rover Electrical Schematic details the connection from the power source to the rest of the electrical components that are present in the system. The hardware involved are essential for controlling the rover. The Jetson Nano is a microcomputer that runs multiple neuron networks, meaning it can handle multiple tasks at the same time. A Wifi component is built into the Nano which can be controlled wireless without having to control with a physical wire connection. The Arduino Mega is a microcontroller that has the built in code which sends control signals to the motor controllers. The Nano is commanded by the user which the user would send a command to the Nano, and depending on the command which will be sent to the Arduino Mega. This scenario is when both the Nano and the Mega talk to each other with the Nano being controlled by the user have the final say. This relationship works the same way with the Arduino in the stewart platform. The signals that are going to be sent to the motor controllers in the motor system, contain directional/control signals. The motor controllers act like a mini-computer which receives the signals from the Arduino and transmits those signals to the motors which as a result, runs the motors. The arduino with the stewart platform carries the LiDAR camera which monitors live footage and sends back the information in a wireless connection back to the user. The stewart platform is formed with many small stepper motors that reorients the position of the platform from the arduino signals.  
 
 	
 Software Team (CE Capstone):
@@ -372,13 +380,23 @@ Controller System Design Diagram:
 Figure 2 shown above describes the interaction between controllers (Xbox, Playstation, etc type controllers) with the NVIDIA Xavier. There is the package that contains the motion logic that the previously mentioned LIDAR interacts with to send motion controls to the Xavier as well as a ROS node that takes controller inputs and processes them to be sent to the motion logic package. The data going from the controller to the ROS controller is analog data that Linux can already understand and there are pre-existing ROS libraries to use controllers. The controller node itself will send out motion commands to the motion logic package which will then send motion data to the Xavier. We also want to ensure that the controller node itself won't do any illegal inputs so we want to create a connection between the motion logic package and the controller node in case of inputs that were not friendly to the rovers motion.	
 	
 	\subsection{Tier 3 Schematics}
-	----This needs to be literal wiring connections between the devices, pin names, etc. Do a section for the PDS; a section for motors, motor controllers, and Arduino; a section for the Stewart platform and its controls; a section for the wiring diagrams across the Arduinos, Jetsons, and LinkSys device.
-	
-	
-		\subsubsection{Electrical Team}
-		The electrical schematic of the puzzle panel will start with a wall wart which would output a specified amount of voltage to the PDS. The PDS will be made up of three levels, each level containing rows of buck modules that are placed in parallel and their function is to step-down the input voltage from the wall wart, down to the amount that is needed for an electrical component. Each buck module will distribute different amounts of voltage due to each electrical component within the actual puzzle panel, requiring different levels of voltage.
 
-		The rover will be powered by lithium batteries that can provide enough voltage or power to the whole rover. The power will be distributed with buck modules to power each component at its needed level. And the step-downed power will then be delivered to the Raspberry Pi, Jetson Nano, Motor controllers, and other components which will run the whole rover. A PCB will be constructed to ensure a simple and controlled designed connection of essential components on a single panel. And digital connections between the hardware will need to be to be accurate with no misplacement of any connection as each wire/bus is responsible for sending essential signals/information to every hardware to ensure proper operation of the rover.     
+\includegraphics[scale=0.7]{Puzzle Panel schematic 1}	
+	
+	
+\includegraphics[scale=1.05]{Rover schematic 1}
+
+\includegraphics[scale=0.95]{Rover schematic 2}	
+
+		\subsubsection{Electrical Team}
+		The PCB of the puzzle panel will start with a wall wart which would output a specified amount of voltage to the PDS. The PDS will be made up of three levels, each level containing rows of buck modules that are placed in parallel and their function is to step-down the input voltage from the wall wart, down to the amount that is needed for an electrical component. Each buck module will distribute different amounts of voltage due to each electrical component within the actual puzzle panel, requiring different levels of voltage.
+
+		The rover will be powered by lithium batteries that can provide enough voltage or power to the whole rover. The 12V DC-DC buck converters which outputs a set amount of voltage of 12V in which the motor controllers are directly powered by. The small buck converters, convert the 12V to 5V which powers the Jetson Nano, Arduino Mega, Stewart platform, and et cetera, which are necessary in the system to control both the distribution of power. 
+
+		The power will be distributed with buck modules to power each component at its needed level. And the step-downed power will then be delivered to the Arduino Mega, Jetson Nano, Motor controllers, and other components which will run the whole rover. This PCB is constructed to use four motor controllers but in this project, two are used to operate the rover. The four USB ports output 5V which are used to provide power to any additional add-ons to the rover, which means different hardware can be added. 
+		
+		Other miscellaneous elements or components like transistors, diodes, resistors are essential in keeping the digital signals at safe levels, to prevent current/voltage spikes.
+		
 
 		\subsubsection{Software/Computer Team}
 	
@@ -403,57 +421,87 @@ The second part with Xavier for this capstone project is the controller node. Th
 	The greatest risks are addressed in order: computer, electrical, mechanical. The computer model only addresses the function of interdependent components in extremely ideal conditions. A disaster environment won't be perfect, and the rover needs to get itself out of sticky situations if communication is lost or electromechanical systems aren't behaving perfectly. The electrical system could fail to provide stable enough current or voltage, or locales of high power draw could result in heating that leads to failure. It's possible the arrangement of components doesn't permit a long enough battery, or results in excess inefficiencies. The mechanical systems may fail about shafts or joints, and the production of gears (as they'll be printed) may be outside of tolerance.
 	To address the stated risks we need effective testing and redundant systems. Computer models need to simulate circumstances where power delivery or mechanical failure causes issues. Further, boot scripts and backup communication protocols need to exist. Electrical systems have to be tested under every conceivable driven condition, with a focus on clean power. Mechanical systems need to be simulated, constructed with high factors of safety, and modeled physically with test rigs.
  	
- 	\subsection{Component Mappping}
+ 	\subsection{Component Mapping}
  	The electrical system of the rover will consist of many different electrical components that are connected to each other and that can send signal communication to other devices. The system is designed to distribute power to different components from a battery or a single power source. \\
 	
 The list of hardware components (bound to change after testing and possible redesigns): \\
 
 \textbf{PCB or power distribution system}
 
+\includegraphics[scale=0.15]{Rover PCB}
+
 \begin{itemize}
 \item
 	The PCB is designed to distribute power to every electrical hardware from a single power source or battery. And as well as, provide the signal connections for the hardware as they are essential in controlling the functionality of every component.
 \end{itemize}
 
-\textbf{Raspberry Pi}
+
+\textbf{Arduino Mega}
+
+\includegraphics[scale=0.5]{Arduino Mega}
 
 \begin{itemize}
 \item
-	Raspberry Pi is a microprocessor that is designed to control the motors by controlling the motor controllers that control the drivetrain.
+	Arduino Mega is a microcontroller that is designed to control the motors by controlling the motor controllers that control the drivetrain.
 \end{itemize}
 
+
 \textbf{Jetson Nano}
+
+\includegraphics[scale=0.5]{Jetson Nano}
 
 \begin{itemize}
 \item
 	The Jetson Nano is a small computer that is designed to run multiple neural networks like image processing, object detection, etc. 
 \end{itemize}
 
-\textbf{LM2596 Buck Converters}
+
+\textbf{12V DC-DC Buck Converters}
+
+\includegraphics[scale=0.5]{12V DC-DC buck converter}
+
 \begin{itemize}
 \item
-	The buck converters are designed to step down or drop down the voltage that is needed by the electrical components to be able to functionally run.
+	The 12V DC-DC buck converter is used to step down any voltage larger than 12V down to its assigned level of 12V.
 \end{itemize}
 
+
+\textbf{LM2596 Buck Converters}
+
+\includegraphics[scale=0.5]{LM2596 bucks}
+
+\begin{itemize}
+\item
+	The LM2596 buck converters are designed to step down or drop down the voltage that is needed by the electrical components to be able to functionally run. And it's adjusted by a potentiometer that controls the voltage level output.
+\end{itemize}
+
+
 \textbf{LiDAR camera}
+
+\includegraphics[scale=0.5]{LiDAR Camera}
 
 \begin{itemize}
 \item
 	The LiDAR camera is tasked to provide image mapping to the rover.
 \end{itemize}
 
+
 \textbf{BTS7960 Motor Controller}
 
+\includegraphics[scale=0.5]{BTS7960 Motor Driver}
+
 \begin{itemize}
 \item
-	The motor controller is used to receive signals from the Raspberry Pi and delivers it to the actual motors of the drivetrain.
+	The motor controller is used to receive signals from the Arduino Mega and delivers it to the actual motors of the drivetrain.
 \end{itemize}
 
-\textbf{Rover wiring schematic}
+\textbf{12V Planetary Gear Motors}
+
+\includegraphics[scale=0.5]{Gear motor 12V planetary}
 
 \begin{itemize}
 \item
-	The final rover wiring schematic will be provided after tests and final redesigns have been done. 
+	The 12V planetary motors are used to drive the whole rover which are controlled by the BTS7960 motor controller through digital signals from the Arduino Mega.
 \end{itemize}
 
 \underline{Risk identification}
@@ -523,13 +571,13 @@ The connections between components
 PCB functionality
 
 \item
-Nano connection
+Jetson Nano connection
 
 \item
-Raspberry Pi and Drivetrain connection
+Arduino Mega and Drivetrain connection
 
 \item
-Battery and power connection
+Battery and power/current performance
 \end{itemize}
 
 The main risk of the electrical circuit or model is that the electrical connection between any electrical components has failed. The risk mitigation can involve:
@@ -555,6 +603,19 @@ Adding new electrical components that are used to mitigate or decrease voltage/c
 	
 \item
 Adding fuses can be used as a fail-safe to prevent the failure of the entire electrical system.
+\end{itemize}
+
+
+Another risk is any wire disconnecting during a test run which can cause an open circuit with the current not flowing in the intended direction and flowing towards volatile electrical components. The risk mitigation can involve:
+
+\begin{itemize}
+\item
+Adding new electrical components that are used to block current.
+
+	\begin{itemize}
+		\item
+		Blocking diodes and transistors can protect volatile components by preventing or blocking current from flowing backwards to a vulnerable component. 
+	\end{itemize}
 \end{itemize}
 
 Future risks will be identified with further testing of the models.
@@ -597,13 +658,35 @@ The testing of these systems will be finished around May and more progress will 
 What data you will need to collect, and how. 
 What are the industry standards used in this project? 
 
+Electrical:
+
+The data that we need to collect involves current/power performance when the entire rover operates. And also, the duration the batteries can last under a full operation by measuring the rate of the current. A special tool called a Clamp Meter is used to measure current values in real time. And it also, doesn't require wire to wire connection to measure as Clamp Meter measures through the magnetic fields from where the current is present. Acquiring the current measurements help determines the overall performance of the rover, its battery life and overall efficiency.
+
+The industry standards used, is the usage of a professional PCB design program KiCad EDA which famous companies known for inventing Electrical Engineering projects like Adafruit which is known to design arduinos which are used in this project, Digi-Key Electronics which is known to manufacture standardized and basic electrical components, most are utilized to create the power distribution PCB of the rover.
+
 \section{Results and Discussion}
 
+Electrical:
+
+The testing for the results in measuring the current/power performance of the rover are successful. We monitored the current levels going into the motor controllers running at 12V during a simple operational maneuver and the rover used around 1.5A when operating on flat ground. The next test involve operating the rover on dirt ground and driving over uneven terrain. Introducing dirt and uneven terrain would require the rover to draw more current since dirt and uneven terrain cause friction and resistant force for the rover to overcome. The results of the tests are successful with the rover operating over dirt in 1.6A to 1.7A and for uneven terrain, around 2.0A was used. The next major test involve moving the rover against the wall, to test the rover when it meets a maximum physical force. The overall current level reached to 3.3A which is more than twice the amount the rover used normally. These values help determine how long the rover perform under each of these environmental conditions. Additionally, there were no electrical hardware failures through each test, which we can conclude that the entire circuit is protected from voltage/current spikes or wire disconnects. And the current used in these conditions, are less than expected so we can safely assume the rover can handle harsher terrain and conditions.
+
+Monitoring the power efficiency and delivery of the Puzzle Panel PCB was successful. Every buck module are able to output the specified voltage based on the adjustment of their potentiometers. And when powering the hardware and the puzzle panel elements, there were no signs of electrical failures. The most number of elements that are connected to the PCB are three and when they operate, they draw 0.7A to 1A. With other slots of power and USBs in the PCB that are available, additional hardware or puzzle elements can be powered from the PCB. And with the performance of power not showing signs of failure, we can safely assume the Puzzle Panel PCB can handle powering multiple hardware and components at once.
 
 \section{Summary, Conclusion and Future Perspectives}
 Summary section (in bullet form)
 key open actions and concerns
 Future perspectives 
+
+Electrical:
+
+\begin{itemize}
+\item
+Rover PCB: Redesign the layout of the components to manage space for better wire to wire connections, selecting newer and improved components that are more efficient and easy to use. Also, replacing any faulty or old hardware to prevent fatal electrical failures or accidents. 
+
+\item
+Puzzle Panel PCB: Redesign the layout of the board to provide many more different alternatives to power different range of hardware, and select newer components to improve maximum power efficiency.
+
+\end{itemize}
 
 \section{Acknowledgments}
 
@@ -612,5 +695,11 @@ Future perspectives
 \section{Appendices and Supplement Data}  
 
 \section{User Manual}
+
+Electrical User Manual:
+
+Puzzle Panel - 1. 
+
+Rover - 
 
 \end{document}
