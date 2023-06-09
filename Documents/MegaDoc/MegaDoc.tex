@@ -1,6 +1,7 @@
 \documentclass[a4paper, 10pt]{article}
 
 \usepackage{graphicx} %%Good primer on this see:  https://www.youtube.com/watch?v=Ax9RCvjpI8E
+\usepackage{subcaption}
 
 \usepackage{geometry} %%To set basic page parameters. See also: https://www.overleaf.com/learn/latex/Page_size_and_margins
 \geometry{a4paper, portrait, margin=1in}
@@ -21,7 +22,7 @@
 
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=.8]{HackRoverlogolofi}
+		\includegraphics[scale=.8]{Photos/HackRoverlogolofi}
 	\end{figure}
 
 	\begin{center}
@@ -46,7 +47,7 @@
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=.8]{UWLogo}
+		\includegraphics[scale=.8]{Photos/UWLogo}
 	\end{figure}		
 	
 \end{titlepage}
@@ -90,7 +91,7 @@
 		
 		When structuring education, university faculty seek useful pedegogical tools; such tools will provide  interdisciplinary education, equip students with life skills, and possibly generate research/products that enrich the name and wealth of the school. Students, specifically engineering ones, look to develop their skills while in school through participation in clubs, projects, and research. They're often pulled in many directions as their educational appetite is wide but options are slim/focused.
 		
-		\includegraphics[scale=0.4]{Student Consumer Map}
+		%\includegraphics[scale=0.4]{Photos/Student Consumer Map}
 		
 		The student should look for extracurriculars, see options, have to pick an option, each option should have different range of benefits.
 		
@@ -98,7 +99,7 @@
 		
 		Robotic companies that develop disaster rovers are limited by the opportunities available to them and niche of their field. Disaster relief is a philanthropic endeavor for the most part, where the only money to  be made is from tech savvy local governments (an already fickle customer) or when disaster relief can be re-purposed as a virtuous advertisement. Minimal money exists in prize form through government sponsored competitions or events, like DARPA's disaster relief competition. Beyond monetary opportunity, research is hard to come by; like an ouroboros, the lack of monetary gain causes people to ignore robotics research in disaster relief. This makes constructing disaster relief systems difficult all around. A disaster responder's role all of this makes R\& D even more difficult, as relying on robotic systems is a difficult and risky endeavor. You're never sure when a disaster will strike, and circumstances are unique each time. As a responder you must delegate quickly and make use of limited resources in saving as many lives and limiting damage as possible. Rovers are dependent on a human operator as well as some uptime; further, their operation needs to be clean and quick to permit a disaster responder to complete the same or better task without major risks.
 		
-\includegraphics[scale=0.45]{Disaster Consumer Map}		
+		%\includegraphics[scale=0.45]{Photos/Disaster Consumer Map}		
 		
 		The disaster responder should be presented with a disaster, have to quickly assess damages, delegate  resources in a timely manner, save people, make risks. Possibly emphasize the risks they might take, and talk about the time it takes to accomplish their goal. 
 		
@@ -219,20 +220,24 @@
 		This physical product will be prototyped within some educational setting which acts as the abstract, student-serving component of the product. We're the educational setting is going to be a competition, but the specifics of the guidelines are unclear as of now. The competition would be managed by our organization, which is both a club and capstone. 
 
 		\subsubsection{Possible Inventions and Business Model}
-		-----Needs a discussion of:
-		1. A bunch of different inventions that exist today and their shortcomings
-		2. Inventions WE might create; emphasize us creating inventions that only satisfy part of the problem, like a rover body with minimal sensors, then a sensor stack, etc. Or, different 'versions' of the competition which don't actually exist. Use flow chart tools to visualize the inventions. 
-			
-		Further discussion with Mourad generated ideas for the informed us that we might pivot HackRover to design competitions which reward designs suiting disaster situations by creating simple puzzle elements and point systems which reward the related functions. The puzzles themselves act as a springboard for our design direction. Further, multiple rovers of various configurations will be built simultaneously to see ‘what works’. This will provide first responders with an arsenal of quickly configurable rovers that can be used in any type of disaster scenario, or at least lead to the design of one ‘great’ system spread nebulously in the design of all four systems.		
-		
 		\subsubsection*{Possible Inventions:}
 		Current systems for disaster relief are overly-expensive, shallow attempts at a design that jerry-rig existing structures/systems to solve issues of disaster relief. What’s more is that these systems rarely provide meaningful help, have large uptimes, or return limited data back. For example, aerial systems show snapshots from a bird's eye view, but little more; they're expensive to acquire, time-consuming to deploy, and require a skilled operator. Some might argue that visual feedback is enough to trace access paths and gauge the scope of the damage, but it gives a limited understanding of victim locations, danger points, etc. Another example: most land rovers - despite being capable in their locomotion - return limited useful sensor data (compared to drones), and the current state of actuative technology is limited. The biggest thwart to effective disaster technology, however, is the context in which it's developed. Frequently made by heavy industry tech giants, the return on investment is minimal and opportunity costs are great; to them, the effort is best served elsewhere. The only place to turn to, then, is University Students who are willing and wanting to work for the low cost of a good resume and contribution to society. Here effective organizations need to be made to mobilize their talents into the creation of disaster relief robots; the best scenario is a robotics competition. Most existing competitions see students participating in events that see them designing rovers tailored to useless/limiting activities, or just working with a confining kit and no creative freedom at all. Though some break the mold, they're few and far in between, and none focus on disaster relief. To further robotic, disaster relief tech, effective student organizations must be created.
 		
-	The first obvious 'invention' of this capstone is a disaster relief-oriented competition, which we call the HackRover Autonomous Robotics Competition (HARC). Traditionally it existed to provide an outlet for interdisciplinary engineering practice and an exploration of IoT; but, as the competition itself has no context there is a point for improvement. This new iteration emphasizes the creation of puzzle panels with elements and a point system that inspires the design of autonomous systems with capable actuation, computer vision and vision processing, capable locomotion, short up-time, easy configuration, and quick access.
+		The first obvious 'invention' of this capstone is a disaster relief-oriented competition, which we call the HackRover Autonomous Robotics Competition (HARC). Traditionally it existed to provide an outlet for interdisciplinary engineering practice and an exploration of IoT; but, as the competition itself has no context there is a point for improvement. This new iteration emphasizes the creation of puzzle panels with elements and a point system that inspires the design of autonomous systems with capable actuation, computer vision and vision processing, capable locomotion, short up-time, easy configuration, and quick access.
+	
+		There are some hacking competitions, and even disaster robotics competitions, (such as the one hosted by DARPA); but, all of these are largely philanthropic endeavors. Certainly we have the UW system as our foundation, and will likely recieve meaningful funding from them, but this only offsets the cost of physical hardware they deem absolutely necessary. To make this organization really stand out and be financially viable we theroized a few `inventions': (1) a payment scheme for participants, (2) providing design favors to local companies in exchange for funding, and (3) providing student research favors to local companies in exchange for funding. The first is obvious, participants in the competition will pay a fee, but this will likely only offset food, advertising, and more. The second and third see UW students dedicating physical design efforts, or research efforts proportional to the money gifted by a local company. For example, say that Boeing wants a unique end effector which performs a task they might see in their factory, and donates \$4,000, while Lowes wants a software architecture reflective of potential AGVs in their warehouse and donates \$6,000; HackRover may or may not form capstone inspired by these requests, but would dedicate 40\% of their extra manpower to Boeing's desires, and 60\% extra to Lowes.
+	
+	----ADD DARPA SPLASH
 
-The second main invention is a modular rover framework. In the past, the biggest hurdle for all robotic systems has been the software architecture, which must be uniquely tailored to the hardware being employed. With the help of some middleware Robotic Operating System (ROS), we can create individual software nodes and elements which can be knit together in as little as a day to create unique robotic software stacks. Our goal, then, is to create an easily understandable, well-documented, modular rover framework that supports a near-endless number of arms, locomotive systems (traditional mostly), cameras, and other sensors, limited only by the hardware being used.	
+		The second main invention is a modular rover framework. In the past, the biggest hurdle for all robotic systems has been the software architecture, which must be uniquely tailored to the hardware being employed. With the help of some middleware Robotic Operating System (ROS), we can create individual software nodes and elements which can be knit together in as little as a day to create unique robotic software stacks. Our goal, then, is to create an easily understandable, well-documented, modular rover framework that supports a near-endless number of arms, locomotive systems (traditional mostly), cameras, and other sensors, limited only by the hardware being used.	
 
-The third invention is a physical disaster relief rover. Founded on the modular rover software framework (discussed as invention two), the design of the relief rover would only concern a small group of electrical and mechanical engineers configuring various pieces of third-party hardware into a physical rover capable of speedy, robust locomotion, payload delivery, actuation, and sensing. All control (arm and locomotion), sensor data processing, and additional actuative capabilities are the subject of the well-designed software framework mentioned.
+		The third invention is a physical disaster relief rover. Founded on the modular rover software framework (discussed as invention two), the design of the relief rover would only concern a small group of electrical and mechanical engineers configuring various pieces of third-party hardware into a physical rover capable of speedy, robust locomotion, payload delivery, actuation, and sensing. All control (arm and locomotion), sensor data processing, and additional actuative capabilities are the subject of the well-designed software framework mentioned.
+
+		Considering the exacts of our `rover' - (a term I use here liberally) - we must consider the context and needs surveyed in previous sections. We're designing some product for earthquake, building collapse, and warzone environments; the product must have a short uptime, be easy to control, and relay important information; finally, it must be affordable for local governments. Surveying existing products on the market, we see massive, clunky, humanoid robots that are trying to solve every problem - analogized to a universe key. In our opinion these endeavours are foolhardy, not just for us but the people doing them; more, the costs are exorbitant. We're going to control our appetite and try for something that fits a niche. Here a simple rover, which we'll define simply as `A vehicle that navigates rough terrain' is going to be our best bet. We were inspired early on by biologically inspired designs like worms or spiders; but, scrapped the inspiration after reflecting on the manufacturing difficulties and costs associated with the rubber plastics used, as well as the control programming complexity. We then thought a drone would be a great idea: relaying LiDAR data from a birds-eye-view; but the LiDAR weight alone would drive the size (and thus costs) way up. The obvious conclusion was a ground-based rover, with tank treads that might traverse uncertain and difficult terrain. If we design out of inexpensive thermoplastics - in price ranging from PLA to Nylon fiber - and stock aluminum components, we could easily sell to local governments.
+		
+		
+		-----NEED CURRENT STATE OF ROBOTICS IMAGES
+		-----NEED BIO ROBOTS AND BOSTON DYNAMICS
 
 		\subsubsection*{Our Solution and Invention}
 		\textit{An intuitively controlled disaster relief rover which considers the time \& resource constraints of disaster responders - with its short up time and inexpensive construction - while providing life-saving information from its sensor stack and various feedback mechanisms. The rover will be developed within an undergraduate robotics competition, where competition props (electromechanical) and guidelines will serve as pedagogical tools, and all student activities are documented in \LaTeX\ and akin to IEEE standards.}		
@@ -241,10 +246,9 @@ The third invention is a physical disaster relief rover. Founded on the modular 
 		
 		----------NEED  AN IMAGE HERE -----------
 	
-		Despite shortcomings early designs, the rover will serve as disaster relief in limited contexts and will provide an enriching educational engineering experience for UWB students now and for the future. The practice of documenting in \LaTeX\ will not only provide students with industry-standard skills, and aid at generating a wealth of information which might be used by other developers; but, it will also speak to the high standards of practice, and aide in on-boarding students with ease, lowering the learning curve.
+		Despite shortcomings early designs, the rover will serve as disaster relief in limited contexts and will provide an enriching educational engineering experience for UWB students now and for the future. The practice of documenting in \LaTeX\ will not only provide students with industry-standard skills, and aid at generating a wealth of information which might be used by other developers; but, it will also speak to the high standards of practice, and aide in on-boarding students with ease, lowering the learning curve. This good documentation practice and logging of information may come in handy in the future if we act on the business plans discussed above.
 	
 		\subsubsection{Planning Roadmap}
-		----Needs to be a planning roadmap of the build of the robot itself, not the actual project.
 		\textbf{Initial Product:} A competition with a rulebook, at least two rovers (one disaster-relief oriented), and four puzzle panels.
 		
 		The first competition encourages student involvement, a clear understanding of the framework, and expectations for the iterative methods used in developing our systems. Puzzles won't be so disaster-tailored as much as they will be a proof of concept. The first two rovers created will be designed to prototype a 'skeleton' software framework that exemplifies the principles of the software organization we desire. Physically these rovers will serve different purposes: the first to simply prototype the competition, drive around Discovery Hall, and make use of our available technology, and the second to provide an early model of what a disaster relief rover could be. Focusing more on the latter robotic design, an early disaster relief rover would have quick, rugged locomotion systems, effective sensor data storage, feedback, and/or processing, capable payload delivery, and meaningful arm actuation. At this point in the 'product' development, we wouldn't focus too hard on waterproofing or extremely robust chassis. The obvious adopters here are going to be UWB students, capstone students, Pierre Mourad, STF, and only philanthropic companies.
@@ -260,192 +264,342 @@ The third invention is a physical disaster relief rover. Founded on the modular 
 
 \pagebreak
 	
-
-
-
-
 \section{Experience Design and Human Interface Design}
 	\subsection{User Workflow}
-	------Needs to discuss how someone might use the rover and devices. Talk about within the competition and how it interfaces with the puzzle panel, then talk about how it works in the field. 
-		
-		
-	Before addressing UX in depth, a quick review of the state of the systems. The last capstone sent forth a rover with hardware components ordered according to an (almost) ideal rover architecture, however no software (at least not in ROS) was in place. All control was exclusively done through a script loaded onto the Raspberry Pi (RBPi) which enabled a user to control the rover via a Bluetooth game controller. The controls were hardly programmable, and what existed was limited (no control over LiDAR, arm, etc). Before any mind can be paid to serious UX, the software framework has to be created; each node of the rover must be in contact with others via the Bluetooth to enable us to create useful control scripts and paradigms. Danny Kha is hard at work on this, and we anticipate early software models which represent a final product by March. 
-Despite the little mind paid to UX, we do have some early ideas and expectations. The first two UX choices will be: simple 'boot up', and simple control. Scripts in the form of launch files will be created, allowing us to boot multiple nodes and software features of the rover in safe sequence and at the click of a button. Simple control will consist of control scripts (housed on the Xavier) which enable programmable Xbox controllers and keyboard/mouse control. These early controls are expected to be unintuitive, so long as we can map inputs to expected outputs, we can at least rapidly test the function of the rover. 
-Long term ideals are a web-based GUI which allows for visual control, easily accessible through a browser. We'd also like to create a node, hopefully with a UI as well, which permits easy control mapping for the Xbox and keyboard. Other developments include alternative control schemes: Wii Mote and Nunchuck, Vive Hardware (headgear and controllers), and Switch Controllers; all of these have either open-source hacking communities, or easily accessed programmability. All hardware will come from Justin Heinzig or Pierre Mourad. 
-The aforementioned web-based GUI bleeds into our long term ideals. First a remotely accessible GUI via wireless/wired access to the Xavier (though not necessarily through a browser), will need to be created. Additional long term ideals include porting the camera output of LiDAR to a VR headset. 
-Shown below is an example of how the HackRover mission control system could be compiled into a user interface for ease of use for the user. The rover operator will have an intuitive interface that enables easy manipulation of the robot along with emergency shutdown and interruptions built into the control. 
+	Before addressing UX in depth, a quick review of the state of the systems. The last capstone sent forth a rover with hardware components ordered according to an (almost) ideal rover architecture, however no software (at least not in ROS) was in place. All control was exclusively done through a script loaded onto the Raspberry Pi (RBPi) which enabled a user to control the rover via a Bluetooth game controller. The controls were hardly programmable, and what existed was limited (no control over LiDAR, arm, etc). Before any mind can be paid to serious UX, the software framework has to be created; each node of the rover must be in contact with others via the Bluetooth to enable us to create useful control scripts and paradigms.  
+
+	Despite the little mind paid to UX, there are some basic expectations and workflows, for both the competition and rover. Within the organization/competition, students will form teams for competing. Each team will construct at least one rover which is capable of wireless access and control, and is based on ROS; we want to maximize creative potential, so almost no design is off limits. They will be able to get puzzle component software libraries and construct/prototype puzzles of their own for their rovers to interact with. They will study up on hacking and common system penetration techniques, writing/developing their own (or defenses) in anticipation of game day. Finally, they will tie all their efforts together with HackRover organization standardized working papers (based on IEEE formats) that be sent to the organization, which summarizes their work.
+	
+	On game day, teams will stay in command rooms, where they can semi-autonomously control their rovers. Each team will be distributed random vulnerabilities that reflect real life vulnerabilities. Through the competition all will try to:(1) solve puzzles with the rovers, (2) hack other teams' rovers, and (3) defend their rovers from hacking, to gain points.
+	
+	Moving beyond the student organization we inspect the workflow of a disaster responder using our rover. The rover will turn on, connect automatically to a dedicated computer, and on that computer a launch file will be run. This launch file will associate all internal components with each other, and the rover with the outside world (GUI, communications and controls, etc). In a short time, the disaster responder will be able to send the rover out in autonomous, or semi-autonomous mode to collect life-saving information. The rover, being rubble resistant and small, will travel in to precarious situations, looking for trapped victims, relaying the info back to the operator. This workflow does, of course, reflect an ideal product far into the future that we're working towards; but, it is possible with time and dedication. 
 
 	\subsection{Environmental Analysis}
-	-----Needs to discuss the environment product use will take place in; break down by competition environment and disaster environment.
+	The environment of the rover is two-fold: competition space with simulated events/circumstance, and confined disaster spaces. The web-based UI and simple wireless control serves to empower the competitor's experience during the event. However, it should also easily map onto the disaster location. Good communication with the rover system as it operates in distant, wireless connected, cramped spaces are a must. Ease of control programming and use is a must. Good sensor and visual feedback is a must. Robust traversing of the environment is a must. 
 	
-	The environment of the rover is two-fold: competition space with simulated events/circumstance, and confined disaster spaces. The web-based UI and simple wireless control serves to empower competitor's experience during the event. However, it should also easily map onto the disaster location. Good communication with the rover system as it operates in distant, wireless connected, cramped spaces are a must. Ease of control programming and use is a must. Good sensor and visual feedback is a must. Robust traversing of the environment is a must. 
-Assuming all these 'musts' mentioned in the last paragraph, the three-pronged solution to satisfy them is: an effective and functional software architecture, a reliable mechanical system, and a long-lasting power distribution system. The software architecture, created in ROS, will be made with modularity and programmability in mind. The mechanical system will transcend its simple motor-shaft design into the realm of geared drive trains and intelligent chassis configuration. The power distribution system will consider as many power-saving mechanisms and electrical stop-gaps to failure as possible. The resulting system should be easy to program, deploy, control, and service.
+	Assuming all these 'musts' mentioned in the last paragraph, the three-pronged solution to satisfy them is: an effective and functional software architecture, a reliable mechanical system, and a long-lasting power distribution system. The software architecture, created in ROS, will be made with modularity and programmability in mind. The mechanical system will transcend its simple motor-shaft design into the realm of geared drive trains and intelligent chassis configuration. The power distribution system will consider as many power-saving mechanisms and electrical stop-gaps to failure as possible. The resulting system should be easy to program, deploy, control, and service.
 
 	\subsection{Cultural Factors Mapping}
-	------Needs to discuss cultural factors, emphasize the design decisions (aesthetics) as well as the controls paradigm. 	
+	Our device needs to save lives, end of discussion. Cultural factors are of comparatively less importance unless they help us do that better. The two factors mappings we genuinely believe will empower saving lives are: (1) intuitive controls based off video games, and (2) friendly rover design.
 	
-	One of the low priority 'cultural factors' we're trying to hit at is in the aesthetic design/flare of our river systems. For each design we provide a meaningful name reflective of the function/shape/aesthetic of the system. Further, we integrate paint or features which are entirely artistic that reflect the name. The goal is to make the design projects fun and enjoyable, and give participating students an end sub-project to look forward to that makes the system they're developing all the more personal. Flare includes custom, PCB artwork, and painted rover bodies. 
-The higher priority - and more meaningful - cultural factor we aim towards is in the control programming of the system. We're trying to make the rovers reflect commonly understood formats (drive system, actuation, etc) seen in popular science fiction, and real life applications, so understanding how the system interfaces with the world is rapid. We're also implementing as many video game control paradigms as possible since many of this generation have a familiarity with video games; this eases the operator's learning curve and provides them the option to control with something they're familiar with. 
-Using an Xbox controller will allow for a natural form of control for the rover. Most of our software will be based around English-speaking audiences but later on can be implemented to add different languages to change the GUI language.
-
-
-	\subsection{Information Architecture and Hierarchy}
-	-----Needs to be a user device interaction. Emphasize computer science, not so much any mechanical or  electrical.	
+	Most remote-operated technology uses joysticks and an array of push-buttons, incredibly unintuitive and often requiring hours of training for operators. Looking to the pop-culture side of controls we see video game systems. Sony has sold 180 million PS2s, while Nintendo has sold 102 million Wii's; both these consoles defined a generation of children, and trained plenty of potential rover operators by popularizing their consoles control paradigms. We might harness this power by using Wii Motes or Playstation/Xbox controllers to control the rover; in fact early iterations will use an Xbox controller, and we've discussed controller mappings for Wii motes in depth as a team.
 	
+	-----ADD IMAGES OF NINTENDO WII AND PS
+	
+	The other factor mapping - friendly rover design - sees us making our rover amicable and easy to approach by all sorts of people. From built in displays to lovely shapes, when the disaster rover finds a victim it might restore some hope and provide comfort. Industrial designs may cause anxiety and concern upon first contact.
+	
+	\subsection{Information Architecture and Hierarchy}	
 	For startup: Either turning on the rover and running one launch script, or pressing one physical button (attached to the execution of a launch script) will set up the system completely and run all background checks/power up tests. 
-For use: Intuitive Bluetooth pairing button combinations, or browser-based logins will allow the user to quickly access the rover. The startup launch, mentioned prior, would have enabled the rover to receive simple communication. Perhaps a UI for selecting controls before use will ensure the correct systems are selected. From there all controls should be either intuitive, well documented, visually displayed, or easily accessible from the file system of the rover. 
-During use: The user is assumed to be interacting with the rover at this point. All inputs will forward from the control scheme directly to the master node hosted on the Xavier. This outputs control commands to the necessary sections (LiDAR, arm, etc), for which feedback is received. This feedback is processed as we deem fit and then manifest as either actuation of the physical rover or display on a desired monitor. For example, a control input may be processed through some control script, then modified by state conditions of an actuating device to provide some output. Alternatively a change in the environment, or press of a button will alter what sensor information is displayed on some feedback monitor. We plan on having only certain data be displayed in an orderly fashion, rather than providing the user the ability to select what they'd like to see. The reason is that only limited information will be displayed back as it already is, and we'd rather not muddy the use or development process (in creating such a system). Shutdown after use will be the reverse of startup, just as easy to accomplish.
 
-On the Electrical Architecture, digital wiring between components are essential for having the rover to operate correctly and safely. In the first major architecture, the rover needs the connections between the different hardware to be correct, one misplaced wire could lead to severe failures for the rover. Failures can involve, hardware breaking down electrically which causes damage or the rover moving in the wrong direction. Knowing which wire connects from hardware to a specific node is important. The connections between the Arduino Mega and the Motor controllers involve enable and digital signals. There are wires that are in charge of directing digital communication to allow the software within a hardware to operate correctly with other hardware. 
+	For use: Intuitive Bluetooth pairing button combinations, or browser-based logins will allow the user to quickly access the rover. The startup launch, mentioned prior, would have enabled the rover to receive simple communication. Perhaps a UI for selecting controls before use will ensure the correct systems are selected. From there all controls should be either intuitive, well documented, visually displayed, or easily accessible from the file system of the rover. 
+
+	During use: The user is assumed to be interacting with the rover at this point. All inputs will forward from the control scheme directly to the master node hosted on the Xavier (or Nano). This outputs control commands to the necessary sections (LiDAR, arm, etc), for which feedback is received. This feedback is processed as we deem fit and then manifest as either actuation of the physical rover or display on a desired monitor. For example, a control input may be processed through some control script, then modified by state conditions of an actuating device to provide some output. Alternatively a change in the environment, or press of a button will alter what sensor information is displayed on some feedback monitor. We plan on having only certain data be displayed in an orderly fashion, rather than providing the user the ability to select what they'd like to see. The reason is that only limited information will be displayed back as it already is, and we'd rather not muddy the use or development process (in creating such a system). Shutdown after use will be the reverse of startup, just as easy to accomplish.
+
+	On the Electrical Architecture, digital wiring between components are essential for having the rover to operate correctly and safely. In the first major architecture, the rover needs the connections between the different hardware to be correct, one misplaced wire could lead to severe failures for the rover. Failures can involve, hardware breaking down electrically which causes damage or the rover moving in the wrong direction. Knowing which wire connects from hardware to a specific node is important. The connections between the Arduino Mega and the Motor controllers involve enable and digital signals. There are wires that are in charge of directing digital communication to allow the software within a hardware to operate correctly with other hardware. 
 
 	\subsection{Interface Design}
 	-----Basically just talk about the controller and other possible devices for control. Compare them to one another. Possibly reference ergonomic studies, and make sure to place them in references/biblography. Make sure to emphasize our preferred choice but time and monetary limitations.
 	
-	The physical components of input are the controller, sensor systems (LiDAR vision, motor position, etc). The physical components of output are a monitor (if it’s needed), the arm, and the motors of the rover. All interfacing is completed by the software on the Nvidia Xavier. 
-The user will be able to choose between two different types of analog inputs to control the rover. The first would be the Xbox controller and the second through arrow keys on the GUI either using the keyboard arrow keys or the GUI clickable buttons to command the rover.
-
-Currently we are focusing on integrating the Xbox controller as our best option to control the rover as there are built in functions within Linux that allow joystick control to easily connect with ROS. 
-
+	The most base and simple design for interfacing with the rover is obviously mouse and keyboard. This default is assumed with ROS, as it runs in its own terminal and accepts typed inputs. Work will need to be done to create a GUI that accepts keyboard/mouse input, but it's the minimum priority.
+	
+	The powerful aspect of ROS is its modularity, we might design an input node that sends commands to a control mapping node, which translates and forwards to a control script node. If, on a whim, we decided to change the control paradigm, we would substitute the input node with another, say an Xbox controller or Wii remote. The rest of the framework would continue to work so long as our mapping node was configured correctly. Beyond keyboard and mouse, we do plan to use the Xbox controller. Operators would be able to press just a few buttons to get the rover into an active, controllable state.
+	
+	Feedback from sensing devices, (like LiDAR or encoders) is streamed to a monitor output. This provides a sort of `commander center' for the operator to get information back.
 
 	\subsection{Graphic User Interface Design}
-	-----Discuss different thoughts for the GUI and how it could be a control vs a feedback center.
+	The GUI, mentioned in passing in the previous section, is known as our command center. In it's most base form it's designed to provided sensor feedback and minimally processed data. The GUI itself is hosted on the rovers main computer, and accessible wirelessly via a browser. At a minimum we plan for it to stream direct visuals and a heatmap from the LiDAR camera, (which processes and sends data in ROS nodes of its own). We'd also like to have encoder data. 
 	
-	The graphical user interface hasn’t seriously been considered at this point in the design process. Further, it depends on how much we can ‘hide away’ in the software and implicit controls of the system. Ideally the only UI will be a small status window and output of what the LiDAR sees. Buttons on the controller will let the user switch between LiDAR output modes, (distance maps, raw image, etc). There may also be a visual of the rover with diagnostic points where errors in operation are cast as simple visuals denoting failure. An early example of our Hackrover mission control GUI can be seen below.
+	The nature of our GUI being designed within a ROS framework means future modifications can be made: informative post-processed statistics, sensor additions, and more. Specific `profiles' might be engineered as simple scripts, where more or less information is provided.
 	
-\includegraphics[scale=0.25]{hackrover mission control}
+	We did name it `command center', implying some form of control. In its current state, and for our nearest plans, there isn't this aspect. The keyboard/mouse combo, or Xbox controller manage all controls; but, we have discussed the very real possibilities of adding settings that can: (1) modify rover parameters in real time, and (2) switch between control paradigms and profiles. For example, as a user I may find the proportional, joystick speed control too wiley, so I tap a switch in the command center that allows me to set a constant speed. Another example, I may like working with Xbox for most operations, but would like to enter into a more privledged mode with keyboard and mouse, or maybe, my coworker prefers a Wii remote; the command center should allow for seamless switching between these control paradigms.
+
+%	\includegraphics[scale=0.25]{Photos/hackrover mission control}
 
 	\subsection{Best Use Practices Report}
-	------Needs to mainly focus, again, on computers and human interaction, not actually mechanical or electrical build. 
+	There are virtually no `Best Use Practices' for any mechanical or electrical subsystems of our rover. We designed with the intent of offloading physical configuration from the user; all best use falls in the lap of human-computer interaction, and our computer engineers.
 	
-	Since we haven't effectively implemented our control systems or completed our design, I can't confidently speak on best use practices. All that can be said about use is contained in B.4. We strive to create a human interface that allows users to be quickly trained on how to operate the rover. With a user interface that has limited items being displayed it allows the user to focus on the core part of controlling the rover rather than trying to figure out what each item being displayed on the GUI represents. 
+	Minimum best-use expectations are relying on custom designed launch scripts for initial setup. We want the user to avoid typing into any terminal, or plugging directly into the rover with computer. This decision acts to simplify the setup process, and also hide information. Hiding information is important because it removes the opportunity for making careless mistakes. 
 	
-	Some guidelines for the proper use of the Hackrover are as follows:
+	Once the launch scripts - activated with simple turn on or button press - setup the rover, the user should spend all their time within the command center GUI, and the controller in their hands.
 
-	\begin{itemize}
-		\item
-		Rover User - The GUI will allow the user to have full control over the rovers drivetrain and will be able to be easily controlled by users with a controller that is easily deployable. The end user will not be required to have any background knowledge of the rover to operate it as well as knowledge on how to configure the rover itself.
-
-		\item
-		Rover Maintenance - The maintenance of the rover will be accomplished with items that are easily accessible within the rover for replacement and are common to find in the real world.
-
-		\item
-		Autonomous Navigation - The nature of autonomous navigation is to allow the rover to discover its own way around obstacles and reach end points. The best use by the user is to ensure that the end points are reachable by the rover and that the user should assist the rover with finding efficient pathing to reach the end goal. 
-\end{itemize}
-	
 	\subsection{Usability Requirements Document}
-	----Basically the final, culminating decisions based on the above.
+	The first product will be a robust rover system with a modular, programmable software architecture created in ROS and hosted on the central Xavier or Nano computer. Booting the rover system will be straightforward, and all background tasks for effective startup will be offloaded from the user via automation by simple scripts. The user will be able to easily control the rover from one of many control paradigms, and see useful output on a monitor through a custom designed GUI. 
 	
-	The first product will be a robust rover system with a modular, programmable software architecture created in ROS and hosted on the central Xavier computer. Booting the rover system will be straightforward, and all background tasks for effective startup will be offloaded from the user via automation by simple scripts. The user will be able to easily control the rover from one of many control paradigms, and optionally see output on a monitor. 
-	
-The form factor of the rover itself will be akin to last year: a PCB interfacing the Xavier with an RBPi and motors; and a LiDAR, arm, and communication stack communicating with the Xavier. All UI will be handled through ROS. 
-
-A further list of pros/cons can't be provided now since we haven't finalized our initial design, and haven't accurately assessed our ability within ROS.
+The form factor of the rover itself will be akin to last year: a PCB interfacing the Xavier/Jetson with an RBPi and motors; and a LiDAR and communication stack communicating with the Xavier/Jetson. All UI will be handled through ROS. 
 
 \pagebreak
 	
-\section{Design}
+\section{Requirement Documentation}
 	\subsection{Decisions and Rationale}
-	-----Review to ensure this encapsulates the product we will build by June.
-	The final plans for the build phase will - at a minimum - include the creation of one first iteration puzzle panel, one first iteration disaster rover (Mimir), and one first iteration competition rover. Experiencing success with these sooner than later will prompt us to improve upon the base design with further iterations (which introduce more electronics, better mechanical housing, cleaner code), as well as create more puzzle panels and competition rovers.
+	The final plans for the build phase will - at a minimum - include the creation of one first iteration puzzle panel, and one first iteration disaster rover (Mimir). Experiencing success with these sooner than later will prompt us to improve upon the base design with further iterations (which introduce more electronics, better mechanical housing, cleaner code), as well as create more puzzle panels and competition rovers.
 	
-	The limiting factor now for mechanical engineers is creation of gear trains. Understanding what goes into drive trains and being able to construct one is necessary. We have a majority of the parts, or have access to creating them with tools/resources in the Disc 270 capstone lab. A good understanding of gear trains will result in 3D prototyping, printing, and testing that may be packaged into test reports placed in this document. Another limiting factor is the surveying of existing mechanical components and their identification with past purchasing sheets and/or engineering professors. When this is done, modeling and simulation will be quick work, and up-time on building the rover should be short.
-
-	The limiting factor for electrical engineers is understanding the buck modules, a few electronic components, and some software. We're taking it one step at a time, determining the behavior of electronic components and figuring how they fit in the larger power distribution systems. Until we have parts selected that can properly step down our voltages as necessary, and deliver stable power to each necessary component, we can't begin to model the system. With the system modeled we should make quick work of building, as most parts exist.
-
-	The limiting factor for computer engineers/scientists is really just understanding the software and operating system we're working with. We have all the components for the rover, we just have to take them one at a time and integrate them effectively.
+		\subsubsection*{Puzzle Panels}
+		The goal of the club, competition, and these puzzle panels was to serve as a pedagogical tool for interdisciplinary engineering for UW students. To that end we researched game design and player learning. The most wealthy source was Portal and Portal 2, which - like our puzzle panels - see modular puzzles composed of smaller puzzle elements. Within the game you can enter a `developer' mode, causing small interactive speech bubbles to appear throughout the map; selecting these bubbles plays back the developer's log. The most important log discussed the importants of iconic puzzle elements with increasing complexity of interaction, starting from the most foundational operations. For example, the player's first puzzle is to place a large box onto a bright red button that opens a door; the next puzzle sees two boxes and two buttons. Obviously progression doesn't need to be that dull, but the concept stands.
+		
+		--------INCLUDE IMAGES OF PORTAL WITH SPEECH BUBBLES
+		
+		From this we decided the puzzles - for which there would be four, one to each floor - must increase in difficulty. Each puzzle, being comprised of the same fundamental elements, must use these elements in ways of increasing complexity. The fundamental elements must be easily understandable with minimal interaction. We decided upon 6-7 different elements, including ultrasound sensors, push-buttons, and potentiometers.
+		
+		Modularizing our elements was important for their manufacture and control methods. With modular components we can off-the-shelf Arduino-compatible actuators and sensors, and build icon housing around them. This should also make creating software in OOP environments easier. 		
+		
+		\subsubsection*{Rover}
+		The rover will operate in earthquake, warzone, and building collapse environments. it needs to be rubble resistant, have a low center of gravity, and stocky. The electrical systems that power it must be reliable, robust, and deliver clean energy. The software framework that underpins it must be modular for future development or rapid on-site changes. This modular software framework will also translate into the physical of the rover design, with mountings and electronic connections that are modular.
+		
+		The rover also sees the addition of a novel, camera control method the form of a Stewart platform. Traditionally the Stewart platform has been a parallel robot with 6 linear actuators. The significance is that this device can move in 6 DOF, and reverse kinematics can be used to calculate actuator position - simply plug in desired position and a math model determines actuator output. Recently roboticists have been popularizing a Stewart platform that uses rotational servos - as opposed to linear actuators - and the designs/models are promising, especially for their cost effectiveness. We plan on a Stewart platform controlling the LiDAR camera.
 
 	\subsection{Tier 1 Schematics}
+		\subsubsection{Mechanical Team}
+		An early mapping of the rover seen in THE FIGUREEEEE reflects what we actually intend to build. As you can see, the chassis is divided into drive base and housing, where housing is further subdivided into tiers. The size of components mostly dictates the function/organization of tiers; but, conveniently electronics and microcontrol will occur in the bottom tier, higher level microcomputer control and networking will occur in the second layer, and sensing with the LiDAR will occur at the highest layer.
+		
+		-----NEEDS IMAGE OF LAYERS
+		
+		\subsubsection{Electrical Team}
+		The puzzle panel will be powered by a power source (wall wart) that will connect to a power distribution system (PDS) which will power the actual puzzle panel game. The PDS itself will be able to power each and every hardware with enough power.
 
-\includegraphics[scale=0.8]{Puzzle Panel tier 1 schematic}
-\includegraphics[scale=0.8]{Rover tier 1 schematic}
-
-
-\subsubsection{Electrical Team}
-	
-The puzzle panel will be powered by a power source (wall wart) that will connect to a power distribution system (PDS) that will power the actual puzzle panel game. The PDS itself will be able to power each and every hardware with enough power.
-
-	The rover will need a power source that can provide enough power connected to every hardware and also, has a power source that can be efficient and reliable. A power distribution system will be needed to safely distribute enough power to each hardware and also, size of the PDS will be dependent on what the final size of the mechanical system will provide for the PDS to fit in.  
+		The rover will need a power source that can provide enough reliable and disturbance-free power to all hardware. A power distribution system will be needed to safely distribute enough power to each hardware and also, size of the PDS will be dependent on what the final size of the mechanical system will provide for the PDS to fit in.  
+		\includegraphics[scale=0.8]{Photos/Puzzle Panel tier 1 schematic}
+		\includegraphics[scale=0.8]{Photos/Rover tier 1 schematic}
 
 	\subsection{Tier 2 Schematics}
-\includegraphics[scale=0.8]{Puzzle panel simplified}
-\includegraphics[scale=0.8]{Rover schematic simplified}
-
-
-
-	\subsubsection{Electrical Team}
+		\subsubsection{Mechanical Team}
+		Provided thanks to retrospect, we can see a better visual of component placement in Fusion360. Here the same tiered `territories' exist within the rover design. Components included in the image should give some idea of function.
+		
+		--------NEED DRIVE TRAIN
+		--------NEED BASE LEVEL
+		-----NEED MIDDLE LEVEL
+		------NEED TOP LEVEL
 	
-The puzzle panel schematic that is shown above details the connection of power for the puzzle panels. The connection starts from the power source which is a wall wart that we will use to power the puzzle panel. The wall wart would output its maximum voltage to the power distribution system (PDS) which then will be distributed to every electrical component. The PDS is constructed to be able to provide different ranges of voltage to meet the power requirements for any electronic component. The puzzle panel itself will be operated by Arduino or PCBs which control the function of the puzzle panel through its connection to the electrical components. Each puzzle panel differs by its own use of electrical components and by the function of its Arduino. 
+		\subsubsection{Electrical Team}
+		The puzzle panel schematic that is shown details the connection of power for the puzzle panels. The connection starts from the power source which is a wall wart that we will use to power the puzzle panel. The wall wart would output its maximum voltage to the power distribution system (PDS) which then will be distributed to every electrical component. The PDS is constructed to be able to provide different ranges of voltage to meet the power requirements for any electronic component. The puzzle panel itself will be operated by Arduino or PCBs which control the function of the puzzle panel through its connection to the electrical components. Each puzzle panel differs by its own use of electrical components and by the function of its Arduino. 
 	
-	The simplified Rover Electrical Schematic details the connection from the power source to the rest of the electrical components that are present in the system. The hardware involved are essential for controlling the rover. The Jetson Nano is a microcomputer that runs multiple neuron networks, meaning it can handle multiple tasks at the same time. A Wifi component is built into the Nano which can be controlled wireless without having to control with a physical wire connection. The Arduino Mega is a microcontroller that has the built in code which sends control signals to the motor controllers. The Nano is commanded by the user which the user would send a command to the Nano, and depending on the command which will be sent to the Arduino Mega. This scenario is when both the Nano and the Mega talk to each other with the Nano being controlled by the user have the final say. This relationship works the same way with the Arduino in the stewart platform. The signals that are going to be sent to the motor controllers in the motor system, contain directional/control signals. The motor controllers act like a mini-computer which receives the signals from the Arduino and transmits those signals to the motors which as a result, runs the motors. The arduino with the stewart platform carries the LiDAR camera which monitors live footage and sends back the information in a wireless connection back to the user. The stewart platform is formed with many small stepper motors that reorients the position of the platform from the arduino signals.  
-
+		\includegraphics[scale=0.8]{Photos/Puzzle panel simplified}
+		
+		The simplified Rover Electrical Schematic details the connection from the power source to the rest of the electrical components that are present in the system. The hardware involved are essential for controlling the rover. The Jetson Nano is a microcomputer that runs multiple neuron networks, meaning it can handle multiple tasks at the same time. A Wifi component is built into the Nano which can be controlled wireless without having to control with a physical wire connection. The Arduino Mega is a microcontroller that has the built in code which sends control signals to the motor controllers. The Nano is commanded by the user which the user would send a command to the Nano, and depending on the command which will be sent to the Arduino Mega. This scenario is when both the Nano and the Mega talk to each other with the Nano being controlled by the user have the final say. This relationship works the same way with the Arduino in the stewart platform. The signals that are going to be sent to the motor controllers in the motor system, contain directional/control signals. The motor controllers act like a mini-computer which receives the signals from the Arduino and transmits those signals to the motors which as a result, runs the motors. The arduino with the stewart platform carries the LiDAR camera which monitors live footage and sends back the information in a wireless connection back to the user. The stewart platform is formed with many small stepper motors that reorients the position of the platform from the arduino signals.  
+		
+		\includegraphics[scale=0.8]{Photos/Rover schematic simplified}
 	
-\subsubsection{Software Team}
+		\subsubsection{Software Team}
 
-\includegraphics[scale=0.3]{LIDAR nodes}
+		\includegraphics[scale=0.3]{Photos/LIDAR nodes}
 
-Figure 1 shown above describes the interaction between the Intel RealSense LIDAR L515 with the NVIDIA Xavier. The ROS node that is used as the publisher of the LIDAR image data to then be sent to a subscriber to the image data uses image\_ transport as the library to export the images from the LIDAR to the processing node in a low-bandwidth compressed format to reduce latency. The image processing node has computer vision models within the node to process the image using OpenCV, which is then sent to the Xavier as data that the Xavier will use for further motion logic or displaying the image to the user.
+		The FIGURE details the interaction between the Intel RealSense LIDAR L515 with the NVIDIA Xavier. The ROS node that is used as the publisher of the LIDAR image data to then be sent to a subscriber to the image data uses image\_ transport as the library to export the images from the LIDAR to the processing node in a low-bandwidth compressed format to reduce latency. The image processing node has computer vision models within the node to process the image using OpenCV, which is then sent to the Xavier as data that the Xavier will use for further motion logic or displaying the image to the user.
 
-Controller System Design Diagram:
+		\includegraphics[scale=0.3]{Photos/controller node} Controller System Design Diagram:
 
-\includegraphics[scale=0.3]{controller node}
-
-Figure 2 shown above describes the interaction between controllers (Xbox, Playstation, etc type controllers) with the NVIDIA Xavier. There is the package that contains the motion logic that the previously mentioned LIDAR interacts with to send motion controls to the Xavier as well as a ROS node that takes controller inputs and processes them to be sent to the motion logic package. The data going from the controller to the ROS controller is analog data that Linux can already understand and there are pre-existing ROS libraries to use controllers. The controller node itself will send out motion commands to the motion logic package which will then send motion data to the Xavier. We also want to ensure that the controller node itself won't do any illegal inputs so we want to create a connection between the motion logic package and the controller node in case of inputs that were not friendly to the rovers motion.	
+		The FIGURE details the interaction between controllers (Xbox, Playstation, etc type controllers) with the NVIDIA Xavier. There is the package that contains the motion logic that the previously mentioned LIDAR interacts with to send motion controls to the Xavier as well as a ROS node that takes controller inputs and processes them to be sent to the motion logic package. The data going from the controller to the ROS controller is analog data that Linux can already understand and there are pre-existing ROS libraries to use controllers. The controller node itself will send out motion commands to the motion logic package which will then send motion data to the Xavier. We also want to ensure that the controller node itself won't do any illegal inputs so we want to create a connection between the motion logic package and the controller node in case of inputs that were not friendly to the rovers motion.	
 	
 	\subsection{Tier 3 Schematics}
-
-\includegraphics[scale=0.7]{Puzzle Panel schematic 1}	
-	
-	
-\includegraphics[scale=1.05]{Rover schematic 1}
-
-\includegraphics[scale=0.95]{Rover schematic 2}	
-
 		\subsubsection{Electrical Team}
 		The PCB of the puzzle panel will start with a wall wart which would output a specified amount of voltage to the PDS. The PDS will be made up of three levels, each level containing rows of buck modules that are placed in parallel and their function is to step-down the input voltage from the wall wart, down to the amount that is needed for an electrical component. Each buck module will distribute different amounts of voltage due to each electrical component within the actual puzzle panel, requiring different levels of voltage.
+		
+		\includegraphics[scale=0.7]{Photos/Puzzle Panel schematic 1}	
 
 		The rover will be powered by lithium batteries that can provide enough voltage or power to the whole rover. The 12V DC-DC buck converters which outputs a set amount of voltage of 12V in which the motor controllers are directly powered by. The small buck converters, convert the 12V to 5V which powers the Jetson Nano, Arduino Mega, Stewart platform, and et cetera, which are necessary in the system to control both the distribution of power. 
+		
+		\includegraphics[scale=1.05]{Photos/Rover schematic 1}
 
 		The power will be distributed with buck modules to power each component at its needed level. And the step-downed power will then be delivered to the Arduino Mega, Jetson Nano, Motor controllers, and other components which will run the whole rover. This PCB is constructed to use four motor controllers but in this project, two are used to operate the rover. The four USB ports output 5V which are used to provide power to any additional add-ons to the rover, which means different hardware can be added. 
+		
+		\includegraphics[scale=0.95]{Photos/Rover schematic 2}	
 		
 		Other miscellaneous elements or components like transistors, diodes, resistors are essential in keeping the digital signals at safe levels, to prevent current/voltage spikes.
 		
 
 		\subsubsection{Software/Computer Team}
-	
-Starting with the LIDAR integration the main connection is between the publisher and subscriber node of the LIDAR image. The publisher node will be outputting a compressed formatted image to the subscriber through the image\_ transport API. Within the processing node (subscriber to the image data) we can use OpenCV to translate the image that is being collected from the publisher to be created into a model that the rover can use to identify what is being shown in the image. This can be done with a point-cloud model and computer vision techniques. After the image is processed, the image itself is sent to the Xavier to display to the user and the image data with motion commands is sent to the motion logic, where the motion logic will then determine whether the images motion data is relevant to motion objectives. The latter is a back and forth process between the subscriber processing node and the motion logic component. 
+	Starting with the LIDAR integration the main connection is between the publisher and subscriber node of the LIDAR image. The publisher node will be outputting a compressed formatted image to the subscriber through the image\_ transport API. Within the processing node (subscriber to the image data) we can use OpenCV to translate the image that is being collected from the publisher to be created into a model that the rover can use to identify what is being shown in the image. This can be done with a point-cloud model and computer vision techniques. After the image is processed, the image itself is sent to the Xavier to display to the user and the image data with motion commands is sent to the motion logic, where the motion logic will then determine whether the images motion data is relevant to motion objectives. The latter is a back and forth process between the subscriber processing node and the motion logic component. 
 The second part with Xavier for this capstone project is the controller node. The main connection will be between the controller node that takes in controller information and the motion logic. This will also be a back and forth process between the two since the motion logic may not want to perform the actions that the user is inputting into the controller. 
 
 	\subsection{Estimation of Cost of Goods}
-	
 	The final estimation of cost falls around 1,500 dollars. Overtime, the cost changes due to the major design decisions have to be made by electrical and mechanical leads before a final order can be placed. An each orders are done on a weekly basis with each section having a total shown below. 
 	
 	The estimate costs of goods of the Electrical components falls to 915 dollars which includes miscellaneous components that are already in our inventory that costs around 400 dollars. The Mechanical components falls to 233.24 dollars """(include also, estimation costs of miscellaneous mechanical parts already in inventory)"""
 
-\includegraphics[scale=0.9]{Bills of Material}
+	\includegraphics[scale=0.9]{Photos/Bills of Material}
 
 	\subsection{Schedule}
-	We make use of an online, free, Gantt software accessible to anyone. A screenshot of only a portion of our schedule can be seen below. Our project is split into mechanical, electrical, and computer sections, each with 'sub-projects' which have their own schedule prescribed with dates, information, background, etc.
+	We make use of an online, free, Gantt software accessible to anyone. A screenshot of only a portion of our schedule can be seen below. Our project is split into mechanical, electrical, and computer sections, each with 'sub-projects' which have their own schedule proscribed with dates, information, background, etc.
 
-\includegraphics[scale=0.3]{Gantt Chart}
+	\includegraphics[scale=0.3]{Photos/Gantt Chart}
 
 \pagebreak	
 
 \section{Concept Development}
-
 	\subsection{Technology Mapping, Risk Analysis, and Feasibility}
 	The minimum product we'll create is a disaster rover, for which we have all the needed components. Functionality will be ensured with the software created to operate well-planned electromechanical systems. Usability will be ensured with effective documentation and simple controls. A well ordered rover with ease of control and robust build will be necessary and capable for further business; though, our client is the UW, so we have little concern for how this would  sell.
+	
 	The disaster rover would need to traverse rugged terrain. A compact frame with a well-set center of gravity and tank treads would allow it to path in any environment. Falls or tumbles would be mitigated by a 'domed' upper chassis that ensures it always lands on its base. Operators will be able to connect to it easily and wirelessly, (ideally through browser), and control with easy to understand, video-game based control schemes. All electromechanical systems would interface through robot operating system (ROS) housed on a central, Xavier computer. Focusing on electrical and mechanical systems independently: electronics will convey clean, modular power to various components through LIPO batteries. Clean and modular, I stress again, are the focus; devices like the Xavier have stringent voltage and current regulations. Modularity is desired, as future iterations will see different parts added or subtracted; ideally the only aspects affected here are battery life. Everything is contained on a central PCB, improving physical efficiency further. The mechanical systems need to be robust and sourceable. Through the use of aluminum frame, higher end FDM and resin plastics, and (hopefully) casting, we'll be able to create a protective housing for all electrical and computer components. Motors will be mounted directly to the frame with little (or no) geared transmission, depending on the speed and torque output of what motors exist. A small frame is preferred to minimize stresses. Further research into the mechanical engineering of motion mechanisms is needed before a better description can be provided. 
+	
 	The greatest risks are addressed in order: computer, electrical, mechanical. The computer model only addresses the function of interdependent components in extremely ideal conditions. A disaster environment won't be perfect, and the rover needs to get itself out of sticky situations if communication is lost or electromechanical systems aren't behaving perfectly. The electrical system could fail to provide stable enough current or voltage, or locales of high power draw could result in heating that leads to failure. It's possible the arrangement of components doesn't permit a long enough battery, or results in excess inefficiencies. The mechanical systems may fail about shafts or joints, and the production of gears (as they'll be printed) may be outside of tolerance.
+	
 	To address the stated risks we need effective testing and redundant systems. Computer models need to simulate circumstances where power delivery or mechanical failure causes issues. Further, boot scripts and backup communication protocols need to exist. Electrical systems have to be tested under every conceivable driven condition, with a focus on clean power. Mechanical systems need to be simulated, constructed with high factors of safety, and modeled physically with test rigs.
  	
- 	\subsection{Component Mapping}
- 	The electrical system of the rover will consist of many different electrical components that are connected to each other and that can send signal communication to other devices. The system is designed to distribute power to different components from a battery or a single power source. \\
-	
-The list of hardware components (bound to change after testing and possible redesigns): \\
+ 	\subsection{Component Technology Research}
+ 	\textbf{Puzzle Panel}
+ 	The competition puzzle panels are the only physical manifestation of the competition. They will address mechanical, electrical, and software modularity. To these ends, small electromechanical puzzle components will be designed; arranged properly they will constitute a puzzle panel. The components will be Arduino compatible, have iconic housings for easy robot interaction and future AI solving, and attach to the puzzle panel physically via velcro. The physical puzzle panel will be clad in velcro. 
+ 	
+ 	To achieve electrical modularity, a custom PDS which delivers clean voltage of choice will be designed. A wall wart provides power to the PDS, which distributes it to adjustable, low voltage buck modules. The entire PDS will be housed and mounted to the back of the puzzle panel, another task of the mechanical engineer. Students will be able to plug their electromechanical puzzle elements and Arduino into the PDS and be confident the power they recieve is reliable and free of disturbances.
+ 	
+ 	To achieve software modularity, custom software libraries written in the Arduino language will be created. Students can drag and drop into their control programs, and access custom functions. This will not only drastically simplify control programming, but also improve prototyping.
+ 	
+ 	\textbf{Rover}
+ 	To address environmental constraints imposed by the context of disaster relief, our rover will have a rubble-resistant chassis design, and encased, centralized electrical PDS. We will also try to achieve modularity mechanically, electrically, and software wise. To achieve mechanical modularity, the drivetrain will be constructed of stock aluminum parts, and the housing will see a tiered system with adjustable mounting and plenty of open space. In addition to these two major rover aspects, we will have a rotational servo actuated Stewart platform that controls our LiDAR camera; all other components on it will be 3D printed.
+ 	
+ 	To achieve electrical modularity the battery connector will be common, connecting into two buck converters. These buck converters are responsible for stepping down voltage to power logical (5V) and power components (12V). The unique property here is any battery with the same connector may be used. The PCB we designed itself is the PDS, providing power to all logical and actuative components. On the PCB we will add extra ports and adjustable buck modules for unanticipated, future modifications, or alternative designs. Though our rover Mimir only uses two motor controllers, the PCB will be designed with four so it may be repurposed for other designs.
+ 	
+ 	To achieve software modularity we will be developing our architecture in ROS. Each component, interaction, data processing procedure, etc can be respresented as a modular `node' that can be added or removed from the final build and launch script.
+ 		
+ 		\subsubsection{EE Circuit Models}
+ 		-------------NEED TO COME BACK TO THIS
+ 		
+ 		\subsubsection*{Stewart Platform}
+ 		The Stewart platform houses and controls the motion of the LiDAR. Early designs of the electronics are presented below. The first iteration we created was simply proof of concept, and to prototype the control software. It used a GikFun solderable breadboard as the base for our power electronics and signal electronics, and all components. An early mockup of the electrical schematics can be seen in figure -----INSERT REFERENCE HERE, and the physical, manufacture control board can be seen in figure ------INSERT REFERENCE HERE. We do have plans to have the control board be professionally printed, or seek out a third party servo controller, if possible.
+ 		
+ 		----INSERT IMAGE OF ELECTRICAL SCHEMATICS
+ 		----INSERT IMAGE OF FINAL BOARD
+ 		
+ 		The Stewart platform was controlled by an Arduino Due. The Due is effectively a beefier version of the Arduino Mega: it has the same footprint but faster processing speed and bigger memory. The math model-based script we're using to forward angle inputs to Stewart platform actuation is extremely intricate and process intensive. A visual of the Due can be see in figure -----INSERT REFERENCE HERE
+ 		
+ 		-----INSERT IMAGE OF DUE
+ 
+ 		\subsubsection{Mechanical Models}
+ 		Mechanical modelling was completed incrementally and with lots of thought on a day by day basis. Plenty of notes were taken, and it would be a waste to ignore them. That being said, content must be streamlined in the MegaDoc presentation. I present various moodels throughout all the stages.
+ 		\subsubsection*{Puzzle Panel}
+		The puzzle panel can be divided into the panel itself and the small components that constitute it. The design rational was mentioned above, so I won't repeat myself. In figure ----INSERT REFERENCE is the Fusion360 model of the puzzle panel completed; one instance of the panel was constructed in real life, a photo of it seen in figure -----INSERT REFERENCE.
+		
+		-----INSERT IMAGE OF PUZZLE PANEL IN FUSION360
+		
+		-----INSERT  IMAGE OF REAAL LIFE PUZZLE PANEL
+		
+		There were a small collection of electromechanical puzzle components that made the cut: (1) button, (2) servo motor, (3) ultrasound sensor, (4) light strip, (5) potentiometer, and (6) wall. The specifics of each and every one isn't particularly important, but what is noteworthy is the manufacturing procedure. Each component selected is Arduino-compatible, purchased in bulk from the internet. A custom, 3D-printed housing is created and then encases the part, enabling it to be attached to the board for student  use. In figure ----INSERT REFERENCE is just one example of these components, an ultrasound sensor, modelled in Fusion360, if you inspect the puzzle panel in the previous section, you might notice its use.
+		
+		-----INSERT IMAGE OF ULTRASOUND
+ 		
+ 		\subsubsection*{Rover}
+		The rover can be split into its drive base and component housing. Seen in figure ----INSERT REFERENCE is the drivebase without treads, assembled in Fusion360. The drivebase was adopted from the previous year's design, so details of component selection arren't extremely relevant here. Motor were changed, however, as analysis of performance revealed last year's team made poor selection resulting in low efficiency; this analysis is elaborated upon in the methodology section. We swapped out the 612RPM motors for 118RPM motors, seen in figure ------INSERT REFERENCEE; you might believe the speed would drastically decrease, but the 612RPM motors were being run at such poor performance they were already 1/12th their quoted maximum. The 118RPM motors were significantly more efficient and roughly the same speed.
+		
+		-----IMAGE OF DRIVEBASE GOES HERE
+		
+		-----IMAGE OF MOTORS GOES HERE
+		
+		The component housing was design per our specifications and mention before. We have three tiers: bottom, middle, and upper. The bottom tier houses the PDS, and microcontrollers for the motors and Stewart platform; see this tier in figure ---INSERT  REFERENCE. The middle tier houses the Jetson Nano - the master microcomputer running ROS - and the 3-in-1 networking device; see this tier in figure ----INSERT REFERENCE. The top tier houses the Stewart platform, it being discussed in a later section; see this tier in figure -----INSERT REFERENCE.
+		
+		----IMAGE OF EACH TIER FROM FUSION360
+ 		
+ 		\subsubsection*{Stewart Platform}
+ 		The Stewart platform houses and controls the motion of the LiDAR. We're using the same LiDAR as years prior, so we don't feel the need to discuss it in detail or present images; it's a Intel RealSense LiDAR L515. Early designs of the Stewart Platform are presented below. The first iteration we created was simply proof of concept, and to prototype the control software.
+ 		
+ 		\begin{figure} [h]
+			\centering
+			\includegraphics[scale=0.2]{Photos/early_mechanical}
+			\caption{Mechanical sketches seen at the right}
+			\label{basic_mechanical}
+		\end{figure}
+		
+		Early on I decided to print the housing, linkages and ball joints. Most parts were custom designed, but some were 3D models that were sourced from McMasterCarr, then modified, as seen in Figure \ref{ball_joint}. The printing was completed on both resin and FDM printers.
+		
+		\begin{figure*}[h]
+			\centering
+			\begin{subfigure}[h]{0.34\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{Photos/section_ball_joint}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[h]{0.65\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{Photos/ball_joint}
+			\end{subfigure}
+			\centering
+			\caption{Section of the ball joint showing no interference, next to its 3D model}
+			\label{ball_joint}
+		\end{figure*}
+		
+		A final first iteration can be seen in figure \ref{final_assembly}. It includes and top and side view. This version worked out well for prototyping, but wasn't our final.
+		
+		\begin{figure*}[h]
+			\centering
+			\begin{subfigure}[h]{0.34\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{Photos/assembly_top_down}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[h]{0.65\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{Photos/complete_assembly}
+			\end{subfigure}
+			\centering
+			\caption{The final first iteration assembly}
+			\label{final_assembly}
+		\end{figure*}
+ 		
+ 		In the second iteration we made sure the platform mounted to the rover. We also improved the structure by making the ball joints and linkages permanently connected and printed with a stronger resin. A housing for the LiDAR was created on an FDM printer. The final version can be seen in figure ----INSERT REFERENCE.
+ 		
+ 		------FUSION360 IMAGE OF STEWART PLATFORM
+ 		
+		\subsubsection*{Risk Identification}
+		Risk was assessed constantly and iteratively as I designed all aspects of this project. For example, linkages were designed with a more expensive resin, but upon later risk analysis determined to be too frail, and strengthened by printing as one piece. As this project is constantly developing, the design isn't complete, and there exists some risks we tried to mitigate.
+			
+			\begin{itemize}
+				\item{Heat Distribution:}
+				The motor controllers and microcomputer will generate plenty of heat. The early iterations didn't consider this, but it became a major risk point when tabletop tests showed pretty hot heat fins. It's not a major risk; but, to address it (were it to get worse) vents and airflow tracts were built into the component housing, and 40mm fans were employed to convey heat. See one example in figure ----INSERT REFERENCE
+				
+				---PICTURE OF  THE VENTS
+				
+				\item{Component Slippage:}
+				Housing components is difficult when they can't use threaded fasteners, or their size relative to the chassis is large. As the rover moves there is a fear that components slide, slide and pop out of where they should sit. To mitigate this risk, alignment posts or walls that take advantage of the component's geometry were added. In certain places flexible tabs were also added. It's not perfect, but it should be a point of inspection for the future.
+			\end{itemize}			 		
+ 		
+ 		\subsubsection{Software Models}
+ 		The software system of the rover will be centered around using the Robotic Operating System - ROS, which is an open source robotics middleware. The system is designed to live on the NVIDIA Xavier and Raspberry PI on the rover and consists of multiple sections of code that interact within the ROS environment. The software system is used to provide command and control for the rover. The Raspberry PI and NVIDIA Xavier pictures can be seen in Figure D1 and Figure D2 respectively. 
+
+		List of ROS packages (bound to change after testing and possible redesigns):
+			\begin{itemize}
+				\item{LiDAR Package:}
+				This package consists of a publisher node for the LIDAR image data and two subscriber nodes for outputting the image data as either an imaging processing node or an image viewing node. The image processing node is able to process the image and send corresponding motion data to the main motion logic package. The image viewing node is used to display the image that is coming out of the publisher node to wherever the output is required live.
+			
+				\item{Controller Package:}
+				This package consists of a publisher node for the controller data and currently one subscriber node that processes the controller data to be sent to the main motion logic package.
+			
+				\item{Motion Logic Package:}
+				This package consists of a publisher node that takes motion data from the LIDAR or controller to determine the motion of the rover. The subscriber will be a middle node that connects to the Raspberry PI which is used as the motor controller for the motors on the rover.
+			\end{itemize}
+
+		\subsubsection*{Risk Identification} 
+			\begin{itemize}
+				\item
+				A major risk is the LIDAR node creating a false LIDAR map of the surrounding area and thus sending false information to the motion logic package. We can mitigate this by adding in additional logic to prioritize using controller motion data compared to the LIDAR mapping data. 
+
+				\item
+				Another risk is the motion logic not having enough logic within it to ensure that the rover does not make false moves that may endanger the rover itself. This risk can be mitigated through edge case testing and ensuring the motion logic corresponds correctly with rover movements. 
+
+				\item
+				The rover system depends on a fully functional user interface for all interactions. If one of the user interface functions does not work correctly, the specific functionality will be affected and not be easily accessed by the user through the application. 
+			\end{itemize}
+ 		
+ 		\subsubsection{Human Interaction Models}
+		The main interaction between the user and the prototype will be through a PC and possibly an Xbox controller which would control the rover. The PC will allow the user to start the rover through the ROS language and be able to test the prototype. The Xbox controller would be used to navigate the rover with joint sticks to do basic operations. And this controller works best for the user to control the rover and wouldn't require them to know ROS. The risk mitigation involves allowing the user to use the software without first-hand knowledge and being able to test the prototype with ease. This would also allow easy control and having it be user-friendly.
+
+		\subsubsection{System Interface Modeling, Testing, and Risk Analysis}
+		Testing the system interface of the rover, we would ensure that the connections between the interface are functioning accurately. Some of the components which we would be testing are the connection for the LiDAR camera. 
+
+		The main risk of the system interface would be the failure in the connection between the devices. Mitigating the risk would involve:
+
+		\begin{itemize}
+			\item
+			Testing each connection between systems and their interface functionality.
+
+			\item
+			Testing the LiDAR camera to ensure that the mapping is accurate and readable. 
+		\end{itemize}
+
+		The testing of these systems will be finished around May and more progress will be done as the team continues to design and build the actual systems.
+ 		
+ 		
+ 		
+--------------------------HUH?!?!?!??!
 
 \textbf{PCB or power distribution system}
 
-\includegraphics[scale=0.15]{Rover PCB}
+\includegraphics[scale=0.15]{Photos/Rover PCB}
 
 \begin{itemize}
 \item
@@ -455,7 +609,7 @@ The list of hardware components (bound to change after testing and possible rede
 
 \textbf{Arduino Mega}
 
-\includegraphics[scale=0.5]{Arduino Mega}
+\includegraphics[scale=0.5]{Photos/Arduino Mega}
 
 \begin{itemize}
 \item
@@ -465,7 +619,7 @@ The list of hardware components (bound to change after testing and possible rede
 
 \textbf{Jetson Nano}
 
-\includegraphics[scale=0.5]{Jetson Nano}
+\includegraphics[scale=0.5]{Photos/Jetson Nano}
 
 \begin{itemize}
 \item
@@ -475,7 +629,7 @@ The list of hardware components (bound to change after testing and possible rede
 
 \textbf{12V DC-DC Buck Converters}
 
-\includegraphics[scale=0.5]{12V DC-DC buck converter}
+\includegraphics[scale=0.5]{Photos/12V DC-DC buck converter}
 
 \begin{itemize}
 \item
@@ -485,7 +639,7 @@ The list of hardware components (bound to change after testing and possible rede
 
 \textbf{LM2596 Buck Converters}
 
-\includegraphics[scale=0.5]{LM2596 bucks}
+\includegraphics[scale=0.5]{Photos/LM2596 bucks}
 
 \begin{itemize}
 \item
@@ -493,19 +647,9 @@ The list of hardware components (bound to change after testing and possible rede
 \end{itemize}
 
 
-\textbf{LiDAR camera}
-
-\includegraphics[scale=0.5]{LiDAR Camera}
-
-\begin{itemize}
-\item
-	The LiDAR camera is tasked to provide image mapping to the rover.
-\end{itemize}
-
-
 \textbf{BTS7960 Motor Controller}
 
-\includegraphics[scale=0.5]{BTS7960 Motor Driver}
+\includegraphics[scale=0.5]{Photos/BTS7960 Motor Driver}
 
 \begin{itemize}
 \item
@@ -514,7 +658,7 @@ The list of hardware components (bound to change after testing and possible rede
 
 \textbf{12V Planetary Gear Motors}
 
-\includegraphics[scale=0.5]{Gear motor 12V planetary}
+\includegraphics[scale=0.5]{Photos/Gear motor 12V planetary}
 
 \begin{itemize}
 \item
@@ -533,48 +677,6 @@ The list of hardware components (bound to change after testing and possible rede
 
 \underline{Software System}
 
-The software system of the rover will be centered around using the Robotic Operating System - ROS, which is an open source robotics middleware. The system is designed to live on the NVIDIA Xavier and Raspberry PI on the rover and consists of multiple sections of code that interact within the ROS environment. The software system is used to provide command and control for the rover. The Raspberry PI and NVIDIA Xavier pictures can be seen in Figure D1 and Figure D2 respectively. \\
-
-List of ROS packages (bound to change after testing and possible redesigns): \\
-
-\textbf{LIDAR Package}
-\begin{itemize}
-\item
-	This package consists of a publisher node for the LIDAR image data and two subscriber nodes for outputting the image data as either an imaging processing node or an image viewing node. The image processing node is able to process the image and send corresponding motion data to the main motion logic package. The image viewing node is used to display the image that is coming out of the publisher node to wherever the output is required live.
-\end{itemize}
-
-\textbf{Controller Package}
-
-\begin{itemize}
-\item
-	This package consists of a publisher node for the controller data and currently one subscriber node that processes the controller data to be sent to the main motion logic package. 
-\end{itemize}
-
-\textbf{Motion Logic Package}
-
-\begin{itemize}
-\item
-	This package consists of a publisher node that takes motion data from the LIDAR or controller to determine the motion of the rover. The subscriber will be a middle node that connects to the Raspberry PI which is used as the motor controller for the motors on the rover. 
-\end{itemize}
-
-\underline{Risk Identification}
-
-\begin{itemize}
-\item
-	A major risk is the LIDAR node creating a false LIDAR map of the surrounding area and thus sending false information to the motion logic package. We can mitigate this by adding in additional logic to prioritize using controller motion data compared to the LIDAR mapping data. 
-
-\item
-	Another risk is the motion logic not having enough logic within it to ensure that the rover does not make false moves that may endanger the rover itself. This risk can be mitigated through edge case testing and ensuring the motion logic corresponds correctly with rover movements. 
-
-\item
-	The rover system depends on a fully functional user interface for all interactions. If one of the user interface functions does not work correctly, the specific functionality will be affected and not be easily accessed by the user through the application. 
-\end{itemize}
-	\subsection{Design Strategy, Concept Development, and Concept Risk Identification \& Mitigation}
-
-
-		\subsubsection{Technology Mapping, Component Technology Research}
-		
-		The Project GANTT chart can be added here for the technology mapping image.
 
 		\subsubsection{Electrical}
 		The electrical circuit or model will be tested with the mechanical models, and the approximate date of testing will take place from the end of April to May. Testing will involve making sure connections are stable and all electrical components are functioning correctly and correspondingly communicate with each other. 
@@ -637,45 +739,85 @@ Adding new electrical components that are used to block current.
 
 Future risks will be identified with further testing of the models.
 
-		\subsubsection{Mechanical}
-		The mechanical models will be tested and built to be retro-fitted into the rover with all electrical hardware connected and fit into base.
 		
-		\subsubsection{Firmware and Software}
-		The rover system will be tested within computer simulation and with the rover itself. The testing will take place between April to May and will test the components that were created such as the LIDAR, controller, and motion logic packages. We will also test that the interaction between all the packages are working as expected. 
 		
-\begin{itemize}
-\item
-	LIDAR system testing will consist of ensuring that the image display is displayed correctly on the outputting display and that the image processing node is providing motion logic data that is accurate to the map that the LIDAR creates.
-	
-\item
-	Controller system testing will consist of input testing of single or multiple input prompts and ensuring that the rover can respond to the motion logic that comes out of the controller system. 
-	
-\item
-	Motion logic system testing will coincide with controller system testing as we need inputs to ensure that the motion logic is moving the right motors and the connection between the Xavier and PI are correct. In this we will validate that the motion logic system can turn the correct motor on command and can work independently from the LIDAR or controller if we do manual inputs through the console. To reduce the risk about the incorrect movements from the controller to the motion logic, we will run edge cases with a multitude of inputs to the controller and observe how the motion logic responds to them.
-\end{itemize}
+----------------------------------HUH!?
 
-		\subsubsection{Human Interaction Models}
-		The main interaction between the user and the prototype will be through a PC and possibly an Xbox controller which would control the rover. The PC will allow the user to start the rover through the ROS language and be able to test the prototype. The Xbox controller would be used to navigate the rover with joint sticks to do basic operations. And this controller works best for the user to control the rover and wouldn't require them to know ROS. The risk mitigation involves allowing the user to use the software without first-hand knowledge and being able to test the prototype with ease. This would also allow easy control and having it be user-friendly.
-
-		\subsubsection{System Interface Modeling, Testing, and Risk Analysis}
-Testing the system interface of the rover, we would ensure that the connections between the interface are functioning accurately. Some of the components which we would be testing are the connection for the LiDAR camera. 
-
-The main risk of the system interface would be the failure in the connection between the devices. Mitigating the risk would involve:
-
-\begin{itemize}
-\item
-Testing each connection between systems and their interface functionality.
-
-\item
-Testing the LiDAR camera to ensure that the mapping is accurate and readable. 
-\end{itemize}
-
-The testing of these systems will be finished around May and more progress will be done as the team continues to design and build the actual systems.
 
 \section{Methodology}
+	\subsection{Mechanical}
+		\subsubsection*{Early Motor Selection}
+		The lack of documentation from previous year's teams, and the dearth of UWB mechanical design education makes designing a rover hard or almost impossible. I scraped through websites, forums, and catalogs of books to try and find the best I can on rover design and drive train design. 
+	
+		Since the motor dictates the design we had to get its data sheet. All literature advises over-sizing motors and running them at 10-20\% their stall torque in continuous run, split the difference and we should be working at 15\%; further analysis will get a more precise value. This makes sense as maximum efficiency occurs roughly at 15\% stall torque; we want to minimize battery drain. Doing this will set both the speed and torque output, the latter which will determine the weight of the rover. We don't expect the first iteration to drive up stairs, but when future iterations do, the incline increases net torque experienced; still we hope this won't creep up past 20\%. Obvious future changes could be to accept normal operating torque of 10\% of stall after reducing weight. The calculations for experienced forces driving up stairs in extreme conditions and on flat terrain still need to be completed at this stage.
+		
+		The operation of the motor is also intimately related to travel speed and power consumption. We must determine early if the planetary gear motors provided by RobotZone have already considered losses to inefficiencies of gears, and how that will affect power consumption, but not sure this is possible. The rover travel speed is based on the diameter and angular speed of the tank drive sprocket. The angular speed of the tank drive sprocket is the motor's angular speed, which is not actually 612RPM, despite being named so. Remind yourself that 612RPM is the no-load speed (this particular motor has 10\% uncertainty by the way) and this decreases linearly with increasing torque. Operating at 15\% torque we should actually expect to see 520RPM (85\% speed). I will soon create accurate (enough) motor curves for reference, and calculate exact parameters on torque experienced and maximum weight allowed. 
+		
+		\subsubsection*{Generating Motor Curves}
+		Motor curves are simple plots of torque vs current, power, speed, and efficiency. Speed is inversely proportional to torque, with the maximum value being the no-load speed (written on the motor) occurring at 0 torque, and the minimum value being 0 at stall torque. We have two potential motors for use, so I'll generate the curves for both: 612RPM and 118RPM motors.
+		
+		The current has no-load and stall torque values; for our particular 612RPM (or 64.08 rads/sec) these are 0.5A (no-load) and 20A (stall). Mechanical power can be found as the product of torque (Nm) and angular velocity (rads/sec); this is different than electrical power, which is the product of applied voltage and drawn current. Efficiency is the ratio of mechanical power (output) to electrical power (input). Stall torque is 16kgF-cm, or about 1.57Nm.
+		
+		With the above parameters I used Desmos to plot the motor curve of our selected motor. Torque units are in Newton meters, rotational velocity (red line) units are in rads/sec, mechanical output power (green) are in Watts, current (blue) is in amps. The \textbf{efficiency (black) has been multiplied by a factor of 50} for easy visualization; correcting and we see a maximum of 31.25\% efficiency at $ 0.21/1.57 => 13.37\% $ of the stall torque.
+		
+		\begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.5]{Photos/motor_curves_612}
+			\caption{Motor curves with efficiency multiplied by a factor of 50 for scale}
+			\label{motor_curves_612}
+		\end{figure}
+		
+		For our 118RPM (or 12.35 rads/sec) current values are 0.5A (no-load) and 20A (stall). Stall torque is 69kgF-cm, or about 6.76Nm. 
+		
+		With the above parameters I used Desmos to plot the motor curve of our selected motor. Torque units are in Newton meters, rotational velocity (red line) units are in rads/sec, mechanical output power (green) are in Watts, current (blue) is in amps. The \textbf{efficiency (black) has been multiplied by a factor of 20} for easy visualization; correcting and we see a maximum of 26.05\% efficiency at $ 0.927/6.79 = 0.1365 => 13.65\% $ of the stall torque. 
+		
+		\begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.5]{Photos/motor_curves_118}
+			\caption{Motor curves with efficiency multiplied by a factor of 20 for scale}
+			\label{motor_curves_118}
+		\end{figure}
 
-"What data you will need to collect, and how. 
-What are the industry standards used in this project?" 
+		\subsubsection*{Determining torque, maximum allowable size, and speed}
+		See the motor curves above for useful context. When considering the 612RPM motors, we've determined a maximum efficiency of 31.25\% if we run the motor at 13.37\% of the stall torque, which is about 0.214Nm. 
+		
+		At 13.37\% of the stall torque, we'd be running 86.63\% of the no-load speed, or 526RPM, which is 55 rads/sec. The velocity of a tank tread is simply the linear velocity of it's drive sprocket. The current design, which we're building on uses 2400 Series goBUILDA tracks, and a 100mm diameter sprocket; thus linear velocity is $v = 55rad/s * 50mm$, a reasonable 2.75 meters per second, or a little over 8 feet per second. 
+		
+		If we assume we're going to drive this rover entirely flat at the maximum efficiency, our motor should experience 0.214Nm of torque. When moving a single 50mm radius sprocket, the force developed at the contact is 4.28 Newtons. From here things are a bit confusing, as from first glance the rover appears to have two of these motors, but the document (which is admittedly outdated) shows 4. If we have 2 our total force propelling the rover is 8.56 Newtons, 4 and it's 17.l2 Newtons. Move past the motors for a moment and determine what our rover must overcome to move. Consulting some literature, a liberal frictional coefficient for tread based vehicles should be 0.5 the weight; 0.7 will be our conservative. I'm also going to do the calculations for the rubber tank treads we might use in the future at 0.9 (around the value of rubber on dry concrete). The tank treads never roll, so static friction is a constant. The force to overcome is thus 
+		$$F_{app} = \mu mg$$
+		We can assume that the motor will match this force, and solve for the only unknown (our mass). If we assume two motors outputting 8.56 Newtons: at the liberal friction coefficient estimate our ideal weight should be 1.75kg (3.8lbs), while for the conservative it should be 1.25kg (2.75lbs), and the future rubber treads about 0.97kg (2.13lbs). Obviously this is a massive weight reduction from the current 25 lbs rover, which would cause the motors to deliver 88\% its stall torque, an incredible inefficiency. I really want my math to be wrong, but nothing from their MegaDoc explains the decisions they made. If we assume 4 motors and 17.12 Newtons, then the ideal weight should be liberal - 3.5kg (7.9lbs), conservative - 2.5kg (5.5lbs), and future - 1.94kg (4.26lbs); again this is a huge difference from the realistic 25 lbs rover, which would require the motors to deliver 44\% its stall torque. Remember, our goal is 13\%... Trying to read back through their document I see mention of a speed test, but they placed the data into an image that got corrupted and never submitted with the PDF. There is one mention I saw of 1.1m/s, and while I don't think it's the rover they built, it would correspond to about 70\% of stall torque, causing me to lean on the side of 2 motors. I think what happened was this last team wanted a faster rover, and mindlessly piggybacked off the year-prior team's decision to use 118RPM motors without considering the torque specifications of the rover. If that rover uses 2 motors instead of 4, it's damn near a miracle it works, and it certainly wouldn't work climbing stairs. 
+		
+		The guaranteed takeaways are: (1) we need to drastically reduce the weight as much as possible to reach peak efficiency, or (2) we need to swap out the motors for 118RPM motors which will result in improved efficiency, and possibility to climb stairs. Fortunately most of the logical components don't amount to collectively more than a pound, leaving between 4 and 6 pounds for the rest of the chassis, batteries, and Stewart platform. 
+	
+		Another future consideration is performance on stairs. The equation used above was flat only, however it would become 
+		$$F_{app} = \mu mgsin\theta + mgcos\theta$$
+		for traveling up an incline of $\theta$ degrees. The increase here is appreciable when you consider how steep Discovery Hall's stairs are. Even 4 612RPM motors would be pushing their luck, we'd prefer 4 118RPM motors. 
+		
+		There are two situations that follow from this point: we continue running the two 612RPM motors, or swap out for 118RPM motors. Assuming we go with two 612RPM we see:
+		\begin{itemize}
+			\item Close to 88\% stall torque in continuous operation at \textbf{current weight}
+			\item Efficiency of 5\% in continuous operation at \textbf{current weight}
+			\item Increasing efficiency to 31.25\% as we reduce from 25lbs to 3lbs
+			\item Increasing speed to 526RPM and 2.75 meters per second as we reduce from 25lbs to 3lbs.
+		\end{itemize}
+		The current speed given the torque should be 12\% of the max speed, or 73.44RPM (7.69 rads/sec), which corresponds to 0.38m/s. Their recorded value of 1m/s corresponds more closely to 30\% of the max speed, but it's still hard to believe.
+		
+		If we choose to swap out the 118RPM motors, at an ideal weight we'll be putting out 13.65\% of the stall torque and attaining 26.05\% efficiency. For this scenario we have the three friction coefficients: (1) liberal - 0.5, (2) conservative - 0.7, (3) alternative rubber treads for the future - 0.9. A single motor will develop 0.923Nm of torque, and on 50mm radius sprockets, this translates to 18.46Nm of force, for a 2 motor applied force of 36.92N. Ideal weights are thus liberal - 7.53kg (16.6lbs), conservative - 5.37kg (11.8lbs), and alternative - 4.18kg (9.21lbs). In our current scenario we assume 25lbs (11.3kg), resulting in a required force of 55.4N between two motors, or an experienced torque of 1.38Nm, which is pleasing 20.4\% of the stall torque, and efficiency of 25.29\%. This 25.29\% is extremely close to the ideal efficiency of 26.05\%. On the other end of the extreme, with rubber treads and 0.9 friction coefficient,  we need 2.49Nm of torque, which is an alright 36.7\% of the stall torque, and efficiency of 21\%. This corresponds to a liberal speed of 0.49m/s, or conservative speed of 0.39m/s. 
+		
+		So what we see if we swap out the 612RPM motors for 118RPM motors is a mild decrease in speed, and massive increase in efficiency. At this current stage it makes the most sense to swap out motors and drop the weight. If we're able to drop the weight significantly we can go back to 612RPM motors. 
+		
+		\subsubsection*{Testing Speed and Efficiency}
+		Knowing now that we've decided upon 2 118RPM motors, and implemented them, we must conduct tests. As the analysis shows above, for a 25lbs rover we should expect, conservatively 0.39m/s of speed. Conducting a speed test would grant insight into the efficiency and operating conditions of the motor. In figure ----INSERT REFERENCE were the results of our test.
+		
+		-----INSERT IMAGE OF TEST'
+		
+		
+		
+		
+
+
+
+
 
 Electrical:
 
@@ -689,15 +831,15 @@ Electrical:
 
 The testing for the results in measuring current performance and voltage leveling accuracy in the puzzle panel power distribution system was a success. Demonstrating the test, we utilized a stationed multimeter to measure and monitor the output voltage in the picture below. 
 
-\includegraphics[scale=0.7]{LM2956 Testing Picture}
+%\includegraphics[scale=0.7]{Photos/LM2956 Testing Picture}
 
 We tested every buck converter with this method. There were many that are broken down which we discarded in the waste box, but we desoldered some of the components which we can save for a different project. The ones we found to work, we used them for the final design of the Puzzle Panel power distribution system and for the rover PCB. In the table below, illustrates the results of one of the buck converters working well with a high input voltage and being able to step it down to any voltage lower than the input. And also, it is able to output the stepped down voltage which is essential in powering some of the hardware we have that requires low level voltage. There is a table with more data in terms of current and power performance in the Appendices and Supplement Data Section of this Megadoc and in the Electrical test report of the Buck Converter.
 
-\includegraphics[scale=0.8]{Buck Converter Test Result}
+%\includegraphics[scale=0.8]{Photos/Buck Converter Test Result}
 
 After getting the buck converters to work, we soldered them onto the puzzle panel PDS. And we then powered the whole PDS to provide power to the actual Puzzle Panel elements which is shown below. 
 
-\includegraphics[scale=0.85]{Puzzle Panel Powered}
+\includegraphics[scale=0.85]{Photos/Puzzle Panel Powered}
 
 We then monitored the power efficiency and delivery of the Puzzle Panel PDS to the puzzle panel elements. The results showed it was successful. Every buck module are able to output the specified voltage based on the adjustment of their potentiometers. And when powering the hardware and the puzzle panel elements, there were no signs of electrical failures. The most number of elements that are connected to the PCB are three and when they operate, they draw 0.3A to 0.5A. With other slots of power and USBs in the PCB that are available, additional hardware or puzzle elements can be powered from the PCB. And with the performance of power not showing signs of failure, we can safely assume the Puzzle Panel PCB can handle powering multiple hardware and components at once.
 
@@ -728,7 +870,7 @@ Puzzle Panel PCB: Redesign the layout of the board to provide many more differen
 
 \textbf{Electrical Data} :
 
-\includegraphics[scale=1.0]{Buck Converter Data}
+\includegraphics[scale=1.0]{Photos/Buck Converter Data}
 
 
 
@@ -764,7 +906,7 @@ Puzzle Panel PCB: Redesign the layout of the board to provide many more differen
 
 5. Next, onto the digital connections. The digital connections from the Motor Controllers are built into the PCB. To connect them to the Arduino Mega, jumper wires are utilized. And the labels and which ports to connect to on the Mega is shown in this diagram below.
 
-\includegraphics[scale=0.6]{Digital Connections from Motor Controller to Arduino Mega}
+%\includegraphics[scale=0.6]{Photos/Digital Connections from Motor Controller to Arduino Mega}
 
 6. From the figure above, this allows the code of the software that is built into the Arduino Mega to communicate with the Motor controllers.
 
