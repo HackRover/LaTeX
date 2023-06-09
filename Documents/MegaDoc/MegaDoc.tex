@@ -691,7 +691,7 @@ The testing for the results in measuring current performance and voltage levelin
 
 \includegraphics[scale=0.7]{LM2956 Testing Picture}
 
-We tested every buck converter with this method. There were many that are broken down which we discarded in the waste box, but we desoldered some of the components which we can save for a different project. The ones we found to work, we used them for the final design of the Puzzle Panel power distribution system and for the rover PCB. In the table below, illustrates the results of one of the buck converters working well with a high input voltage and being able to step it down to any voltage lower than the input. And also, it is able to output the stepped down voltage which is essential in powering some of the hardware we have that requires low level voltage. 
+We tested every buck converter with this method. There were many that are broken down which we discarded in the waste box, but we desoldered some of the components which we can save for a different project. The ones we found to work, we used them for the final design of the Puzzle Panel power distribution system and for the rover PCB. In the table below, illustrates the results of one of the buck converters working well with a high input voltage and being able to step it down to any voltage lower than the input. And also, it is able to output the stepped down voltage which is essential in powering some of the hardware we have that requires low level voltage. There is a table with more data in terms of current and power performance in the Appendices and Supplement Data Section of this Megadoc and in the Electrical test report of the Buck Converter.
 
 \includegraphics[scale=0.8]{Buck Converter Test Result}
 
@@ -726,6 +726,12 @@ Puzzle Panel PCB: Redesign the layout of the board to provide many more differen
 
 \section{Appendices and Supplement Data}  
 
+\textbf{Electrical Data} :
+
+\includegraphics[scale=1.0]{Buck Converter Data}
+
+
+
 \section{User Manual}
 
 \textbf{Electrical User Manual:}
@@ -746,7 +752,7 @@ Puzzle Panel PCB: Redesign the layout of the board to provide many more differen
 
 6. When using the Puzzle Panel Power distribution system, it's best to use a singular power source. For example, we used a 14.8V wall-wart and different rows of buck converters are adjusted to output, 3.3V, 5V, and 12V.
 
-Rover - To setup the hardware, we'll start with the power connections before the digital connections.
+\textbf{Rover} - To setup the hardware, we'll start with the power connections before the digital connections.
 
 1. Power connections need both positive and negative polarities to complete a circuit. First, the motor controllers needed positive and ground connections to be powered in B+ and B- slots. The M+ and M- indicate the polarities to connect to the actual planetary motors. 
 
