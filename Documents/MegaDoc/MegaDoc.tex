@@ -449,8 +449,169 @@ The second part with Xavier for this capstone project is the controller node. Th
  	To achieve software modularity we will be developing our architecture in ROS. Each component, interaction, data processing procedure, etc can be respresented as a modular `node' that can be added or removed from the final build and launch script.
  		
  		\subsubsection{EE Circuit Models}
- 		-------------NEED TO COME BACK TO THIS
+
+	The current Electrical Circuit Models are made to power at any voltage level, providing different modular of power that can power different hardware. For the Rover PCB and the following components that will be used in the Rover are listed here. And also, the risks involve that may entail with solutions that can help mitigate those risks. 
  		
+ 	\textbf{PCB or power distribution system of Rover}
+
+\begin{figure} [h]
+			\centering
+			\includegraphics[scale=0.15]{Photos/Rover PCB}
+			\caption{Power Distribution System of Rover}
+		\end{figure}
+
+\begin{itemize}
+\item
+	Shown above is the power distribution system PCB of the rover that is designed to distribute power to every electrical hardware from a single power source or battery. And as well as, provide the signal connections for the hardware as they are essential in controlling the functionality of every component. 
+\end{itemize}
+
+
+\textbf{Arduino Mega}
+
+\includegraphics[scale=0.5]{Photos/Arduino Mega}
+
+\begin{itemize}
+\item
+	Arduino Mega is a microcontroller that is designed to control the motors by controlling the motor controllers that control the drivetrain.
+\end{itemize}
+
+
+\textbf{Jetson Nano}
+
+\includegraphics[scale=0.5]{Photos/Jetson Nano}
+
+\begin{itemize}
+\item
+	The Jetson Nano is a small computer that is designed to run multiple neural networks like image processing, object detection, etc. 
+\end{itemize}
+
+
+\textbf{12V DC-DC Buck Converters}
+
+\includegraphics[scale=0.5]{Photos/12V DC-DC buck converter}
+
+\begin{itemize}
+\item
+	The 12V DC-DC buck converter is used to step down any voltage larger than 12V down to its assigned level of 12V.
+\end{itemize}
+
+
+\textbf{LM2596 Buck Converters}
+
+\includegraphics[scale=0.5]{Photos/LM2596 bucks}
+
+\begin{itemize}
+\item
+	The LM2596 buck converters are designed to step down or drop down the voltage that is needed by the electrical components to be able to functionally run. And it's adjusted by a potentiometer that controls the voltage level output.
+\end{itemize}
+
+
+\textbf{BTS7960 Motor Controller}
+
+\includegraphics[scale=0.5]{Photos/BTS7960 Motor Driver}
+
+\begin{itemize}
+\item
+	The motor controller is used to receive signals from the Arduino Mega and delivers it to the actual motors of the drivetrain.
+\end{itemize}
+
+\textbf{12V Planetary Gear Motors}
+
+\includegraphics[scale=0.5]{Photos/Gear motor 12V planetary}
+
+\begin{itemize}
+\item
+	The 12V planetary motors are used to drive the whole rover which are controlled by the BTS7960 motor controller through digital signals from the Arduino Mega.
+\end{itemize}
+
+\underline{Risk identification}
+
+\begin{itemize}
+\item
+	One of the major risks or dangers for the electrical system is the probability of overheating which will cause a fire hazard. This will cause permanent damage to many of the components on the rover. The battery and the components that needed the most power are at risk of this danger, so sufficient protection for these parts will lower the risk of this danger.
+
+\item
+	The risk of the motors running too much or insufficient torque will cause different amounts of currents to be drawn from the battery. This current spike will cause damage to the electrical hardware that is directly connected to the battery and cause a fire hazard. The mechanical components will also face damage as a result.
+\end{itemize}
+
+The electrical circuit or model will be tested with the mechanical models, and the approximate date of testing will take place from the end of April to May. Testing will involve making sure connections are stable and all electrical components are functioning correctly and correspondingly communicate with each other. 
+		
+Future testing of electrical components and their functions:
+\begin{itemize}
+\item
+The connections between components
+
+\item
+PCB functionality
+
+\item
+Jetson Nano connection
+
+\item
+Arduino Mega and Drivetrain connection
+
+\item
+Battery and power/current performance
+\end{itemize}
+
+The main risk of the electrical circuit or model is that the electrical connection between any electrical components has failed. The risk mitigation can involve:
+
+\begin{itemize}
+\item
+Rewiring/replacing wires, checking every connection between every electrical component.
+
+\item
+Replacing old/faulty components with new ones can decrease the risk of circuit failure.
+\end{itemize}
+
+Another risk of the electrical circuit is the uneven distribution of power to any electrical component through voltage/current spikes and voltage/current noise. The risk mitigation can involve:
+
+\begin{itemize}
+\item
+Adding new electrical components that are used to mitigate or decrease voltage/current spikes.
+
+	\begin{itemize}
+		\item
+		Snubber diodes, bypass capacitors, transistors, and any other component that can prevent undesirable effects. 
+	\end{itemize}
+	
+\item
+Adding fuses can be used as a fail-safe to prevent the failure of the entire electrical system.
+\end{itemize}
+
+
+Another risk is any wire disconnecting during a test run which can cause an open circuit with the current not flowing in the intended direction and flowing towards volatile electrical components. The risk mitigation can involve:
+
+\begin{itemize}
+\item
+Adding new electrical components that are used to block current.
+
+	\begin{itemize}
+		\item
+		Blocking diodes and transistors can protect volatile components by preventing or blocking current from flowing backwards to a vulnerable component. 
+	\end{itemize}
+\end{itemize}
+
+Taking consideration of these risks, we are able to update the PCB design to include these essential components that mitigate the risks. Diodes are placed in the PCB to protect volatile hardware like the motor controllers from voltage spikes. And also, blocking diodes are used to block any current that is going to the opposite way. 
+
+Protecting the hardware components that are mentioned and listed above, would ensure that the rover will be able to drive around in normal conditions without any electrical difficulty. 
+
+The components and the wiring shown below, includes the potential wiring that will take place when all of the components are included. This is the early stage of the assembly as we placed the PCB to fit into the housing that the mechanical team made. This would allow us to figure out how to wire the entire rover without making any final decisions from the beginning.
+ 
+ 		\begin{figure} [h]
+			\centering
+			\includegraphics[scale=0.15]{Rover PCB (Wired)}
+			\caption{Early Electrical System of Rover}
+		\end{figure}
+
+In the image below, shows an early assembly of the rover with the PCB connected and all of the components wired as well. This includes adding the LiDAR camera which eventually will be inserted into the Stewart platform in the later stages of the assembly. But the test of the electrical system is essential to make sure everything both hardware and software work together.
+
+\begin{figure} [h]
+			\centering
+			\includegraphics[scale=0.15]{Rover PCB (Assembled)}
+			\caption{Latest Electrical System of Rover}
+		\end{figure}
+		
  		\subsubsection*{Stewart Platform}
  		The Stewart platform houses and controls the motion of the LiDAR. Early designs of the electronics are presented below. The first iteration we created was simply proof of concept, and to prototype the control software. It used a GikFun solderable breadboard as the base for our power electronics and signal electronics, and all components. An early mockup of the electrical schematics can be seen in figure -----INSERT REFERENCE HERE, and the physical, manufacture control board can be seen in figure ------INSERT REFERENCE HERE. We do have plans to have the control board be professionally printed, or seek out a third party servo controller, if possible.
  		
@@ -594,155 +755,7 @@ The second part with Xavier for this capstone project is the controller node. Th
 		The testing of these systems will be finished around May and more progress will be done as the team continues to design and build the actual systems.
  		
  		
- 		
---------------------------HUH?!?!?!??!
-
-\textbf{PCB or power distribution system}
-
-\includegraphics[scale=0.15]{Photos/Rover PCB}
-
-\begin{itemize}
-\item
-	The PCB is designed to distribute power to every electrical hardware from a single power source or battery. And as well as, provide the signal connections for the hardware as they are essential in controlling the functionality of every component.
-\end{itemize}
-
-
-\textbf{Arduino Mega}
-
-\includegraphics[scale=0.5]{Photos/Arduino Mega}
-
-\begin{itemize}
-\item
-	Arduino Mega is a microcontroller that is designed to control the motors by controlling the motor controllers that control the drivetrain.
-\end{itemize}
-
-
-\textbf{Jetson Nano}
-
-\includegraphics[scale=0.5]{Photos/Jetson Nano}
-
-\begin{itemize}
-\item
-	The Jetson Nano is a small computer that is designed to run multiple neural networks like image processing, object detection, etc. 
-\end{itemize}
-
-
-\textbf{12V DC-DC Buck Converters}
-
-\includegraphics[scale=0.5]{Photos/12V DC-DC buck converter}
-
-\begin{itemize}
-\item
-	The 12V DC-DC buck converter is used to step down any voltage larger than 12V down to its assigned level of 12V.
-\end{itemize}
-
-
-\textbf{LM2596 Buck Converters}
-
-\includegraphics[scale=0.5]{Photos/LM2596 bucks}
-
-\begin{itemize}
-\item
-	The LM2596 buck converters are designed to step down or drop down the voltage that is needed by the electrical components to be able to functionally run. And it's adjusted by a potentiometer that controls the voltage level output.
-\end{itemize}
-
-
-\textbf{BTS7960 Motor Controller}
-
-\includegraphics[scale=0.5]{Photos/BTS7960 Motor Driver}
-
-\begin{itemize}
-\item
-	The motor controller is used to receive signals from the Arduino Mega and delivers it to the actual motors of the drivetrain.
-\end{itemize}
-
-\textbf{12V Planetary Gear Motors}
-
-\includegraphics[scale=0.5]{Photos/Gear motor 12V planetary}
-
-\begin{itemize}
-\item
-	The 12V planetary motors are used to drive the whole rover which are controlled by the BTS7960 motor controller through digital signals from the Arduino Mega.
-\end{itemize}
-
-\underline{Risk identification}
-
-\begin{itemize}
-\item
-	One of the major risks or dangers for the electrical system is the probability of overheating which will cause a fire hazard. This will cause permanent damage to many of the components on the rover. The battery and the components that needed the most power are at risk of this danger, so sufficient protection for these parts will lower the risk of this danger.
-
-\item
-	The risk of the motors running too much or insufficient torque will cause different amounts of currents to be drawn from the battery. This current spike will cause damage to the electrical hardware that is directly connected to the battery and cause a fire hazard. The mechanical components will also face damage as a result.
-\end{itemize}
-
 \underline{Software System}
-
-
-		\subsubsection{Electrical}
-		The electrical circuit or model will be tested with the mechanical models, and the approximate date of testing will take place from the end of April to May. Testing will involve making sure connections are stable and all electrical components are functioning correctly and correspondingly communicate with each other. 
-		
-Future testing of electrical components and their functions:
-\begin{itemize}
-\item
-The connections between components
-
-\item
-PCB functionality
-
-\item
-Jetson Nano connection
-
-\item
-Arduino Mega and Drivetrain connection
-
-\item
-Battery and power/current performance
-\end{itemize}
-
-The main risk of the electrical circuit or model is that the electrical connection between any electrical components has failed. The risk mitigation can involve:
-
-\begin{itemize}
-\item
-Rewiring/replacing wires, checking every connection between every electrical component.
-
-\item
-Replacing old/faulty components with new ones can decrease the risk of circuit failure.
-\end{itemize}
-
-Another risk of the electrical circuit is the uneven distribution of power to any electrical component through voltage/current spikes and voltage/current noise. The risk mitigation can involve:
-
-\begin{itemize}
-\item
-Adding new electrical components that are used to mitigate or decrease voltage/current spikes.
-
-	\begin{itemize}
-		\item
-		Snubber diodes, bypass capacitors, transistors, and any other component that can prevent undesirable effects. 
-	\end{itemize}
-	
-\item
-Adding fuses can be used as a fail-safe to prevent the failure of the entire electrical system.
-\end{itemize}
-
-
-Another risk is any wire disconnecting during a test run which can cause an open circuit with the current not flowing in the intended direction and flowing towards volatile electrical components. The risk mitigation can involve:
-
-\begin{itemize}
-\item
-Adding new electrical components that are used to block current.
-
-	\begin{itemize}
-		\item
-		Blocking diodes and transistors can protect volatile components by preventing or blocking current from flowing backwards to a vulnerable component. 
-	\end{itemize}
-\end{itemize}
-
-Future risks will be identified with further testing of the models.
-
-		
-		
-----------------------------------HUH!?
-
 
 \section{Methodology}
 	\subsection{Mechanical}
@@ -871,7 +884,6 @@ Puzzle Panel PCB: Redesign the layout of the board to provide many more differen
 \textbf{Electrical Data} :
 
 \includegraphics[scale=1.0]{Photos/Buck Converter Data}
-
 
 
 \section{User Manual}
