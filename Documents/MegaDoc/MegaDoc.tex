@@ -295,17 +295,14 @@
 	
 \section{Experience Design and Human Interface Design}
 	\subsection{User Workflow}
------------------------------
-DANNY. REVIEW THIS SECTION FOR MODIFICATIONS/DISCUSS ABOUT LAUNCH FILE.	
------------------------------
-	
+
 	Before addressing UX in depth, a quick review of the state of the systems. The last capstone sent forth a rover with hardware components ordered according to an (almost) ideal rover architecture, however no software (at least not in ROS) was in place. All control was exclusively done through a script loaded onto the Raspberry Pi (RBPi) which enabled a user to control the rover via a Bluetooth game controller. The controls were hardly programmable, and what existed was limited (no control over LiDAR, arm, etc). Before any mind can be paid to serious UX, the software framework has to be created; each node of the rover must be in contact with others via the Bluetooth to enable us to create useful control scripts and paradigms.  
 
 	Despite the little mind paid to UX, there are some basic expectations and workflows, for both the competition and rover. Within the organization/competition, students will form teams for competing. Each team will construct at least one rover which is capable of wireless access and control, and is based on ROS; we want to maximize creative potential, so almost no design is off limits. They will be able to get puzzle component software libraries and construct/prototype puzzles of their own for their rovers to interact with. They will study up on hacking and common system penetration techniques, writing/developing their own (or defenses) in anticipation of game day. Finally, they will tie all their efforts together with HackRover organization standardized working papers (based on IEEE formats) that be sent to the organization, which summarizes their work.
 	
 	On game day, teams will stay in command rooms, where they can semi-autonomously control their rovers. Each team will be distributed random vulnerabilities that reflect real life vulnerabilities. Through the competition all will try to:(1) solve puzzles with the rovers, (2) hack other teams' rovers, and (3) defend their rovers from hacking, to gain points.
 	
-	Moving beyond the student organization we inspect the workflow of a disaster responder using our rover. The rover will turn on, connect automatically to a dedicated computer, and on that computer a launch file will be run. This launch file will associate all internal components with each other, and the rover with the outside world (GUI, communications and controls, etc). In a short time, the disaster responder will be able to send the rover out in autonomous, or semi-autonomous mode to collect life-saving information. The rover, being rubble resistant and small, will travel in to precarious situations, looking for trapped victims, relaying the info back to the operator. This workflow does, of course, reflect an ideal product far into the future that we're working towards; but, it is possible with time and dedication. 
+	Moving beyond the student organization we inspect the workflow of a disaster responder using our rover. The rover will turn on, connect automatically to a dedicated computer, and on that computer a launch file will be run. This launch file will associate all internal components with each other, and the rover with the outside world (GUI, communications and controls, etc). The launch file can either be booted up through SSH from another computer to start the processes, or can be automatically run by the rover itself. During testing and development of the rover, we recommend that the launch file be booted up through SSH from another computer, and in practical applications that the rover has the launch file set to automatically execute as the rover commences its boot sequence. In a short time, the disaster responder will be able to send the rover out in autonomous, or semi-autonomous mode to collect life-saving information. The rover, being rubble resistant and small, will travel in to precarious situations, looking for trapped victims, relaying the info back to the operator. This workflow does, of course, reflect an ideal product far into the future that we're working towards; but, it is possible with time and dedication. 
 
 	\subsection{Environmental Analysis}
 	The environment of the rover is two-fold: competition space with simulated events/circumstance, and confined disaster spaces. The web-based UI and simple wireless control serves to empower the competitor's experience during the event. However, it should also easily map onto the disaster location. Good communication with the rover system as it operates in distant, wireless connected, cramped spaces are a must. Ease of control programming and use is a must. Good sensor and visual feedback is a must. Robust traversing of the environment is a must. 
@@ -327,10 +324,7 @@ DANNY. REVIEW THIS SECTION FOR MODIFICATIONS/DISCUSS ABOUT LAUNCH FILE.
 	The other factor mapping - friendly rover design - sees us making our rover amicable and easy to approach by all sorts of people. From built in displays to lovely shapes, when the disaster rover finds a victim it might restore some hope and provide comfort. Industrial designs may cause anxiety and concern upon first contact.
 	
 	\subsection{Information Architecture and Hierarchy}	
------------------------------
-DANNY. REVIEW THIS SECTION.	
------------------------------
-	For startup: Either turning on the rover and running one launch script, or pressing one physical button (attached to the execution of a launch script) will set up the system completely and run all background checks/power up tests. 
+	For startup: The rover will have a modified boot up sequence so a launch script can be executed automatically. This launch script will comprise of turning on the ROS core network and any specific ROS nodes that are vital to the rovers operation in the beginning. The boot up sequence for most Linux based computers such as the NVIDIA Jetson are easily modifiable through boot configurations, which differs depending on what Linux distribution is being utilized.
 
 	For use: Intuitive Bluetooth pairing button combinations, or browser-based logins will allow the user to quickly access the rover. The startup launch, mentioned prior, would have enabled the rover to receive simple communication. Perhaps a UI for selecting controls before use will ensure the correct systems are selected. From there all controls should be either intuitive, well documented, visually displayed, or easily accessible from the file system of the rover. 
 
@@ -339,24 +333,22 @@ DANNY. REVIEW THIS SECTION.
 	On the Electrical Architecture, digital wiring between components are essential for having the rover to operate correctly and safely. In the first major architecture, the rover needs the connections between the different hardware to be correct, one misplaced wire could lead to severe failures for the rover. Failures can involve, hardware breaking down electrically which causes damage or the rover moving in the wrong direction. Knowing which wire connects from hardware to a specific node is important. The connections between the Arduino Mega and the Motor controllers involve enable and digital signals. There are wires that are in charge of directing digital communication to allow the software within a hardware to operate correctly with other hardware. 
 
 	\subsection{Interface Design}
------------------------------
-DANNY. REVIEW THIS SECTION.	I BS'D IT, BUT YOU NEED TO MAKE IT NICER, MAYBE ADD IMAGES.
------------------------------
 	The most base and simple design for interfacing with the rover is obviously mouse and keyboard. This default is assumed with ROS, as it runs in its own terminal and accepts typed inputs. Work will need to be done to create a GUI that accepts keyboard/mouse input, but it's the minimum priority.
 	
 	The powerful aspect of ROS is its modularity, we might design an input node that sends commands to a control mapping node, which translates and forwards to a control script node. If, on a whim, we decided to change the control paradigm, we would substitute the input node with another, say an Xbox controller or Wii remote. The rest of the framework would continue to work so long as our mapping node was configured correctly. Beyond keyboard and mouse, we do plan to use the Xbox controller. Operators would be able to press just a few buttons to get the rover into an active, controllable state.
 	
-	Feedback from sensing devices, (like LiDAR or encoders) is streamed to a monitor output. This provides a sort of `commander center' for the operator to get information back.
+	Feedback from sensing devices, (like LiDAR or encoders) is streamed to a monitor output. This provides a sort of `commander center' for the operator to get information back. ROS has options to allow LiDAR or encoders to interact with ROS motion nodes, such as cmd vel which is a built in ROS node that commands velocity. 
+
+    The built in ROS command velocity node is a quick and easy way to integrate a built-in API that allows users to utilize teleoperation. Instead of hand creating a velocity API that takes in movement commands and outputs velocity commands for motors, we are choosing to use cmd vel from ROS. This allows us to quickly integrate and test with our rover, and can give us understanding on how others may also quickly implement their own solutions with cmd vel. 
 
 	\subsection{Graphic User Interface Design}
------------------------------
-DANNY. REVIEW THIS SECTION.	
------------------------------
-	The GUI, mentioned in passing in the previous section, is known as our command center. In it's most base form it's designed to provided sensor feedback and minimally processed data. The GUI itself is hosted on the rovers main computer, and accessible wirelessly via a browser. At a minimum we plan for it to stream direct visuals and a heatmap from the LiDAR camera, (which processes and sends data in ROS nodes of its own). We'd also like to have encoder data. 
+	The GUI, mentioned in passing in the previous section, is known as our command center. In it's most base form it's designed to provided sensor feedback and minimally processed data. The GUI itself is hosted on the rovers main computer, and accessible wirelessly via a browser. At a minimum we plan for it to stream direct visuals and a heatmap from the LiDAR camera, (which processes and sends data in ROS nodes of its own). We'd also like to have encoder data to understand the more data (such as speed) at which the rover is operating at.
 	
 	The nature of our GUI being designed within a ROS framework means future modifications can be made: informative post-processed statistics, sensor additions, and more. Specific `profiles' might be engineered as simple scripts, where more or less information is provided.
+
+    The GUI was built using HTML and CSS while the backend that connects and is hosted as a ROS node is built utilizing Flask in Python. The mentioned code is referenced in the official HackRover GitHub Rover repository. 
 	
-	We did name it `command center', implying some form of control. In its current state, and for our nearest plans, there isn't this aspect. The keyboard/mouse combo, or Xbox controller manage all controls; but, we have discussed the very real possibilities of adding settings that can: (1) modify rover parameters in real time, and (2) switch between control paradigms and profiles. For example, as a user I may find the proportional, joystick speed control too wiley, so I tap a switch in the command center that allows me to set a constant speed. Another example, I may like working with Xbox for most operations, but would like to enter into a more privledged mode with keyboard and mouse, or maybe, my coworker prefers a Wii remote; the command center should allow for seamless switching between these control paradigms.
+	We did name it `command center', implying some form of control. In its current state, and for our nearest plans, there isn't this aspect. The keyboard/mouse combo, or Xbox controller manage all controls; but, we have discussed the very real possibilities of adding settings that can: (1) modify rover parameters in real time, and (2) switch between control paradigms and profiles. For example, as a user I may find the proportional, joystick speed control too wiley, so I tap a switch in the command center that allows me to set a constant speed. Another example, I may like working with Xbox for most operations, but would like to enter into a more privileged mode with keyboard and mouse, or maybe, my coworker prefers a Wii remote; the command center should allow for seamless switching between these control paradigms. We would also want to implement that a controller is connected directly to the laptop viewing the webserver is able to control the rover through that paradigm. 
 
 	\begin{figure} [!h]
 			\centering
@@ -366,20 +358,34 @@ DANNY. REVIEW THIS SECTION.
 	\end{figure}
 
 	\subsection{Best Use Practices Report}
------------------------------
-DANNY. REVIEW THIS SECTION.	Again I tried to BS it at the last moment. Based on what you talked about in the GUI or Interface advance in best practices.
------------------------------
 	There are virtually no `Best Use Practices' for any mechanical or electrical subsystems of our rover. We designed with the intent of offloading physical configuration from the user; all best use falls in the lap of human-computer interaction, and our computer engineers.
 	
 	Minimum best-use expectations are relying on custom designed launch scripts for initial setup. We want the user to avoid typing into any terminal, or plugging directly into the rover with computer. This decision acts to simplify the setup process, and also hide information. Hiding information is important because it removes the opportunity for making careless mistakes. 
 	
 	Once the launch scripts - activated with simple turn on or button press - setup the rover, the user should spend all their time within the command center GUI, and the controller in their hands.
 
+    There are some limitations and vulnerabilities that we have thought about with hosting a webserver based off of the WiFi that the rovers computer is attached to. The first would be that hosting a website on a public WiFi that anybody can access is inherently dangerous in terms of cybersecurity. Secondly, there are bypasses that have to be done to allow the rovers computer to host the webserver such as allowing any user that is connected to the computers IP address to modify serial ports, through Linux change modification commands. Lastly, a Denial-of-Service (DoS) attack can flood the public IP address that the rovers computer is hosted as with a high volume of traffic, which would overwhelm the rovers resources and causing the website to become inaccessible to legitimate users.
+
 	\subsection{Usability Requirements Document}
------------------------------
-DANNY. REVIEW THIS SECTION.	Since you designed the controls you need to discuss usability. Not what did you, but what SHOULD you do. Don't forget, this is section B, they assume we write it well before we make the  rover.
------------------------------
 	The first product will be a robust rover system with a modular, programmable software architecture created in ROS and hosted on the central Xavier or Nano computer. Booting the rover system will be straightforward, and all background tasks for effective startup will be offloaded from the user via automation by simple scripts. The user will be able to easily control the rover from one of many control paradigms, and see useful output on a monitor through a custom designed GUI. 
+
+    Our primary objective is to ensure that users can easily navigate and interact with the interface, enabling efficient and intuitive control of the rover's functionalities. By adhering to a set of usability requirements, we aim to optimize the user experience and maximize mission success.
+
+    \begin{enumerate}
+        \item Intuitive Interface:
+        
+        The Mission Control GUI should feature a visually appealing and intuitive design that enables users to quickly grasp the various functions and controls. The layout should be logical and organized, with clear navigation paths and easily identifiable icons and buttons. Prioritizing simplicity, the interface should minimize clutter and present information in a concise and understandable manner.
+
+        \item Ease of Use:
+
+        To ensure the widest possible user base, the GUI should be accessible to individuals with varying levels of technical expertise. It should offer both basic and advanced control options, allowing beginners to easily initiate missions while providing advanced users with advanced functionalities. 
+
+        \item Responsiveness and Real-Time Feedback:
+
+        The GUI should provide real-time feedback to users, ensuring that they are aware of the rover's status and any ongoing operations. Response times to user commands should be minimal, allowing for immediate feedback and preventing any perceived delays or latency. Real-time telemetry data, such as battery levels, location, and sensor readings, should be displayed prominently, facilitating informed decision-making.
+    \end{enumerate}
+
+
 	
 The form factor of the rover itself will be akin to last year: a PCB interfacing the Xavier/Jetson with an RBPi and motors; and a LiDAR and communication stack communicating with the Xavier/Jetson. All UI will be handled through ROS. 
 
@@ -409,9 +415,6 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 		The rover also sees the addition of a novel, camera control method the form of a Stewart platform. Traditionally the Stewart platform has been a parallel robot with 6 linear actuators. The significance is that this device can move in 6 DOF, and reverse kinematics can be used to calculate actuator position - simply plug in desired position and a math model determines actuator output. Recently roboticists have been popularizing a Stewart platform that uses rotational servos - as opposed to linear actuators - and the designs/models are promising, especially for their cost effectiveness. We plan on a Stewart platform controlling the LiDAR camera.
 
 	\subsection{Tier 1 Schematics}
------------------------------
-DANNY. REVIEW THIS SECTION.	I looked at your tier 2 schematics, and they're actually tier 1. Move them here and make some new Tier 3's if you can.
------------------------------
 		\subsubsection{Mechanical Team}
 		An early mapping of the rover seen in figure \ref{layered_sketch} reflects what we actually intend to build. As you can see, the chassis is divided into drive base and housing, where housing is further subdivided into tiers. The size of components mostly dictates the function/organization of tiers; but, conveniently electronics and microcontrol will occur in the bottom tier, higher level microcomputer control and networking will occur in the second layer, and sensing with the LiDAR will occur at the highest layer.
 		
@@ -443,6 +446,25 @@ DANNY. REVIEW THIS SECTION.	I looked at your tier 2 schematics, and they're actu
 			\label{tier_1_schems}
 		\end{figure*}
 
+        \pagebreak 
+        \subsubsection{Software Team}
+        The basic diagrams are shown below for the software team. These show us the major nodes of the ROS framework which consist of the Intel Realsense LIDAR L515, Web Server Node, Teleoperation Node, and the ros core from the Jetson Nano.
+        We also introduce a second diagram that shows the controller system that is connected in the fashion shown in the diagram.
+        \begin{figure*} [!h]
+			\centering
+			\includegraphics[scale=0.35]{Photos/LIDAR nodes}
+			\caption{Dominant nodes of the ROS framework}
+			\label{dominant_nodes}
+		\end{figure*}
+
+        \begin{figure*} [!h]
+			\centering
+			\includegraphics[scale=0.35]{Photos/controller node}
+			\caption{Controller system design diagram}
+			\label{control_nodes}
+		\end{figure*}
+
+    \pagebreak
 	\subsection{Tier 2 Schematics}
 		\subsubsection{Mechanical Team}
 		Provided thanks to retrospect, we can see a better visual of component placement in Fusion360. Here the same tiered `territories' exist within the rover design. Components included in the images in figures \ref{bottom_parts} and \ref{upper_parts} should give some idea of function.
@@ -500,32 +522,24 @@ DANNY. REVIEW THIS SECTION.	I looked at your tier 2 schematics, and they're actu
 			\caption{Rover sketch detailing connection of components}
 			\label{rover_schema}
 		\end{figure}
-		
+
+        \pagebreak
 		\subsubsection{Software Team}
-		Figure \ref{dominant_nodes} details the interaction between the Intel RealSense LIDAR L515 with the NVIDIA Xavier. The ROS node that is used as the publisher of the LIDAR image data to then be sent to a subscriber to the image data uses image\_ transport as the library to export the images from the LIDAR to the processing node in a low-bandwidth compressed format to reduce latency. The image processing node has computer vision models within the node to process the image using OpenCV, which is then sent to the Xavier as data that the Xavier will use for further motion logic or displaying the image to the user.
+		Figure \ref{ros_schema} details the interaction between the Intel RealSense LIDAR L515 with the NVIDIA Xavier. The ROS node that is used as the publisher of the LIDAR image data to then be sent to a subscriber to the image data uses image\_ transport as the library to export the images from the LIDAR to the processing node in a low-bandwidth compressed format to reduce latency. The image processing node has computer vision models within the node to process the image using OpenCV, which is then sent to the Xavier as data that the Xavier will use for further motion logic or displaying the image to the user.
 		
-		\begin{figure} [!h]
-			\centering
-			\includegraphics[scale=0.35]{Photos/LIDAR nodes}
-			\caption{Dominant nodes of the ROS framework}
-			\label{dominant_nodes}
-		\end{figure}
+		The \ref{ros_schema} details the interaction between controllers (Xbox, Playstation, etc type controllers) with the NVIDIA Xavier. There is the package that contains the motion logic that the previously mentioned LIDAR interacts with to send motion controls to the Xavier as well as a ROS node that takes controller inputs and processes them to be sent to the motion logic package. The data going from the controller to the ROS controller is analog data that Linux can already understand and there are pre-existing ROS libraries to use controllers. The controller node itself will send out motion commands to the motion logic package which will then send motion data to the Xavier. We also want to ensure that the controller node itself won't do any illegal inputs so we want to create a connection between the motion logic package and the controller node in case of inputs that were not friendly to the rovers motion.	
 
-		The \ref{control_nodes} details the interaction between controllers (Xbox, Playstation, etc type controllers) with the NVIDIA Xavier. There is the package that contains the motion logic that the previously mentioned LIDAR interacts with to send motion controls to the Xavier as well as a ROS node that takes controller inputs and processes them to be sent to the motion logic package. The data going from the controller to the ROS controller is analog data that Linux can already understand and there are pre-existing ROS libraries to use controllers. The controller node itself will send out motion commands to the motion logic package which will then send motion data to the Xavier. We also want to ensure that the controller node itself won't do any illegal inputs so we want to create a connection between the motion logic package and the controller node in case of inputs that were not friendly to the rovers motion.	
+        \begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.6]{Photos/Tier2ROS.png}
+			\caption{Entire ROS Setup in Detail}
+			\label{ros_schema}
+		\end{figure}
 		
-		\begin{figure} [!h]
-			\centering
-			\includegraphics[scale=0.35]{Photos/controller node}
-			\caption{Controller system design diagram}
-			\label{control_nodes}
-		\end{figure}
 
-\pagebreak
 
+    \pagebreak
 	\subsection{Tier 3 Schematics}
------------------------------
-DANNY. REVIEW THIS SECTION. Add tier three schematics please. Every single software node you made, the linker file you edited, the launch scripts you wrote, etc, should be in a Tier 3 schematic.	
------------------------------
 -----------------------------
 JACOB. REVIEW THIS SECTION.	Just check your grammar and verbiage.
 -----------------------------
@@ -561,8 +575,24 @@ JACOB. REVIEW THIS SECTION.	Just check your grammar and verbiage.
 		
 		\subsubsection{Software/Computer Team}
 	Starting with the LIDAR integration the main connection is between the publisher and subscriber node of the LIDAR image. The publisher node will be outputting a compressed formatted image to the subscriber through the image\_ transport API. Within the processing node (subscriber to the image data) we can use OpenCV to translate the image that is being collected from the publisher to be created into a model that the rover can use to identify what is being shown in the image. This can be done with a point-cloud model and computer vision techniques. After the image is processed, the image itself is sent to the Xavier to display to the user and the image data with motion commands is sent to the motion logic, where the motion logic will then determine whether the images motion data is relevant to motion objectives. The latter is a back and forth process between the subscriber processing node and the motion logic component. 
-The second part with Xavier for this capstone project is the controller node. The main connection will be between the controller node that takes in controller information and the motion logic. This will also be a back and forth process between the two since the motion logic may not want to perform the actions that the user is inputting into the controller. 
+The second part with Xavier for this capstone project is the controller node. The main connection will be between the controller node that takes in controller information and the motion logic. This will also be a back and forth process between the two since the motion logic may not want to perform the actions that the user is inputting into the controller. A launch script is also created to simplify launch operations for the rover. This allows us to run the rover without having to connect a screen, mouse, and keyboard to set up the rover with the correct environment.
+    \begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.5]{Photos/ROSCodeTier3.png}
+			\caption{Python Code For Creating ROS Pipelines and Generating Image Frames}
+			\label{tier3_code}
+	\end{figure}
+    \begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.5]{Photos/ROSLaunchCodeTier3.png}
+			\caption{Shell Script For Booting Rover Automatically}
+			\label{tier3_launch}
+	\end{figure}
+    
+ 
 
+
+    \clearpage
 	\subsection{Estimation of Cost of Goods}
 	The final estimation of cost falls around 1,500 dollars. Overtime, the cost changes due to the major design decisions have to be made by electrical and mechanical leads before a final order can be placed. An each orders are done on a weekly basis with each section having a total shown below. 
 	
@@ -902,10 +932,7 @@ In the image below, shows an early assembly of the rover with the PCB connected 
 			\end{itemize}			 		
  		
  		\subsubsection{Software Models}
------------------------------
-DANNY. REVIEW THIS SECTION.	It looks like it  was copy-pasted from some old version of the MegaDoc. It's not realistic nor a reflection of what we did. We didn't use a RBPi or Xavier. Ignore the broken image placement for now, btw, I'll fix it later.
------------------------------
- 		The software system of the rover will be centered around using the Robotic Operating System - ROS, which is an open source robotics middleware. The system is designed to live on the NVIDIA Xavier and Raspberry PI on the rover and consists of multiple sections of code that interact within the ROS environment. The software system is used to provide command and control for the rover. The Raspberry PI and NVIDIA Xavier pictures can be seen in Figure D1 and Figure D2 respectively. 
+ 		The software system of the rover will be centered around using the Robotic Operating System - ROS, which is an open source robotics middleware. The system is designed to live on the NVIDIA computer and a Microcontroller on the rover and consists of multiple sections of code that interact within the ROS environment. The software system is used to provide command and control for the rover. 
 
 		List of ROS packages (bound to change after testing and possible redesigns):
 			\begin{itemize}
@@ -951,9 +978,6 @@ DANNY. REVIEW THIS SECTION.	It looks like it  was copy-pasted from some old vers
  		
  		
 \section{Methodology}
------------------------------
-DANNY. REVIEW THIS SECTION.	Add a section for software. You've got to discuss software validation, tests that you did, methods that you used. You can talk about how you created launch scripts, or the  way you know the rover is working, etc.
------------------------------
 	\subsection{Mechanical}
 		\subsubsection*{Early Motor Selection}
 		The lack of documentation from previous year's teams, and the dearth of UWB mechanical design education makes designing a rover hard or almost impossible. I scraped through websites, forums, and catalogs of books to try and find the best I can on rover design and drive train design. 
@@ -1056,6 +1080,24 @@ Also use this area as opportunity to discuss (possibly) how you chose to wire th
 
 	The testing for the results in measuring the current/power performance of the rover are successful. We monitored the current levels going into the motor controllers running at 12V during a simple operational maneuver and the rover used around 1.5A when operating on flat ground. The next test involve operating the rover on dirt ground and driving over uneven terrain. Introducing dirt and uneven terrain would require the rover to draw more current since dirt and uneven terrain cause friction and resistant force for the rover to overcome. The results of the tests are successful with the rover operating over dirt in 1.6A to 1.7A and for uneven terrain, around 2.0A was used. The next major test involve moving the rover against the wall, to test the rover when it meets a maximum physical force. The overall current level reached to 3.3A which is more than twice the amount the rover used normally. These values help determine how long the rover perform under each of these environmental conditions. Additionally, there were no electrical hardware failures through each test, which we can conclude that the entire circuit is protected from voltage/current spikes or wire disconnects. And the current used in these conditions, are less than expected so we can safely assume the rover can handle harsher terrain and conditions.
 
+    \subsection{Software}
+    \subsubsection*{Learning ROS}
+    In this section we talk about the process that occurred for the software team to learn, understand, and eventually utilize ROS. This year there was no single member of the software team that had any experience utilizing ROS, nor robotics in general. This created a steep learning curve for the individuals of the software team, and a majority of time was spent working on learning ROS and how it interacts with components. After studying ROS books and guides on the internet, the team chose to utilize ROS Noetic on Linux 20.04. This flavor of ROS was chosen due to the completeness of ROS Noetic as it is considered a ROS 1 architecture. This means that a majority of the APIs that are considered for this project had already been created, and would not have to be created by the software team themselves. 
+
+    \subsubsection*{Implementation}
+    After deciding on a ROS flavor, the team started to work on creating software and completing tasks. Tasks such as having a way to control the rover, viewing the LIDAR output, and teleoperation for the motors themselves. The team started by creating a website that is hosted on the NVIDIA Jetson Nano that is hosted a ROS node. Initially the team was unsure if Flask was able to become a ROS node since Flask is a general web framework that is written in Python. Through reserach and testing the team found that ROS Noetic has built in APIs that can interact with Flask code and generate a ROS node as a website. This allowed us to then complete the prior goals in this project. We were able to control the rover through the webserver, since the webserver became interactable to ROS on the Nano itself. The LIDAR live view was another pain point in our process, but through research, testing, and validation we were able to achieve a LIDAR live view that is sent through the image transport ROS pipeline. Meaning that the LIDAR becomes a ROS node and is able to send data through the built in pipeline that ROS builds. 
+
+    A feature that was added for the LIDAR was having a switch that allowed both live and heat map view for the LIDAR camera output on the webserver. The heatmap is generated using OpenCV which is a Python package for computer vision. Through the OpenCV API we were able to manipulate and generate color maps for the LIDAR. We paired this with Intels provided Python RealSense API that can directly use our own Intel RealSense camera and all of its built in components within the device. We made use of the color and depth stream pipelines from the device to then utilize OpenCV to calculate and generate heatmaps. 
+    Lastly we implemented a distance calculation that was made through built in API functions that provide us with distance based off the heatmap. 
+    We tested the distance measurements and were able to accurately read distance measurements from up to 8.2 meters, which was different from the 9 meters that Intel advertises. This may be due to environmental conditions as well as the code setup itself. We tested that the depth calculations for distance is based off of the center of the LIDAR camera itself.
+
+    \subsubsection*{Rover Setup and Test}
+    When the rover was built, we placed the NVIDIA Jetson Nano into the rover and began testing that all the components that was previously mentioned is able to interact with a physical rover. Prior to the physical rover being built, bench top test were done with a Arduino micorcontroller, motor contollers, and one of the rover motors. This allowed us to test that we were able to control the motors through the Jetson Nano to the micorcontroller to the motor controllers, and finally to the motors themselves. This also created an opportunity for the electrical team to record current data that the motors pull from the power supplies. 
+
+    After the rover was built, we booted the system up with a non-headless display, meaning that we had to plug in a monitor, keyboard, and mouse to the Nano to set up the ROS environment. This became a hassle, therefore the software team chose to create a quick boot up launch script to automatically deploy the rover and set up the environment. Testing was done to ensure that the boot up time had not changed for the rover.
+    We found that the average boot up time prior to the launch script was 17.8 seconds. 
+    After implementing the launch script, we found the average boot up time to be 30.5 seconds. Which was expected as the launch script contains sleep contains that add approximately 15 seconds of run time to boot up, allowing all environmental components to start up completely prior to completing boot up.
+
 -----------------------------
 JACOB. Do the Bibliography; figure out how to use a citation creator. Remember, a Bibliography is a collection of every reference used. I'll add to it after you get as much done as possible. Try to think of resources/blogs/books you consulted. Attempt to find other resources in the drive or documents which we used.
 -----------------------------
@@ -1063,9 +1105,8 @@ JACOB. Do the Bibliography; figure out how to use a citation creator. Remember, 
 \section{Results and Discussion}
 -----------------------------
 JACOB. Add content discussing your results. Remember the discussion has to cover both puzzle panels and the rover.
------------------------------
-DANNY. Add your content for results and discussion too.
------------------------------
+    \subsection{Software}
+    The software team was able to conclude that all goals determined in the beginning of the project to be met by the software team were completed. Control, data view, and modularity goals for the rover to be operational had been all completed through this project by the software team. 
 
 \section{Summary, Conclusion, and Future Perspectives}
 Don't worry, I got this section. You can add something if you feel it must be added.
@@ -1106,11 +1147,7 @@ JACOB. Improve the formatting here, look below, I started it for you.
 -----------------------------
 JACOB. Add content discussing how to wire the rover, connect batteries, precautions, concerns, best practices, pinouts, etc. INCLUDE IMAGES.
 -----------------------------
-	\subsection{Software User Manual:}
------------------------------
-DANNY. Add content about basic bootup, login, connecting to the internet, how to setup controls, etc. INCLUDE IMAGES. Point and click adventure type stuff.
-Please also talk about the filesystem for our rover, and detail the nodes, what each node does, etc.
------------------------------
+    
 \textbf{Electrical User Manual:}
 
 \textbf{IMPORTANT:} make sure no power source or battery is connected to any electrical system you are handling. Disconnect the battery or power away from the system to prevent electrical failures or accidents which may cause fatal injury and major damage to hardware.  
@@ -1151,6 +1188,28 @@ Please also talk about the filesystem for our rover, and detail the nodes, what 
 6. From the figure above, this allows the code of the software that is built into the Arduino Mega to communicate with the Motor controllers.
 
 7. \textbf{IMPORTANT}: misplacing a digital wire connection can lead to severe consequences when giving a directional command to the rover. It can lead to hardware failure or operational accidents. So make sure the connection of each wire is correct and secure to prevent a disconnect when the rover operates.
+
+\subsection{Software User Manual:}
+    When booting up the Jetson Nano, you want to first connect to the internet. The webserver can not be hosted without an internet connection. The webserver is hosted on the 5000 port of the IP address of the Jetson Nano. 
+    
+    For example: if the IP address of our Jetson Nano may be 172.10.3.20 and the webserver when it is operation will have a URL of 172.10.3.20:5000.
+
+    Through this you are able to SSH into the Jetson Nano and preform basic Linux operations and editing.
+    
+    All the code can be seen in \url{https://github.com/HackRover/rover}
+    The majority of the code for the rover seen above. In the repository, there is rover/mimir/webserver/ which houses the python server, weblaunch shell script, and the HTML/CSS template for the website. This is a framework for future users to base off their projects on.
+    In the repository there is also rover/mimir/motorcontrol/src/ which houses the Arduino code for the motor controllers that can interact directly with the rover.
+    The file system of the Jetson Nano is similar to how the Mimir Rover GitHub is currently built. 
+    The nodes that are created are the cmd velocity, webserver, teleoperation output, serial to Arduino, and LIDAR view pipeline nodes.
+
+    The software team found that the most difficult part was setting up the entire environment for the Jetson Nano to have all the APIs necessary to be able to work. After the environment is set up, coding becomes simpler with the APIs provided. 
+
+	\begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.5]{Photos/WebserverTut.png}
+			\caption{WebServer Tutorial on GithHub}
+			\label{webserver}
+	\end{figure}
 
 
 \end{document}
