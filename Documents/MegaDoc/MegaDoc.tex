@@ -445,8 +445,7 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 			\caption{Tier 1 schematics of the puzzle panel and rover}
 			\label{tier_1_schems}
 		\end{figure*}
-
-        \pagebreak 
+ 
         \subsubsection{Software Team}
         The basic diagrams are shown below for the software team. These show us the major nodes of the ROS framework which consist of the Intel Realsense LIDAR L515, Web Server Node, Teleoperation Node, and the ros core from the Jetson Nano.
         We also introduce a second diagram that shows the controller system that is connected in the fashion shown in the diagram.
@@ -508,7 +507,7 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 	
 		\begin{figure} [!h]
 			\centering
-			\includegraphics[scale=0.8]{Photos/Puzzle panel simplified}
+			\includegraphics[scale=1.15]{Photos/Puzzle panel simplified}
 			\caption{Puzzle panel sketch detailing connection of components}
 			\label{puzzle_panel_schema}
 		\end{figure}
@@ -518,12 +517,11 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 		
 		\begin{figure} [!h]
 			\centering
-			\includegraphics[scale=0.8]{Photos/Rover schematic simplified}
+			\includegraphics[scale= 0.9]{Photos/Rover schematic simplified}
 			\caption{Rover sketch detailing connection of components}
 			\label{rover_schema}
 		\end{figure}
 
-        \pagebreak
 		\subsubsection{Software Team}
 		Figure \ref{ros_schema} details the interaction between the Intel RealSense LIDAR L515 with the NVIDIA Xavier. The ROS node that is used as the publisher of the LIDAR image data to then be sent to a subscriber to the image data uses image\_ transport as the library to export the images from the LIDAR to the processing node in a low-bandwidth compressed format to reduce latency. The image processing node has computer vision models within the node to process the image using OpenCV, which is then sent to the Xavier as data that the Xavier will use for further motion logic or displaying the image to the user.
 		
@@ -643,56 +641,50 @@ The second part with Xavier for this capstone project is the controller node. Th
  	To achieve software modularity we will be developing our architecture in ROS. Each component, interaction, data processing procedure, etc can be respresented as a modular `node' that can be added or removed from the final build and launch script.
  		
  		\subsubsection{EE Circuit Models}
- 		
  		The current Electrical Circuit Models are made to power at any voltage level, providing different modular of power that can power different hardware. Each system will both utilize the same LM2596 Buck Converters, but the Rover PDS will include multitude of components. With this in mind, the more components there are in an electrical system, the more risks of electrical hardware failure can occur. 
  		
  		\subsubsection*{Puzzle Panel PDS}
+		For the Puzzle Panel PDS and the following components that will be used in the Puzzle Panel are listed here. And also, the risks involve that may entail with solutions that can help mitigate those risks for both electrical systems. 
 
-	For the Puzzle Panel PDS and the following components that will be used in the Puzzle Panel are listed here. And also, the risks involve that may entail with solutions that can help mitigate those risks for both electrical systems. 
-
-\begin{figure} [h]
+		\begin{figure} [h]
 			\centering
-			\includegraphics[scale=0.375]{Photos/Puzzle Panel PDS backside}
+			\includegraphics[scale=0.75]{Photos/Puzzle Panel PDS backside}
 			\caption{Power Distribution System of Puzzle Panel Backside}
 		\end{figure}
 		
-\begin{figure} [h]
+		\begin{figure} [h]
 			\centering
-			\includegraphics[scale=0.375]{Photos/Puzzle Panel PDS front}
+			\includegraphics[scale=0.75]{Photos/Puzzle Panel PDS front}
 			\caption{Power Distribution System of Puzzle Panel Frontside}
+			\label{PDS_of_Puzzle}
 		\end{figure}
 
-\begin{itemize}
-\item
-	Shown above is the power distribution system of the Puzzle Panel that is designed to provide and distribute power at any voltage level. And provides the option to regulate/adjust the voltage level down to a preferred level. The capabilities this PDS provides can power multitude of different hardware that requires a variety levels of voltage. The PDS is powered by a 14.8V power cord and the entire PDS stepped down the voltage. Depending on each of the buck converter's resistances, one can output 12V, 5V, or 3.3V which are the most commonly used voltage values used in today's hardware.
-\end{itemize}
+		\begin{itemize}
+		\item
+		Shown in figure \ref{PDS_of_Puzzle} is the power distribution system of the Puzzle Panel that is designed to provide and distribute power at any voltage level. And provides the option to regulate/adjust the voltage level down to a preferred level. The capabilities this PDS provides can power multitude of different hardware that requires a variety levels of voltage. The PDS is powered by a 14.8V power cord and the entire PDS stepped down the voltage. Depending on each of the buck converter's resistances, one can output 12V, 5V, or 3.3V which are the most commonly used voltage values used in today's hardware.
 
-\begin{figure} [h]
+		\begin{figure} [h]
 			\centering
 			\includegraphics[scale=0.4]{Photos/LM2596 bucks}
 			\caption{LM2596 Buck Converters}
 		\end{figure}
 
-%\includegraphics[scale=0.5]{Photos/LM2596 bucks}
+		\item
+		The LM2596 buck converters are designed to step down or drop down the voltage that is needed by the electrical components to be able to functionally run. And it's adjusted by a potentiometer that controls the voltage level output.
+		\end{itemize}
 
-\begin{itemize}
-\item
-	The LM2596 buck converters are designed to step down or drop down the voltage that is needed by the electrical components to be able to functionally run. And it's adjusted by a potentiometer that controls the voltage level output.
-\end{itemize}
+		\underline{Risk identification}
 
-\underline{Risk identification}
+		\begin{itemize}
+		\item
+		The one major risk for the Puzzle Panel PDS is the probability of the buck modules overheating which will cause a fire hazard. This will cause permanent damage to the buck module itself and possibly cause damage to any of the hardware that is connected and powered directly from it. 
+		\end{itemize}
 
-\begin{itemize}
-\item
-	The one major risk for the Puzzle Panel PDS is the probability of the buck modules overheating which will cause a fire hazard. This will cause permanent damage to the buck module itself and possibly cause damage to any of the hardware that is connected and powered directly from it. 
-\end{itemize}
+		The testing of the circuit model will take place within the month of April. Testing will involve stable power/voltage output and monitoring the heat from the buck converters.
 
-The testing of the circuit model will take place within the month of April. Testing will involve stable power/voltage output and monitoring the heat from the buck converters.
-
-The best mitigation to prevent the overheating of the buck converters is to add heat sinks onto them. Heat sinks are usually made of aluminum alloy which has a high heat capacity and thermal conductivity. Which means, heat sinks will allow to dissipate a lot of heat into the metal of the heat sink itself. This would keep the buck converters and the entire electrical system safe from overheating.
+		The best mitigation to prevent the overheating of the buck converters is to add heat sinks onto them. Heat sinks are usually made of aluminum alloy which has a high heat capacity and thermal conductivity. Which means, heat sinks will allow to dissipate a lot of heat into the metal of the heat sink itself. This would keep the buck converters and the entire electrical system safe from overheating.
 
  		\subsubsection*{Rover PDS}
-
  		For the Rover PCB and the following components that will be used in the Rover are listed here. And also, the risks involve that may entail with solutions that can help mitigate those risks for both electrical systems. 
 
 		\begin{figure} [h]
@@ -701,181 +693,132 @@ The best mitigation to prevent the overheating of the buck converters is to add 
 			\caption{Power Distribution System of Rover}
 		\end{figure}
 
-\begin{itemize}
-\item
-	Shown above is the power distribution system PCB of the rover that is designed to distribute power to every electrical hardware from a single power source or battery. And as well as, provide the signal connections for the hardware as they are essential in controlling the functionality of every component. 
-\end{itemize}
+		\begin{itemize}
+		\item Shown above is the power distribution system PCB of the rover that is designed to distribute power to every electrical hardware from a single power source or battery. And as well as, provide the signal connections for the hardware as they are essential in controlling the functionality of every component. 
 
-\begin{figure} [h]
+		\begin{figure} [h]
 			\centering
-			\includegraphics[scale=0.3]{Photos/Arduino Mega}
+			\includegraphics[scale=0.5]{Photos/Arduino Mega}
 			\caption{Arduino Mega}
 		\end{figure}
 
-%\includegraphics[scale=0.5]{Photos/Arduino Mega}
+		\item Arduino Mega is a microcontroller that is designed to send command signals from an encoded software to the motor controllers that control the drivetrain to the motors.
 
-\begin{itemize}
-\item
-	Arduino Mega is a microcontroller that is designed to send command signals from an encoded software to the motor controllers that control the drivetrain to the motors.
-\end{itemize}
-
-
-\begin{figure} [!h]
+		\begin{figure} [!h]
 			\centering
-			\includegraphics[scale=0.25]{Photos/Jetson Nano}
+			\includegraphics[scale=0.35]{Photos/Jetson Nano}
 			\caption{Jetson Nano}
 		\end{figure}
 
-%\includegraphics[scale=0.5]{Photos/Jetson Nano}
+		\item The Jetson Nano is a small/micro computer that is designed to run multiple neural networks like image processing, object detection, etc. 
 
-\begin{itemize}
-\item
-	The Jetson Nano is a small/micro computer that is designed to run multiple neural networks like image processing, object detection, etc. 
-\end{itemize}
-
-
-\begin{figure} [!h]
+		\begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.25]{Photos/12V DC-DC buck converter}
 			\caption{12V DC-DC Buck Converters}
 		\end{figure}
 		
-%\includegraphics[scale=0.5]{Photos/12V DC-DC buck converter}
+		\item The 12V DC-DC buck converter is used to step down any voltage larger than 12V down to its assigned level of 12V.
 
-\begin{itemize}
-\item
-	The 12V DC-DC buck converter is used to step down any voltage larger than 12V down to its assigned level of 12V.
-\end{itemize}
-
-
-\begin{figure} [!h]
+		\begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.3]{Photos/LM2596 bucks}
 			\caption{LM2596 Buck Converters}
 		\end{figure}
 
-%\includegraphics[scale=0.5]{Photos/LM2596 bucks}
+		\item The LM2596 buck converters are designed to step down or drop down the voltage that is needed by the electrical components to be able to functionally run. And it's adjusted by a potentiometer that controls the voltage level output.
 
-\begin{itemize}
-\item
-	The LM2596 buck converters are designed to step down or drop down the voltage that is needed by the electrical components to be able to functionally run. And it's adjusted by a potentiometer that controls the voltage level output.
-\end{itemize}
-
-
-\begin{figure} [!h]
+		\begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.25]{Photos/BTS7960 Motor Driver}
 			\caption{BTS7960 Motor Controllers}
 		\end{figure}
 
+		\item The motor controller is used to receive signals from the Arduino Mega and delivers the resulting information to the actual motors of the drivetrain.
 
-%\includegraphics[scale=0.5]{Photos/BTS7960 Motor Driver}
-
-\begin{itemize}
-\item
-	The motor controller is used to receive signals from the Arduino Mega and delivers the resulting information to the actual motors of the drivetrain.
-\end{itemize}
-
-%\includegraphics[scale=0.5]{Photos/Gear motor 12V planetary}
-\begin{figure} [!h]
+		\begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.25]{Photos/Gear motor 12V planetary}
 			\caption{12V Planetary Gear Motors}
 		\end{figure}
 
-
-\begin{itemize}
-\item
-	The 12V planetary motors are used to drive the whole rover which are controlled by the BTS7960 motor controller through digital signals from the Arduino Mega.
-\end{itemize}
+		\item The 12V planetary motors are used to drive the whole rover which are controlled by the BTS7960 motor controller through digital signals from the Arduino Mega.
+		\end{itemize}
 
 
-\underline{Risk identification}
+		\underline{Risk identification}
 
-\begin{itemize}
-\item
-	One of the major risks or dangers for the electrical system is the probability of overheating which will cause a fire hazard. This will cause permanent damage to many of the components on the rover. The battery and the components that needed the most power are at risk of this danger, so sufficient protection for these parts will lower the risk of this danger.
+		\begin{itemize}
+		\item
+		One of the major risks or dangers for the electrical system is the probability of overheating which will cause a fire hazard. This will cause permanent damage to many of the components on the rover. The battery and the components that needed the most power are at risk of this danger, so sufficient protection for these parts will lower the risk of this danger.
 
-\item
-	The risk of the motors running too much or insufficient torque will cause different amounts of currents to be drawn from the battery. This current spike will cause damage to the electrical hardware that is directly connected to the battery and cause a fire hazard. The mechanical components will also face damage as a result.
-\end{itemize}
+		\item
+		The risk of the motors running too much or insufficient torque will cause different amounts of currents to be drawn from the battery. This current spike will cause damage to the electrical hardware that is directly connected to the battery and cause a fire hazard. The mechanical components will also face damage as a result.
+		\end{itemize}
 
-The electrical circuit or model will be tested with the mechanical models, and the approximate date of testing will take place from the end of April to May. Testing will involve making sure connections are stable and all electrical components are functioning correctly and correspondingly communicate with each other. 
+		The electrical circuit or model will be tested with the mechanical models, and the approximate date of testing will take place from the end of April to May. Testing will involve making sure connections are stable and all electrical components are functioning correctly and correspondingly communicate with each other. 
 		
-Future testing of electrical components and their functions:
-\begin{itemize}
-\item
-The connections between components
+		Future testing of electrical components and their functions:
+		\begin{itemize}
+		\item The connections between components
 
-\item
-PCB functionality
+		\item PCB functionality
 
-\item
-Jetson Nano connection
+		\item Jetson Nano connection
 
-\item
-Arduino Mega and Drivetrain connection
+		\item Arduino Mega and Drivetrain connection
 
-\item
-Battery and power/current performance
-\end{itemize}
+		\item Battery and power/current performance
+		\end{itemize}
 
-The main risk of the electrical circuit or model is that the electrical connection between any electrical components has failed. The risk mitigation can involve:
+		The main risk of the electrical circuit or model is that the electrical connection between any electrical components has failed. The risk mitigation can involve:
 
-\begin{itemize}
-\item
-Rewiring/replacing wires, checking every connection between every electrical component.
+		\begin{itemize}
+		\item Rewiring/replacing wires, checking every connection between every electrical component.
 
-\item
-Replacing old/faulty components with new ones can decrease the risk of circuit failure.
-\end{itemize}
+		\item Replacing old/faulty components with new ones can decrease the risk of circuit failure.
+		\end{itemize}
 
-Another risk of the electrical circuit is the uneven distribution of power to any electrical component through voltage/current spikes and voltage/current noise. The risk mitigation can involve:
+		Another risk of the electrical circuit is the uneven distribution of power to any electrical component through voltage/current spikes and voltage/current noise. The risk mitigation can involve:
 
-\begin{itemize}
-\item
-Adding new electrical components that are used to mitigate or decrease voltage/current spikes.
-
-	\begin{itemize}
-		\item
-		Snubber diodes, bypass capacitors, transistors, and any other component that can prevent undesirable effects. 
-	\end{itemize}
+		\begin{itemize}
+		\item Adding new electrical components that are used to mitigate or decrease voltage/current spikes.
+		
+		\item Snubber diodes, bypass capacitors, transistors, and any other component that can prevent undesirable effects. 
 	
-\item
-Adding fuses can be used as a fail-safe to prevent the failure of the entire electrical system.
-\end{itemize}
+		\item Adding fuses can be used as a fail-safe to prevent the failure of the entire electrical system.
+		\end{itemize}
 
 
-Another risk is any wire disconnecting during a test run which can cause an open circuit with the current not flowing in the intended direction and flowing towards volatile electrical components. The risk mitigation can involve:
+		Another risk is any wire disconnecting during a test run which can cause an open circuit with the current not flowing in the intended direction and flowing towards volatile electrical components. The risk mitigation can involve:
 
-\begin{itemize}
-\item
-Adding new electrical components that are used to block current.
+		\begin{itemize}
+		\item Adding new electrical components that are used to block current.
 
-	\begin{itemize}
-		\item
-		Blocking diodes and transistors can protect volatile components by preventing or blocking current from flowing backwards to a vulnerable component. 
-	\end{itemize}
-\end{itemize}
+		\item Blocking diodes and transistors can protect volatile components by preventing or blocking current from flowing backwards to a vulnerable component. 
+	
+		\end{itemize}
 
-Taking consideration of these risks, we are able to update the PCB design to include these essential components that mitigate the risks. Diodes are placed in the PCB to protect volatile hardware like the motor controllers from voltage spikes. And also, blocking diodes are used to block any current that is going to the opposite way. 
+		Taking consideration of these risks, we are able to update the PCB design to include these essential components that mitigate the risks. Diodes are placed in the PCB to protect volatile hardware like the motor controllers from voltage spikes. And also, blocking diodes are used to block any current that is going to the opposite way. 
 
-Protecting the hardware components that are mentioned and listed above, would ensure that the rover will be able to drive around in normal conditions without any electrical difficulty. 
+		Protecting the hardware components that are mentioned and listed above, would ensure that the rover will be able to drive around in normal conditions without any electrical difficulty. 
 
-The components and the wiring shown below in figure 35, includes the potential wiring that will take place when all of the components are included. This is the early stage of the assembly as we placed the PCB to fit into the housing that the mechanical team made. This would allow us to figure out how to wire the entire rover without making any final decisions from the beginning.
+		The components and the wiring shown in figure \ref{early_electrical_rover}, includes the potential wiring that will take place when all of the components are included. This is the early stage of the assembly as we placed the PCB to fit into the housing that the mechanical team made. This would allow us to figure out how to wire the entire rover without making any final decisions from the beginning.
  
  		\begin{figure} [!h]
 			\centering
 			\includegraphics[scale=1.25]{Photos/Rover PCB (Wired)}
 			\caption{Early Electrical System of Rover}
+			\label{early_electrical_rover}
 		\end{figure}
 
-In the image below of figure 36, shows a much later or up to date assembly of the rover with the PCB connected and all of the components wired as well. This includes adding the LiDAR camera which eventually will be inserted into the Stewart platform in the later stages of the assembly. But the test of the electrical system is essential to make sure everything both hardware and software work together.
+		Figure \ref{latest_electrical} shows a much later or up to date assembly of the rover with the PCB connected and all of the components wired as well. This includes adding the LiDAR camera which eventually will be inserted into the Stewart platform in the later stages of the assembly. But the test of the electrical system is essential to make sure everything both hardware and software work together.
 
-\begin{figure} [!h]
+		\begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.25]{Photos/Rover PCB (Assembled)}
 			\caption{Latest Electrical System of Rover}
+			\label{latest_electrical}
 		\end{figure}
  		
  		\subsubsection*{Stewart Platform}
@@ -1129,21 +1072,16 @@ In the image below of figure 36, shows a much later or up to date assembly of th
 
 	The testing for the results in measuring current performance and voltage leveling accuracy in the puzzle panel power distribution system was a success. Demonstrating the test, we utilized a stationed multimeter to measure and monitor the output voltage. In the demonstration, we tested one buck converter at a time, as it is time-saving than to test the whole system for current/voltage monitoring. Since, testing the whole system in a trial would require a ton of measuring equipment which we don't have in our disposal. In the picture below of figure \ref{buck_test}, shows a demonstration of output voltage monitoring.  
 
-%\includegraphics[scale=0.7]{Photos/LM2956 Testing Picture}
-
-\begin{figure} [!h]
+		\begin{figure} [!h]
 			\centering
-			\includegraphics[scale=0.7]{LM2956 Testing Picture}
+			\includegraphics[scale=0.7]{Photos/LM2956 Testing Picture}
 			\caption{Buck Converter Test}
 			\label{buck_test}
 		\end{figure}
 
 	To test this method, use the two pair of wire hooks from the power source and latch them onto the input side of the converter. The positive power connector should be clamped onto the input positive and for negative power to input negative. The same would be applied when using the two pair of wire hooks from the multimeter. Positive hook clamped to positive output, negative hook clamped to negative output. With this method, we tested every buck converter. There were many that are broken down most likely due to overuse from past capstone groups. And which we discarded in the waste box, but we desoldered some of the components which we can save for a different project. The ones we found to work, we used them for the final design of the Puzzle Panel power distribution system and for the rover PCB. In the table below, illustrates the results of one of the buck converters working well with a high input voltage and being able to step it down to any voltage lower than the input. And also, it is able to output the stepped down voltage which is essential in powering some of the hardware we have that requires low level voltage.
 
-%\includegraphics[scale=0.8]{Photos/Buck Converter Test Result}
-%\includegraphics[scale=1.0]{Photos/Buck Converter Data}
-
-\begin{figure} [!h]
+		\begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.9]{Photos/Buck Converter Data}
 			\caption{Results of our current/power tests}
@@ -1214,8 +1152,42 @@ In the image below of figure 36, shows a much later or up to date assembly of th
     The software team was able to conclude that all goals determined in the beginning of the project to be met by the software team were completed. Control, data view, and modularity goals for the rover to be operational had been all completed through this project by the software team. 
 
 \section{Summary, Conclusion, and Future Perspectives}
-Don't worry, I got this section. You can add something if you feel it must be added.
+In kind with ordering seen in the document so far, we'll summarize our achievements then provide future perspectives.
 
+	\begin{itemize}
+		\item \textbf{Organization and Competition:} A well-ordered, public GitHub containing all our documentation, software, etc for future capstone groups and future teams was created. We gained more attention within the school, increased our size, and diversified the intelligenece of our members.
+		
+		The competition was made more concrete with better understanding of its proceedings, requirements, and scoring. Work must be done towards the advertising, aesthetic, and flare of the competition, such as through promotional videos, posters, websites, etc.
+		
+		\item \textbf{Puzzle Panel:} The first iteration of the puzzle panel was created, 6 defining puzzle elements were prototyped, the panel itself was constructed, and the software libraries were developed. The PDS was developed, a first iteration made of solderable breadboards was constructed, and a second iteration of custom PCB was produced (but not implemented). 
+		
+		\item \textbf{Rover (Mechanical):} The first iteration of only one physical rover was created. A drive train with two 118RPM motors navigated a housing containing a PDS, Stewart platform (for camera control), microcontrollers for controlling the motors and Stewart platform, a Jetson Nano microcomputer for high level control, and a networking device for interfacing all components within the rover to each other and the microcomputer  with the outside world. Two iterations of the Stewart platform - the second mounting to the rover - were created. Effective documentation was created for everything.
+		
+		\item \textbf{Rover (Electrical):} The first iteration of the PDS was created, it interfaced the supply of power to all driven and logical components. The PDS interfaced motor controllers (which extended to the motors), any stray component that needed USB-based power, and the Arduino Mega which sent motor commands. The power distribution for the Stewart platform was designed and constructed of solderable breadboard. 
+		
+		\item \textbf{Rover (Software):} A software architecture in ROS was created, with basic function for the command GUI, LiDAR feedback, teleoperation, and network connectivity. 
+	\end{itemize}
+		
+HackRover and HARC is far from completion, and we must press on (ideally with increasing speed). The rover - too - needs major developments if we're ever going to prototype the event, or act as a authoratative source of information for robotic development. Below is a list of the most pressing future developments.
+
+	\begin{itemize}
+		\item \textbf{Organization and Competition:} The GitHub structure needs to transform into something of a `template' other teams would follow (required for competition participation). We must officially constitute the organization with clear leadership, expectations and methods for membership, and channels of communication.
+		
+		The competition needs proceedings, requirements, and scoring formalized with written documents and exact metrics. We also need to improve outreach, namely outside of this campus, so we can legitimately compete. The Hacking aspect of the competition needs to have well documented vulnerabilities, how to implement them, how to perform hacks, and how to defend. 
+		
+		\item \textbf{Puzzle Panel:} Future iterations must expand the mounting surface available, reduce the PDS and Arduino profile, and generate more puzzle elements. Each of these elements must come with associated software libraries. Work should also be put towards improving the aesthetics of the puzzles, ideally based on competition themes. Thought towards designing puzzles as icons for AI puzzle-solving techniques should be materialized. 
+		
+		\item \textbf{Rover (Mechanical):} Focusing first on the rover, either the weight needs to come down (to improve speed and efficiency) or more motors need to be added. The internal component mounting and wire routing needs to be improved for safety (avoid melting wires) and construction ease (cable access). A note, mostly the concern of electrical, is that the PDS needs to be reshapen to fit nicely into the chassis. Analysis and improvement of airflow should be conducted and improved in any way possible. The placement of the Stewart platform should be improved, as to lower it and make it more compact. Overall the fit of any components should be improved as best as possible.
+		
+		Additional rovers need to be constructed, as to prototype the competition. Thought  should be placed towards a electromechanical, human controlled gear train for taking advantage of torque-speed tranmission. Stair climbing and improved tank tread design is also a high priority.
+		
+		The Stewart platform will be a beast of its own. Research into best construction methods, and a plan for improved arrangement and manufacture needs to be developed. The linkages need to be better designed for support and weight; mounting of the servos must be improved.
+		
+		\item \textbf{Rover (Electrical):} The PDS needs to be redesigned to seat more compactly into the chassis, as to make room for other components. Interfacing with a Raspberry Pi for motor control is the most important advancement (currently the PDS interfaces with an Arduino Mega); it's extremely important this RBPi surface mounts to the  actual PDS. The Stewart platform can see a custom, low-profile PCB built, or an off the shelf one bought, whichever works.
+		
+		\item \textbf{Rover (Software):} The architecture in ROS needs to be constantly developed with the addition of function-enhancing nodes. The most important nodes are teleoperation, modularized for a variety of control schema; computer vision, for scanning objects and humans; and autonomy, driving based on a model from the input of multiple nodes. Networking with the use of the 3-in-1 Linksys device should be integrated, whether with ROS or without. The Arduino code controlling the Stewart platform must be improved, especially as to integrate it with the Jetson Nano and ROS.  
+	\end{itemize}
+	
 \section{Acknowledgements}
 
 	We would like to express our thanks to the Capstone Advisor and Sponsor, Professor Pierre Mourad for providing the guidance, support and flexibility in completing this project. And also, to members of the HackRover Club for providing their valuable participation and involvement in not only learning the knowledge to help further their educational career but completing the complex tasks of the project.
@@ -1228,58 +1200,55 @@ Don't worry, I got this section. You can add something if you feel it must be ad
 
 \section{Bibliography}
 	\begin{itemize}
-		\item Offers important general information on the concepts of buck converters and design in \href{https://www.electricaltechnology.org/2020/09/buck-converter.html}{here}
-
-		\textit{Technology, Electrical. “Buck Converter - Circuit, Design, Operation and Examples.” ELECTRICAL TECHNOLOGY, 29 Sept. 2022, www.electricaltechnology.org/2020/09/buck-converter.html.} 		
+		\item Technology, Electrical. \textit{“Buck Converter - Circuit, Design, Operation and Examples.”} ELECTRICAL TECHNOLOGY, 29 Sept. 2022, www.electricaltechnology.org/2020/09/buck-converter.html.		
 		
-		\item Practical design of BTS7960 controlled by Arduino in \href{https://electropeak.com/learn/interfacing-bts7960-43a-high-power-motor-driver-module-with-arduino/} {here}
+		\item Shojaei, Amir \& nbsp; M. \textit{“Interfacing BTS7960 43A Motor Driver Module with Arduino: [Step-by-Step].”} Interfacing BTS7960 43A High Power Motor Driver Module with Arduino, Electropeak, 24 May 2023, electropeak.com/learn/interfacing-bts7960-43a-high-power-motor-driver-module-with-arduino/. Accessed 09 June 2023.
 		
-		\textit{Shojaei, Amir \& nbsp; M. “Interfacing BTS7960 43A Motor Driver Module with Arduino: [Step-by-Step].” Interfacing BTS7960 43A High Power Motor Driver Module with Arduino, Electropeak, 24 May 2023, electropeak.com/learn/interfacing-bts7960-43a-high-power-motor-driver-module-with-arduino/. Accessed 09 June 2023.} 
+		\item Data sheet for our motors \href{https://www.servocity.com/content/downloads/118_rpm_hd_precision_planetary_gearmotor_-_specifications_1.pdf} {here}
 		
-		\item Details of Planetary Gear Motor in \href{https://www.servocity.com/content/downloads/118_rpm_hd_precision_planetary_gearmotor_-_specifications_1.pdf} {here}
+		\item Ayodele, Abiola. \textit{“How to Design a PCB Layout: A Comprehensive Guide.”} Wevolver, 22 May 2023, www.wevolver.com/article/how-to-design-a-pcb-layout-a-comprehensive-guide.
 		
-		%DC Planetary Gear Brush Motor, 638276, RobotZone.Online.Available: https://www.servocity.com/content/downloads/118_rpm_hd_precision_planetary_gearmotor_-_specifications.1pdf
-		
-		\item Offers conceptual and practical knowledge in PCB design \href{https://www.wevolver.com/article/how-to-design-a-pcb-layout-a-comprehensive-guide} {here}
+		\item Franco, Sergio. \textit{Design with Operational Amplifiers and Analog Integrated Circuits.} McGraw-Hill Higher Education, 2015.
 				
-		\textit{Ayodele, Abiola. “How to Design a PCB Layout: A Comprehensive Guide.” Wevolver, 22 May 2023, www.wevolver.com/article/how-to-design-a-pcb-layout-a-comprehensive-guide.}
+		\item Sedra, Adel S., et al. \textit{Microelectronic Circuits.} Oxford University Press, 2021. 		
 		
-		\item \textit{Design with Operational Amplifiers and Analog Integrated Circuits} by Sergio Franco
-		
-		\textit{Franco, Sergio. Design with Operational Amplifiers and Analog Integrated Circuits. McGraw-Hill Higher Education, 2015.} 
-				
-		
-		\item \textit{Microelectronic Circuits} by Adel S. Sedra and Kenneth C. Smith
-		
-		\textit{Sedra, Adel S., et al. Microelectronic Circuits. Oxford University Press, 2021.} 		
-		
-		\item \textit{Fundamentals of Digital Logic with Verilog Design} by Stephen Brown and Zvonko Vranesic
-		
-		\textit{Brown, Stephen D., and Zvonko G. Vranesic. Fundamentals of Digital Logic with Verilog Design. McGraw-Hill Higher Education, 2014.} 
+		\item Brown, Stephen D., and Zvonko G. Vranesic. \textit{Fundamentals of Digital Logic with Verilog Design.} McGraw-Hill Higher Education, 2014. 
 		
 		\item A great example which includes a lot of mention of kinematics is seen \href{https://ntrs.nasa.gov/api/citations/19910007810/downloads/19910007810.pdf}{here}
+		
 		\item What might be called a treatise on Stewart platforms is found \href{https://www.ri.cmu.edu/pub_files/pub4/fong_terrence_w_1990_1/fong_terrence_w_1990_1.pdf}{here}
+		
 		\item An instructables on making a ghetto Stewart platform with Servos \href{https://www.instructables.com/Stewart-Platform/}{here}
+		
 		\item All robotic devices need kinematics models to work; \href{https://www.xarg.org/paper/inverse-kinematics-of-a-stewart-platform/}{this article} provides a kinematic model for Stewart platforms powered by rotary means (ie servo)
+		
 		\item Another good design example found \href{https://iopscience.iop.org/article/10.1088/1757-899X/563/5/052059/pdf}{here}
+		
 		\item Though it uses linear actuators, has some good examples of tests that might be performed on Stewart platforms \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6513003/}{here}
+		
 		\item Another good \href{https://core.ac.uk/download/pdf/322824733.pdf}{design example}
+		
 		\item A good \href{https://www.instructables.com/Six-Axis-Platform-Using-Linear-Actuators-Stewart-P/}{instructables}; however, this one uses linear actuators
+		
 		\item A good \href{https://www.ohio.edu/mechanical-faculty/williams/html/PDF/IndRob02.pdf}{design example} with potentially useful testing procedures
+		
 		\item A \href{https://www.mdpi.com/2218-6581/7/2/30}{lovely design} that looks nice and has a nice circular platform
+		
 		\item No tutorial, just great \href{https://www.youtube.com/watch?v=kscvCQTtVvw&t=0s}{inspiration}
+		
 		\item \textit{Parallel Robots} by J.P. Merlet
+		
 		\item \textit{Introduction to Robotics: Analysis, Control, Applications} by Saeed Niku
 		\item \textit{Building Robot Drive Trains} by Dennis Clark
+		
 		\item \textit{Constructing Robot Bases} by Dennis Clark
+		
 		\item \textit{Making Things Move} by Dustyn Roberts		
+		
 		\item Infineon Technologies, ``High Current PN Half Bridge'', BTS7960 datasheet, Mar. 2004 [Revised Dec. 2004]
 	\end{itemize}	
 
 \section{User Manual}
-
-	\subsection{Mechanical User Manual:}
-	
 	\subsection{Electrical User Manual:}
 
 \textbf{IMPORTANT:} make sure no power source or battery is connected to any electrical system you are handling. Disconnect the battery or power away from the system to prevent electrical failures or accidents which may cause fatal injury and major damage to hardware.  
