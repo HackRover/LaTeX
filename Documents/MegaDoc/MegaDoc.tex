@@ -881,7 +881,7 @@ In the image below of figure 36, shows a much later or up to date assembly of th
  		\subsubsection*{Stewart Platform}
  		The Stewart platform houses and controls the motion of the LiDAR. Early designs of the electronics are presented below. The first iteration we created was simply proof of concept, and to prototype the control software. It used a GikFun solderable breadboard as the base for our power electronics and signal electronics, and all components. An early mockup of the electrical schematics can be seen in figure \ref{basic_electrical}. We do have plans to have the control board be professionally printed, or seek out a third party servo controller, if possible.
  		
- 		\begin{figure} [h]
+ 		\begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.2]{Photos/early_electrical}
 			\caption{Rudimentary electrical sketches}
@@ -890,7 +890,7 @@ In the image below of figure 36, shows a much later or up to date assembly of th
 
  		The Stewart platform was controlled by an Arduino Due. The Due is effectively a beefier version of the Arduino Mega: it has the same footprint but faster processing speed and bigger memory. The math model-based script we're using to forward angle inputs to Stewart platform actuation is extremely intricate and process intensive. A visual of the Due can be see in figure \ref{arduino_due}
  		
- 		\begin{figure} [h]
+ 		\begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.2]{Photos/arduino_due}
 			\caption{A top down of the Arduino Due}
@@ -1230,32 +1230,32 @@ Don't worry, I got this section. You can add something if you feel it must be ad
 	\begin{itemize}
 		\item Offers important general information on the concepts of buck converters and design in \href{https://www.electricaltechnology.org/2020/09/buck-converter.html}{here}
 
-		%Technology, Electrical. “Buck Converter - Circuit, Design, Operation and Examples.” ELECTRICAL TECHNOLOGY, 29 Sept. 2022, www.electricaltechnology.org/2020/09/buck-converter.html. 		
+		\textit{Technology, Electrical. “Buck Converter - Circuit, Design, Operation and Examples.” ELECTRICAL TECHNOLOGY, 29 Sept. 2022, www.electricaltechnology.org/2020/09/buck-converter.html.} 		
 		
 		\item Practical design of BTS7960 controlled by Arduino in \href{https://electropeak.com/learn/interfacing-bts7960-43a-high-power-motor-driver-module-with-arduino/} {here}
 		
-		%Shojaei, Amir&nbsp; M. “Interfacing BTS7960 43A Motor Driver Module with Arduino: [Step-by-Step].” Interfacing BTS7960 43A High Power Motor Driver Module with Arduino, Electropeak, 24 May 2023, electropeak.com/learn/interfacing-bts7960-43a-high-power-motor-driver-module-with-arduino/. Accessed 09 June 2023. 
+		\textit{Shojaei, Amir \& nbsp; M. “Interfacing BTS7960 43A Motor Driver Module with Arduino: [Step-by-Step].” Interfacing BTS7960 43A High Power Motor Driver Module with Arduino, Electropeak, 24 May 2023, electropeak.com/learn/interfacing-bts7960-43a-high-power-motor-driver-module-with-arduino/. Accessed 09 June 2023.} 
 		
 		\item Details of Planetary Gear Motor in \href{https://www.servocity.com/content/downloads/118_rpm_hd_precision_planetary_gearmotor_-_specifications_1.pdf} {here}
 		
-		%SPECIFICATIONS DC Planetary Gear Brush Motor, 638276, RobotZone. [Online]. Available: https://www.servocity.com/content/downloads/118_rpm_hd_precision_planetary_gearmotor_-_specifications_1.pdf	
+		%DC Planetary Gear Brush Motor, 638276, RobotZone.Online.Available: https://www.servocity.com/content/downloads/118_rpm_hd_precision_planetary_gearmotor_-_specifications.1pdf
 		
 		\item Offers conceptual and practical knowledge in PCB design \href{https://www.wevolver.com/article/how-to-design-a-pcb-layout-a-comprehensive-guide} {here}
 				
-		%Ayodele, Abiola. “How to Design a PCB Layout: A Comprehensive Guide.” Wevolver, 22 May 2023, www.wevolver.com/article/how-to-design-a-pcb-layout-a-comprehensive-guide. 
+		\textit{Ayodele, Abiola. “How to Design a PCB Layout: A Comprehensive Guide.” Wevolver, 22 May 2023, www.wevolver.com/article/how-to-design-a-pcb-layout-a-comprehensive-guide.}
 		
 		\item \textit{Design with Operational Amplifiers and Analog Integrated Circuits} by Sergio Franco
 		
-		%Franco, Sergio. Design with Operational Amplifiers and Analog Integrated Circuits. McGraw-Hill Higher Education, 2015. 
+		\textit{Franco, Sergio. Design with Operational Amplifiers and Analog Integrated Circuits. McGraw-Hill Higher Education, 2015.} 
 				
 		
 		\item \textit{Microelectronic Circuits} by Adel S. Sedra and Kenneth C. Smith
 		
-		%Sedra, Adel S., et al. Microelectronic Circuits. Oxford University Press, 2021. 		
+		\textit{Sedra, Adel S., et al. Microelectronic Circuits. Oxford University Press, 2021.} 		
 		
 		\item \textit{Fundamentals of Digital Logic with Verilog Design} by Stephen Brown and Zvonko Vranesic
 		
-		%Brown, Stephen D., and Zvonko G. Vranesic. Fundamentals of Digital Logic with Verilog Design. McGraw-Hill Higher Education, 2014. 
+		\textit{Brown, Stephen D., and Zvonko G. Vranesic. Fundamentals of Digital Logic with Verilog Design. McGraw-Hill Higher Education, 2014.} 
 		
 		\item A great example which includes a lot of mention of kinematics is seen \href{https://ntrs.nasa.gov/api/citations/19910007810/downloads/19910007810.pdf}{here}
 		\item What might be called a treatise on Stewart platforms is found \href{https://www.ri.cmu.edu/pub_files/pub4/fong_terrence_w_1990_1/fong_terrence_w_1990_1.pdf}{here}
