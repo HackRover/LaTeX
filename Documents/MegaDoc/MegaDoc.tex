@@ -39,7 +39,7 @@
 		\begin{changemargin}{10pt}{10pt} 
 		\begin{center}
 		\normalsize
-		Justin Heinzig, Danny Kha, Jacob Park
+		Justin Heinzig, Danny Kha, Jacob Park, Ryan Miller, Bahja Adan, Long Ly
 	
 		Advisor; Mentor; Sponsor: Pierre Mourad\\[150pt]
 		\end{center}
@@ -66,7 +66,7 @@
 	\subsection*{Executive Summary}
 	HackRover is a cyber-defense-based student research project aimed at making, breaking, and hacking mobile platforms, encompassing rovers, drones, and anything that moves. Our goal is to practice and develop skills to help defend our increasingly connected world of embedded systems, where the safety of people and communities is being placed in the hands of autonomous machines.
 	
-	Our plan is to pioneer a new type of hacking competition - named the HackRovoer Autonomous Robotics Competition (HARC) - where participants attempt to infiltrate self-driving rovers and collect round-winning information. There is no hackathon in the world that is centered around autonomous machines, yet according to a 2019 Global Autonomous Driving Industry Outlook report, 1 in 4 cars are expected to have autonomous capabilities by 2030. The competition we're creating isn't exclusive to UW Bothell, as tentatively schools around the globe can set up chapters. Succeeding in creating such an event would result in an excellent pedegogical tool. 
+	Our plan is to pioneer a new type of hacking competition - named the HackRovoer Autonomous Robotics Competition (HARC) - where participants attempt to infiltrate self-driving rovers and collect round-winning information. There is no hackathon in the world that is centered around autonomous machines, yet according to a 2019 Global Autonomous Driving Industry Outlook report, 1 in 4 cars are expected to have autonomous capabilities by 2030. The competition we're creating isn't exclusive to UW Bothell, as tentatively schools around the globe can set up chapters. Succeeding in creating such an event would result in an excellent pedagogical tool. 
 	
 	Each iteration of the competition the theme changes, which influences competing rovers' designs, puzzles and props within the competition, and game rules. This iteration's theme is disaster relief; participants are tasked with designing rovers which find themselves in disasters like collapsed buildings or tornado paths. They'll build rovers for a hypothetical company which would sell to local governments and emergency services in disaster prone-regions. Rovers would provide mostly scouting and minimal medical function, either/both seeking out victims (such as under rubble) or/and dispensing minimal medical aid. Obviously the competition is yet to exist officially, so we act as a lone team following the themes set for ourselves. 
 	
@@ -93,7 +93,7 @@
 	\subsection*{Project Requirement Documentation}
 	The disaster rover we're building must be debris resistant and capable of traversing non uniform terrain. Functionally it must be controllable over a wireless connection (network satellite or otherwise) with a standard XBox gaming controller or keyboard. It should send any and all sensor data back through the connection to a browser-based GUI; this quarter the data will at minimum include LiDAR camera images. Internally the rover needs: (1) a PDS to provide 12V and 5V through various means, (2) a central command microcomputer capable of making all necessary high level logical decisions, (3) microcontrollers capable of communicating control commands to the rover drive train and LiDAR's position control device, and (4) networking devices enabling the rover to be operated wirelessly. The PDS should provide clean energy to motors and logical devices simultaneously, as well as present additional 'ports' for future devices and add-ons. The central command microcomputer should be capable of interfacing with all control components, operating at a high level (with the GUI and user), and centralizing control. The microcontrollers should forward information to the control mechanisms (servos, motor controllers, etc) from the central microcomputer. The networking devices must provide switch functionality, to interconnect devices within the rover, routing functionnality, to interface the rover with outside networking, and wireless access.
 	
-	The puzzle panels for the competition should emphasize easy engineering: mechanical, electrical, and computer. Mechanically, devices should be easily and reliably mounted and interfaced on a flat board. Options for configuration should be provided for maximum puzzle design creativity. Electrically, all components should have access to clean power through a simple panel PDS without significantly effecting the power recieved by other components. Signals must be sent into and out from an Arduino central microcontroller with ease. Computer-wise, components should have code libraries created for easily prototyping and producing a myriad of puzzle arrangements. Students unfamiliar with programming should be able to learn and create with short lead time, and not have to worry about seeking out libraries or software components for themselves. 
+	The puzzle panels for the competition should emphasize easy engineering: mechanical, electrical, and computer. Mechanically, devices should be easily and reliably mounted and interfaced on a flat board. Options for configuration should be provided for maximum puzzle design creativity. Electrically, all components should have access to clean power through a simple panel PDS without significantly effecting the power received by other components. Signals must be sent into and out from an Arduino central microcontroller with ease. Computer-wise, components should have code libraries created for easily prototyping and producing a myriad of puzzle arrangements. Students unfamiliar with programming should be able to learn and create with short lead time, and not have to worry about seeking out libraries or software components for themselves. 
 	
 \pagebreak
 
@@ -102,7 +102,7 @@
 		\subsubsection{Consumer Journey Map}
 		The unique nature of our project makes consumer analysis difficult, as product consumption occurs at multiple levels: faculty, students, companies, disaster responders, etc. Here we'll speak lightly of most and provide consumer journey maps for students and disaster responders: the key subjects of our capstone project.
 		
-		When structuring education, university faculty seek useful pedegogical tools; such tools will provide  interdisciplinary education, equip students with life skills, and possibly generate research/products that enrich the name and wealth of the school. Students, specifically engineering ones, look to develop their skills while in school through participation in clubs, projects, and research. They're often pulled in many directions as their educational appetite is wide but options are slim/focused.
+		When structuring education, university faculty seek useful pedagogical tools; such tools will provide  interdisciplinary education, equip students with life skills, and possibly generate research/products that enrich the name and wealth of the school. Students, specifically engineering ones, look to develop their skills while in school through participation in clubs, projects, and research. They're often pulled in many directions as their educational appetite is wide but options are slim/focused.
 		
 		\begin{figure} [!h]
 			\centering
@@ -138,7 +138,7 @@
 			\textbf{Stakeholder:} \emph{Disaster Relief Operators:} Like the government organizers above, these individuals need to manage a swath of resources; albeit smaller, with more attention. Tools that can sub in for more expensive resources, have shorter uptimes, improve information gathering, accomplish rescue, and maximize human life (operator or victim) are beneficial.
 			
 			\item
-			\textbf{Stakeholder:} \emph{UW Bothell Students:} UW Students are the primary beneficiaries of our product. Prior we made clear the intent to create a product that serves UW Bothell students first and foremost, and whose reprocussive effects are benefits to disaster response. Providing students with extracurricular engineering activities that are easy to get into while simultaneously serving broad interests will nix the problem of narrow-focus clubs with steep learning curves. 
+			\textbf{Stakeholder:} \emph{UW Bothell Students:} UW Students are the primary beneficiaries of our product. Prior we made clear the intent to create a product that serves UW Bothell students first and foremost, and whose repercussive effects are benefits to disaster response. Providing students with extracurricular engineering activities that are easy to get into while simultaneously serving broad interests will nix the problem of narrow-focus clubs with steep learning curves. 
 			
 			\item
 			\textbf{Stakeholder:} \emph{UW Capstone Core Team:} Our organization already exists, but the product we create will have bearing on our success. The ability to serve a  need within the school has direct correlates to further funding and participation.
@@ -165,14 +165,14 @@
 			\emph{UW Faculty seeking new educational resource} A UW faculty member desiring to contribute to the education of their students while generating value within the school.
 			
 			\item
-			\emph{Disaster responder} A diasaster responder on the ground attempting to respond to an earthquake that resulted in the collapse of multiple buildings with people inside.
+			\emph{Disaster responder} A disaster responder on the ground attempting to respond to an earthquake that resulted in the collapse of multiple buildings with people inside.
 		\end{itemize}
 		
 		
 		\subsubsection*{Scenarios:}
 		\begin{itemize}
 			\item
-			A students looks at a roster of available clubs and organizations to participate in with the aim of furthering their engineering ability in multiple fields and equipping them with industry-standard skills. They're met with a limited selection containing clubs that exist but don't operate well, and others which are popular; all of these clubs have a niche focus that forces the student to sacrifice some of their interests if they invest their time. The student picks a popular club and is met with a great amount of competition and steep learning curve. Everyone wants to contribute and do something cool, but resources are limited, so competition ensues. To stand out the student  must struggle to learn a massive amount of content; by the end their skills may no longer  be useful. Trying to latch onto existing projects within the club is difficult because documentation is sparse and the student can't understand decisions that were made. These circumstances aren't different for others so the project sits in gridlock: afraid to move forward in case precious resources are destroyed during the process of improvement, and a lack of confidence in how to move forward, since decisions require immennse background knowledge (which isn't well documented). The student spends most of their time jumping hurdles just to do minimal meaningful engineering, get discouraged, and use the club as a resume filler.
+			A students looks at a roster of available clubs and organizations to participate in with the aim of furthering their engineering ability in multiple fields and equipping them with industry-standard skills. They're met with a limited selection containing clubs that exist but don't operate well, and others which are popular; all of these clubs have a niche focus that forces the student to sacrifice some of their interests if they invest their time. The student picks a popular club and is met with a great amount of competition and steep learning curve. Everyone wants to contribute and do something cool, but resources are limited, so competition ensues. To stand out the student  must struggle to learn a massive amount of content; by the end their skills may no longer  be useful. Trying to latch onto existing projects within the club is difficult because documentation is sparse and the student can't understand decisions that were made. These circumstances aren't different for others so the project sits in gridlock: afraid to move forward in case precious resources are destroyed during the process of improvement, and a lack of confidence in how to move forward, since decisions require immense background knowledge (which isn't well documented). The student spends most of their time jumping hurdles just to do minimal meaningful engineering, get discouraged, and use the club as a resume filler.
 
 			\item
 			A faculty member has to balance their desire to improve their students lives with forwarding their own career. They could create a product which is a horrible pedagogical tool and hyper-focuses the education of their student, but which benefits their own reputation and school image. Alternatively they create product which is great for educating students, but doesn't draw any attention or produce meaningful results/research. 
@@ -185,7 +185,7 @@
 		The environment of focus is the disaster responder since it's scenario which motivates most development decisions within the project. The student is important but accessory to the disaster responder. We've repeatedly emphasized above the time and resource intensive environment responders participate in, increased consideration to human life, and limited information. Furthermore, disaster responders are beholden to government organizers who provide resources for disaster response. Despite being the users of our product, the responders must be able to convince higher ups the acquisition is sensible and cost-effective.
 
 		\subsubsection{User Insight Report}
-		\textbf{UW students} need a product that address their lack of interdisciplinary, extracurricullar activities. acitivities provided by the product must be friendly to students of any educational background and not require them to climb a steep learning curve; documentation of past activities should be plenty yet easy to read. Clerical work should be minimized, while real engineering work is maximized. Any participation should result in industry skills being learned.
+		\textbf{UW students} need a product that address their lack of interdisciplinary, extracurricular activities. Activities provided by the product must be friendly to students of any educational background and not require them to climb a steep learning curve; documentation of past activities should be plenty yet easy to read. Clerical work should be minimized, while real engineering work is maximized. Any participation should result in industry skills being learned.
 		
 		\textbf{UW faculty} members need a product that is both pedagogically developed and useful for producing reputable work and/or research. 		
 		
@@ -238,9 +238,9 @@
 		This is a tricky two-part needs statement: (1) the rover portion of the product for the disaster responders, and (2) the product satisfying the needs of the students. The aim was to direct student efforts and learning to the construction of the physical product; this directed effort is accomplished through the pedagogical tool which is the competition. 
 
 		\subsubsection{Hypothesis Statement}
-		For the disaster responders, the product is obviously going to be a rover. For simplicity of prototyping we're going to design a earthquake disaster response rover. We believe a system which is dust and rubble resistant, capable of semi-autonomous action, collecting and relaying data, cheap to manufacture, and easy/quick to setup will help in information collection and decision making for disaster response teams, and potentially serve functions traditionally held by human responders, preserving human life. 
+		For the disaster responders, the product is going to be a rover. For simplicity of prototyping we're going to design an earthquake disaster response rover. We believe a system which is dust and rubble resistant, capable of semi-autonomous action, can collect and relay data, is cheap to manufacture, and easy to setup will help in collecting information and making decisions for disaster response teams. It may also potentially serve functions traditionally held by human responders which may preserve human life.
 		
-		This physical product will be prototyped within some educational setting which acts as the abstract, student-serving component of the product. We're the educational setting is going to be a competition, but the specifics of the guidelines are unclear as of now. The competition would be managed by our organization, which is both a club and capstone. 
+        This physical product will be prototyped within some educational setting which acts as the abstract, student-serving component of the product. The educational setting is going to be a competition, but the specifics of the guidelines are unclear as of now. The competition would be managed by our organization, which is both a club and capstone. 
 
 		\subsubsection{Possible Inventions and Business Model}
 		\subsubsection*{Possible Inventions:}
@@ -248,7 +248,7 @@
 		
 		The first obvious 'invention' of this capstone is a disaster relief-oriented competition, which we call the HackRover Autonomous Robotics Competition (HARC). Traditionally it existed to provide an outlet for interdisciplinary engineering practice and an exploration of IoT; but, as the competition itself has no context there is a point for improvement. This new iteration emphasizes the creation of puzzle panels with elements and a point system that inspires the design of autonomous systems with capable actuation, computer vision and vision processing, capable locomotion, short up-time, easy configuration, and quick access.
 	
-		There are some hacking competitions, and even disaster robotics competitions, (such as the one hosted by DARPA); but, all of these are largely philanthropic endeavors. Certainly we have the UW system as our foundation, and will likely recieve meaningful funding from them, but this only offsets the cost of physical hardware they deem absolutely necessary. To make this organization really stand out and be financially viable we theroized a few `inventions': (1) a payment scheme for participants, (2) providing design favors to local companies in exchange for funding, and (3) providing student research favors to local companies in exchange for funding. The first is obvious, participants in the competition will pay a fee, but this will likely only offset food, advertising, and more. The second and third see UW students dedicating physical design efforts, or research efforts proportional to the money gifted by a local company. For example, say that Boeing wants a unique end effector which performs a task they might see in their factory, and donates \$4,000, while Lowes wants a software architecture reflective of potential AGVs in their warehouse and donates \$6,000; HackRover may or may not form capstone inspired by these requests, but would dedicate 40\% of their extra manpower to Boeing's desires, and 60\% extra to Lowes.
+		There are some hacking competitions, and even disaster robotics competitions, (such as the one hosted by DARPA); but, all of these are largely philanthropic endeavors. Certainly we have the UW system as our foundation, and will likely receive meaningful funding from them, but this only offsets the cost of physical hardware they deem absolutely necessary. To make this organization really stand out and be financially viable we theorized a few `inventions': (1) a payment scheme for participants, (2) providing design favors to local companies in exchange for funding, and (3) providing student research favors to local companies in exchange for funding. The first is obvious, participants in the competition will pay a fee, but this will likely only offset food, advertising, and more. The second and third see UW students dedicating physical design efforts, or research efforts proportional to the money gifted by a local company. For example, say that Boeing wants a unique end effector which performs a task they might see in their factory, and donates \$4,000, while Lowes wants a software architecture reflective of potential AGVs in their warehouse and donates \$6,000; HackRover may or may not form capstone inspired by these requests, but would dedicate 40\% of their extra manpower to Boeing's desires, and 60\% extra to Lowes.
 	
 	 	\begin{figure} [!h]
 			\centering
@@ -261,7 +261,7 @@
 
 		The third invention is a physical disaster relief rover. Founded on the modular rover software framework (discussed as invention two), the design of the relief rover would only concern a small group of electrical and mechanical engineers configuring various pieces of third-party hardware into a physical rover capable of speedy, robust locomotion, payload delivery, actuation, and sensing. All control (arm and locomotion), sensor data processing, and additional actuative capabilities are the subject of the well-designed software framework mentioned.
 
-		Considering the exacts of our `rover' - (a term I use here liberally) - we must consider the context and needs surveyed in previous sections. We're designing some product for earthquake, building collapse, and warzone environments; the product must have a short uptime, be easy to control, and relay important information; finally, it must be affordable for local governments. Surveying existing products on the market, we see massive, clunky, humanoid robots that are trying to solve every problem - analogized to a universe key. In our opinion these endeavours are foolhardy, not just for us but the people doing them; more, the costs are exorbitant. We're going to control our appetite and try for something that fits a niche. Here a simple rover, which we'll define simply as `A vehicle that navigates rough terrain' is going to be our best bet. We were inspired early on by biologically inspired designs like worms or spiders; but, scrapped the inspiration after reflecting on the manufacturing difficulties and costs associated with the rubber plastics used, as well as the control programming complexity. We then thought a drone would be a great idea: relaying LiDAR data from a birds-eye-view; but the LiDAR weight alone would drive the size (and thus costs) way up. The obvious conclusion was a ground-based rover, with tank treads that might traverse uncertain and difficult terrain. If we design out of inexpensive thermoplastics - in price ranging from PLA to Nylon fiber - and stock aluminum components, we could easily sell to local governments.
+		Considering the exacts of our `rover' - (a term I use here liberally) - we must consider the context and needs surveyed in previous sections. We're designing some product for earthquake, building collapse, and warzone environments; the product must have a short uptime, be easy to control, and relay important information; finally, it must be affordable for local governments. Surveying existing products on the market, we see massive, clunky, humanoid robots that are trying to solve every problem - analogized to a universe key. In our opinion these endeavors are foolhardy, not just for us but the people doing them; more, the costs are exorbitant. We're going to control our appetite and try for something that fits a niche. Here a simple rover, which we'll define simply as `A vehicle that navigates rough terrain' is going to be our best bet. We were inspired early on by biologically inspired designs like worms or spiders; but, scrapped the inspiration after reflecting on the manufacturing difficulties and costs associated with the rubber plastics used, as well as the control programming complexity. We then thought a drone would be a great idea: relaying LiDAR data from a birds-eye-view; but the LiDAR weight alone would drive the size (and thus costs) way up. The obvious conclusion was a ground-based rover, with tank treads that might traverse uncertain and difficult terrain. If we design out of inexpensive thermoplastics - in price ranging from PLA to Nylon fiber - and stock aluminum components, we could easily sell to local governments.
 		
 		\begin{figure} [!h]
 			\centering
@@ -273,7 +273,7 @@
 		\subsubsection*{Our Solution and Invention}
 		\textit{An intuitively controlled disaster relief rover which considers the time \& resource constraints of disaster responders - with its short up time and inexpensive construction - while providing life-saving information from its sensor stack and various feedback mechanisms. The rover will be developed within an undergraduate robotics competition, where competition props (electromechanical) and guidelines will serve as pedagogical tools, and all student activities are documented in \LaTeX\ and akin to IEEE standards.}		
 		
-		Choosing to develop the rover within a competition setting both satisfies the needs of a pedagogical tool for UW Bothell students and produces the desired rover. The competition, we're calling the HackRover Autonomous Robotics Competition (HARC) will be held at Bothell, managed by the HackRover club and capstone project. The annual nature of the comeptition will serve as a force for iteration, making the design better year over year. The addition of hacking serves to penetration test rovers so they can't be taken advantage of while performing life-saving tasks. In a good-faith effort to bring the competition to life we will also be making puzzle-panels, which are competition props that the robotic systems interact with. These puzzle-panels are themselves pedagogical tools designed to teach students the basics of mechatronics design. Puzzle elements are laid out on about four floors, accessible by stairs/elevators. Students operate rovers, attempting to solve puzzles and gain points while navigating the building effectively and hacking/slowing other competitors' rovers. Points are awarded based on solutions to puzzles, specifically designed to encourage rover designs that would be capable in disaster relief contexts.
+		Choosing to develop the rover within a competition setting both satisfies the needs of a pedagogical tool for UW Bothell students and produces the desired rover. The competition, we're calling the HackRover Autonomous Robotics Competition (HARC) will be held at Bothell, managed by the HackRover club and capstone project. The annual nature of the competition will serve as a force for iteration, making the design better year over year. The addition of hacking serves to penetration test rovers so they can't be taken advantage of while performing life-saving tasks. In a good-faith effort to bring the competition to life we will also be making puzzle-panels, which are competition props that the robotic systems interact with. These puzzle-panels are themselves pedagogical tools designed to teach students the basics of mechatronics design. Puzzle elements are laid out on about four floors, accessible by stairs/elevators. Students operate rovers, attempting to solve puzzles and gain points while navigating the building effectively and hacking/slowing other competitors' rovers. Points are awarded based on solutions to puzzles, specifically designed to encourage rover designs that would be capable in disaster relief contexts.
 
 		Despite shortcomings early designs, the rover will serve as disaster relief in limited contexts and will provide an enriching educational engineering experience for UWB students now and for the future. The practice of documenting in \LaTeX\ will not only provide students with industry-standard skills, and aid at generating a wealth of information which might be used by other developers; but, it will also speak to the high standards of practice, and aide in on-boarding students with ease, lowering the learning curve. This good documentation practice and logging of information may come in handy in the future if we act on the business plans discussed above.
 	
@@ -392,11 +392,12 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 \pagebreak
 	
 \section{Requirement Documentation}
-	\subsection{Decisions and Rationale}
+    \subsection{Tiered Schematics}
+	\subsubsection{Design Decisions and Rationale}
 	The final plans for the build phase will - at a minimum - include the creation of one first iteration puzzle panel, and one first iteration disaster rover (Mimir). Experiencing success with these sooner than later will prompt us to improve upon the base design with further iterations (which introduce more electronics, better mechanical housing, cleaner code), as well as create more puzzle panels and competition rovers.
 	
 		\subsubsection*{Puzzle Panels}
-		The goal of the club, competition, and these puzzle panels was to serve as a pedagogical tool for interdisciplinary engineering for UW students. To that end we researched game design and player learning. The most wealthy source was Portal and Portal 2, which - like our puzzle panels - see modular puzzles composed of smaller puzzle elements. Within the game you can enter a `developer' mode, causing small interactive speech bubbles to appear throughout the map; selecting these bubbles plays back the developer's log. The most important log discussed the importants of iconic puzzle elements with increasing complexity of interaction, starting from the most foundational operations. For example, the player's first puzzle is to place a large box onto a bright red button that opens a door; the next puzzle sees two boxes and two buttons. Obviously progression doesn't need to be that dull, but the concept stands.
+		The goal of the club, competition, and these puzzle panels was to serve as a pedagogical tool for interdisciplinary engineering for UW students. To that end we researched game design and player learning. The most wealthy source was Portal and Portal 2, which - like our puzzle panels - see modular puzzles composed of smaller puzzle elements. Within the game you can enter a `developer' mode, causing small interactive speech bubbles to appear throughout the map; selecting these bubbles plays back the developer's log. The most important log discussed the importance of iconic puzzle elements with increasing complexity of interaction, starting from the most foundational operations. For example, the player's first puzzle is to place a large box onto a bright red button that opens a door; the next puzzle sees two boxes and two buttons. Obviously progression doesn't need to be that dull, but the concept stands.
 		
 		\begin{figure} [!h]
 			\centering
@@ -414,8 +415,8 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 		
 		The rover also sees the addition of a novel, camera control method the form of a Stewart platform. Traditionally the Stewart platform has been a parallel robot with 6 linear actuators. The significance is that this device can move in 6 DOF, and reverse kinematics can be used to calculate actuator position - simply plug in desired position and a math model determines actuator output. Recently roboticists have been popularizing a Stewart platform that uses rotational servos - as opposed to linear actuators - and the designs/models are promising, especially for their cost effectiveness. We plan on a Stewart platform controlling the LiDAR camera.
 
-	\subsection{Tier 1 Schematics}
-		\subsubsection{Mechanical Team}
+	\subsubsection{Tier 1 Schematics}
+		\subsubsection*{Mechanical Team}
 		An early mapping of the rover seen in figure \ref{layered_sketch} reflects what we actually intend to build. As you can see, the chassis is divided into drive base and housing, where housing is further subdivided into tiers. The size of components mostly dictates the function/organization of tiers; but, conveniently electronics and microcontrol will occur in the bottom tier, higher level microcomputer control and networking will occur in the second layer, and sensing with the LiDAR will occur at the highest layer.
 		
 		\begin{figure} [!h]
@@ -425,10 +426,10 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 			\label{layered_sketch}
 		\end{figure}
 		
-		\subsubsection{Electrical Team}
-		The puzzle panel will be powered by a power source (wall wart) that will connect to a power distribution system (PDS) which will power the actual puzzle panel game. The PDS itself will be able to power each and every hardware with enough power.
+		\subsubsection*{Electrical Team}
+		The puzzle panel will be powered by a wall outlet that will connect to a power distribution system (PDS) which will power the actual puzzle panel game. The PDS itself will be able to power each and every component.
 
-		The rover will need a power source that can provide enough reliable and disturbance-free power to all hardware. A power distribution system will be needed to safely distribute enough power to each hardware and also, size of the PDS will be dependent on what the final size of the mechanical system will provide for the PDS to fit in.  
+		The rover will need a power source that can provide enough reliable and steady power to all hardware. A power distribution system will be needed to safely distribute enough power to all hardware and also, the size of the PDS will be dependent on what the final size of the mechanical system will provide for the PDS to fit in.  
 		
 		\begin{figure*}[h]
 			\centering
@@ -446,26 +447,34 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 			\label{tier_1_schems}
 		\end{figure*}
  
-        \subsubsection{Software Team}
-        The basic diagrams are shown below for the software team. These show us the major nodes of the ROS framework which consist of the Intel Realsense LIDAR L515, Web Server Node, Teleoperation Node, and the ros core from the Jetson Nano.
+        \subsubsection*{Software Team}
+        The basic diagrams are shown below for the software team. These show us the major nodes of the ROS framework which consist of the Intel Realsense LIDAR L515, SLAM package, Web Server Node, Teleoperation Node, and the ros core from the Jetson Nano. Web Server and Teleoperation are currently nodes, but they may be sorted into independent packages for modularity.
         We also introduce a second diagram that shows the controller system that is connected in the fashion shown in the diagram.
-        \begin{figure*} [!h]
+        For the third diagram \ref{SLAM_nodes}, the package displays distinct components that are necessary for the function of capturing its environment and mapping the environment that the rover can utilize and human eyes can recognize. The point cloud library is responsible for rendering physical obstacles onto the Rviz visualizer as a immense collection of colored points. Working in tandem, the Ceres-solver library is responsible for non-linear optimization, which assists Octomap library in "stitching" the series of created points and rendering them correctly in 3D space. More obviously, the camera captures the depth of the environment at a set rate, and the Jetson Nano computes and visualizes the result using all the listed SLAM packages.
+        \begin{figure} [h]
 			\centering
-			\includegraphics[scale=0.35]{Photos/LIDAR nodes}
+			\includegraphics[scale=0.35]{Photos/Dominant Nodes in ROS}
 			\caption{Dominant nodes of the ROS framework}
 			\label{dominant_nodes}
-		\end{figure*}
+		\end{figure}
 
-        \begin{figure*} [!h]
+        \begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.35]{Photos/controller node}
 			\caption{Controller system design diagram}
 			\label{control_nodes}
-		\end{figure*}
+		\end{figure}
+		
+		\begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.35]{Photos/SLAM Package Design Diagram}
+			\caption{SLAM package design diagram}
+			\label{SLAM_nodes}
+		\end{figure}
 
-    \pagebreak
-	\subsection{Tier 2 Schematics}
-		\subsubsection{Mechanical Team}
+\pagebreak
+	\subsubsection{Tier 2 Schematics}
+		\subsubsection*{Mechanical Team}
 		Provided thanks to retrospect, we can see a better visual of component placement in Fusion360. Here the same tiered `territories' exist within the rover design. Components included in the images in figures \ref{bottom_parts} and \ref{upper_parts} should give some idea of function.
 		
 		\begin{figure*}[h]
@@ -502,7 +511,7 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 
 \pagebreak
 
-		\subsubsection{Electrical Team}
+		\subsubsection*{Electrical Team}
 		The puzzle panel schematic that is shown details the connection of power for the puzzle panels. The connection starts from the power source which is a wall wart that we will use to power the puzzle panel. The wall wart would output its maximum voltage to the power distribution system (PDS) which then will be distributed to every electrical component. The PDS is constructed to be able to provide different ranges of voltage to meet the power requirements for any electronic component. The puzzle panel itself will be operated by Arduino or PCBs which control the function of the puzzle panel through its connection to the electrical components. Each puzzle panel differs by its own use of electrical components and by the function of its Arduino. 
 	
 		\begin{figure} [!h]
@@ -513,7 +522,7 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 		\end{figure}
 		
 		
-		The simplified Rover Electrical Schematic details the connection from the power source to the rest of the electrical components that are present in the system. The hardware involved are essential for controlling the rover. The Jetson Nano is a microcomputer that runs multiple neuron networks, meaning it can handle multiple tasks at the same time. A Wifi component is built into the Nano which can be controlled wireless without having to control with a physical wire connection. The Arduino Mega is a microcontroller that has the built in code which sends control signals to the motor controllers. The Nano is commanded by the user which the user would send a command to the Nano, and depending on the command which will be sent to the Arduino Mega. This scenario is when both the Nano and the Mega talk to each other with the Nano being controlled by the user have the final say. This relationship works the same way with the Arduino in the stewart platform. The signals that are going to be sent to the motor controllers in the motor system, contain directional/control signals. The motor controllers act like a mini-computer which receives the signals from the Arduino and transmits those signals to the motors which as a result, runs the motors. The arduino with the stewart platform carries the LiDAR camera which monitors live footage and sends back the information in a wireless connection back to the user. The stewart platform is formed with many small stepper motors that reorients the position of the platform from the arduino signals.  
+		The simplified Rover Electrical Schematic details the connection from the power source to the rest of the electrical components that are present in the system. The hardware involved is essential for controlling the rover. The Jetson Nano is a microcontroller that has a discrete graphics processing unit which means it handles AI and image processing particularly well. A Wifi component is built into the Nano which can be controlled wirelessly without having to control it with a physical wired connection. The Raspberry Pi is a microcontroller which is coded to control the motor controllers. The Nano is commanded by the user which the user would send a command to the Nano, and depending on the command which will be sent to the Raspberry Pi. This scenario is when both the Nano and the Pi talk to each other with the Nano being controlled by the user have the final say. This relationship works the same way with the Arduino in the stewart platform. The signals that are going to be sent to the motor controllers in the motor system, contain directional/control signals. The motor controllers act like a mini-computer which receives the signals from the Arduino and transmits those signals to the motors which as a result, runs the motors. The arduino with the stewart platform carries the LiDAR camera which monitors live footage and sends back the information in a wireless connection back to the user. The stewart platform is formed with many small stepper motors that reorient the position of the platform from the arduino signals.  
 		
 		\begin{figure} [!h]
 			\centering
@@ -522,11 +531,13 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 			\label{rover_schema}
 		\end{figure}
 
-		\subsubsection{Software Team}
+		\subsubsection*{Software Team}
 		Figure \ref{ros_schema} details the interaction between the Intel RealSense LIDAR L515 with the NVIDIA Xavier. The ROS node that is used as the publisher of the LIDAR image data to then be sent to a subscriber to the image data uses image\_ transport as the library to export the images from the LIDAR to the processing node in a low-bandwidth compressed format to reduce latency. The image processing node has computer vision models within the node to process the image using OpenCV, which is then sent to the Xavier as data that the Xavier will use for further motion logic or displaying the image to the user.
 		
 		The \ref{ros_schema} details the interaction between controllers (Xbox, Playstation, etc type controllers) with the NVIDIA Xavier. There is the package that contains the motion logic that the previously mentioned LIDAR interacts with to send motion controls to the Xavier as well as a ROS node that takes controller inputs and processes them to be sent to the motion logic package. The data going from the controller to the ROS controller is analog data that Linux can already understand and there are pre-existing ROS libraries to use controllers. The controller node itself will send out motion commands to the motion logic package which will then send motion data to the Xavier. We also want to ensure that the controller node itself won't do any illegal inputs so we want to create a connection between the motion logic package and the controller node in case of inputs that were not friendly to the rovers motion.	
 
+	The RQTGraph details the all nodes that depend on one another to run a specific package. As shown, the camera runs its ROS wrapper nodes under /camera. The input captured from the camera passes to the custom-made ssl slam nodes, which process them into point clouds, then into /odom node for positional data, and eventually mapping on /map node and visualizing in ROS's rviz node. The processed data in /map node can and shall be utilized for future projects.
+	
         \begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.6]{Photos/Tier2ROS.png}
@@ -534,13 +545,18 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 			\label{ros_schema}
 		\end{figure}
 		
-
+		\begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.6]{Photos/SLAM RQTGraph.jpg}
+			\caption{SLAM Nodes in Detail}
+			\label{SLAM_schema}
+		\end{figure}
 
     \pagebreak
-	\subsection{Tier 3 Schematics}
+	\subsubsection{Tier 3 Schematics}
 
-		\subsubsection{Electrical Team}
-		The PCB of the puzzle panel will start with a wall wart which would output a specified amount of voltage to the PDS. The PDS will be made up of three levels, each level containing rows of buck modules that are placed in parallel and their function is to step-down the input voltage from the wall wart, down to the amount that is needed for an electrical component. Each buck module will distribute different amounts of voltage due to each electrical component within the actual puzzle panel, requiring different levels of voltage.
+		\subsubsection*{Electrical Team}
+		The PCB of the puzzle panel will start with a wall wart which would output a specified amount of voltage to the PDS. The PDS will be made up of three levels, each level containing rows of buck modules that are placed in parallel and their function is to step-down the input voltage from the wall wart, down to the amount that is needed for an electrical component. Each buck module will distribute different amounts of voltage due to each electrical component within the actual puzzle panel requiring different levels of voltage.
 		
 		\begin{figure} [!h]
 			\centering
@@ -549,7 +565,7 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 			\label{puzzle_panel_PCB}
 		\end{figure}
 
-		The rover will be powered by lithium batteries that can provide enough voltage or power to the whole rover. The 12V DC-DC buck converters which outputs a set amount of voltage of 12V in which the motor controllers are directly powered by. The small buck converters, convert the 12V to 5V which powers the Jetson Nano, Arduino Mega, Stewart platform, and et cetera, which are necessary in the system to control both the distribution of power. 
+		The rover will be powered by lithium batteries that can provide enough power to the whole rover. The 12V DC-DC buck converters will output 12V to power the motors. The small buck converters, convert the 12V to 5V which powers the Jetson Nano, Raspberry Pi, Stewart platform, and other components. 
 		
 		\begin{figure} [!h]
 			\centering
@@ -558,9 +574,9 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 			\label{rover_PCB_1}
 		\end{figure}
 
-		The power will be distributed with buck modules to power each component at its needed level. And the step-downed power will then be delivered to the Arduino Mega, Jetson Nano, Motor controllers, and other components which will run the whole rover. This PCB is constructed to use four motor controllers but in this project, two are used to operate the rover. 
+		The power will be distributed with buck modules to power each component at its needed level. The power, when stepped down, will then be delivered to the Raspberry Pi, Jetson Nano, Motor controllers, and other components which will run the whole rover. This PCB is constructed to use four motor controllers but in this project, two are used to operate the rover. This allows future teams the option of using four motors.
 		
-		The four USB ports output 5V which are used to provide power to any additional add-ons to the rover, which means different hardware can be added. 
+		The four USB ports output 5V which are used to provide power to any additional add-ons to the rover, which means different hardware can be added. In our case, we added 20mm case fans. 
 		
 		\begin{figure} [!h]
 			\centering
@@ -569,11 +585,13 @@ The form factor of the rover itself will be akin to last year: a PCB interfacing
 			\label{rover_PCB_2}
 		\end{figure}
 		
-		Other miscellaneous elements or components like transistors, diodes, resistors are essential in keeping the digital signals at safe levels, to prevent current/voltage spikes.
+		In Figure \ref{rover_PCB_2}, on the right, you may see a single example of the connection of a motor controller and motor encoder and on the left, you may see how all four motor controllers and encoders connect to the Raspberry Pi.
 		
-		\subsubsection{Software/Computer Team}
+		\subsubsection*{Software/Computer Team}
 	Starting with the LIDAR integration the main connection is between the publisher and subscriber node of the LIDAR image. The publisher node will be outputting a compressed formatted image to the subscriber through the image\_ transport API. Within the processing node (subscriber to the image data) we can use OpenCV to translate the image that is being collected from the publisher to be created into a model that the rover can use to identify what is being shown in the image. This can be done with a point-cloud model and computer vision techniques. After the image is processed, the image itself is sent to the Xavier to display to the user and the image data with motion commands is sent to the motion logic, where the motion logic will then determine whether the images motion data is relevant to motion objectives. The latter is a back and forth process between the subscriber processing node and the motion logic component. 
 The second part with Xavier for this capstone project is the controller node. The main connection will be between the controller node that takes in controller information and the motion logic. This will also be a back and forth process between the two since the motion logic may not want to perform the actions that the user is inputting into the controller. A launch script is also created to simplify launch operations for the rover. This allows us to run the rover without having to connect a screen, mouse, and keyboard to set up the rover with the correct environment.
+	For SLAM, these are the custom-made files for creating the ROS nodes. As there are multiple files for executing SLAM, the source code won't be displayed, but they execute in accordance to \ref{SLAM_schema}. This is the src directory in ssl slam package responsible for running SLAM. Running SLAM only require these few command lines in Terminal.
+	
     \begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.5]{Photos/ROSCodeTier3.png}
@@ -586,8 +604,18 @@ The second part with Xavier for this capstone project is the controller node. Th
 			\caption{Shell Script For Booting Rover Automatically}
 			\label{tier3_launch}
 	\end{figure}
-    
- 
+    \begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.5]{Photos/SLAM Files.png}
+			\caption{src directory in ssl slam package}
+			\label{tier3_slam_files}
+	\end{figure}
+ 	\begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.5]{Photos/Run SLAM.png}
+			\caption{Command lines responsible for running SLAM}
+			\label{tier3_slam_launch}
+	\end{figure}
 
 
     \clearpage
@@ -619,9 +647,9 @@ The second part with Xavier for this capstone project is the controller node. Th
 	\subsection{Technology Mapping, Risk Analysis, and Feasibility}
 	The minimum product we'll create is a disaster rover, for which we have all the needed components. Functionality will be ensured with the software created to operate well-planned electromechanical systems. Usability will be ensured with effective documentation and simple controls. A well ordered rover with ease of control and robust build will be necessary and capable for further business; though, our client is the UW, so we have little concern for how this would  sell.
 	
-	The disaster rover would need to traverse rugged terrain. A compact frame with a well-set center of gravity and tank treads would allow it to path in any environment. Falls or tumbles would be mitigated by a 'domed' upper chassis that ensures it always lands on its base. Operators will be able to connect to it easily and wirelessly, (ideally through browser), and control with easy to understand, video-game based control schemes. All electromechanical systems would interface through robot operating system (ROS) housed on a central, Xavier computer. Focusing on electrical and mechanical systems independently: electronics will convey clean, modular power to various components through LIPO batteries. Clean and modular, I stress again, are the focus; devices like the Xavier have stringent voltage and current regulations. Modularity is desired, as future iterations will see different parts added or subtracted; ideally the only aspects affected here are battery life. Everything is contained on a central PCB, improving physical efficiency further. The mechanical systems need to be robust and sourceable. Through the use of aluminum frame, higher end FDM and resin plastics, and (hopefully) casting, we'll be able to create a protective housing for all electrical and computer components. Motors will be mounted directly to the frame with little (or no) geared transmission, depending on the speed and torque output of what motors exist. A small frame is preferred to minimize stresses. Further research into the mechanical engineering of motion mechanisms is needed before a better description can be provided. 
+	The disaster rover would need to traverse rugged terrain. A compact frame with a well-set center of gravity and tank treads would allow it to path in any environment. Falls or tumbles would be mitigated by a 'domed' upper chassis that ensures it always lands on its base. Operators will be able to connect to it easily and wirelessly, (ideally through a browser), and control with easy to understand, video-game based control schemes. All electromechanical systems would interface through robot operating system (ROS) housed on a central, Xavier computer. Focusing on electrical and mechanical systems independently: electronics will convey clean, modular power to various components through LIPO batteries. Clean and modular, I stress again, are the focus; devices like the Xavier have stringent voltage and current regulations. Modularity is desired, as future iterations will see different parts added or subtracted; ideally the only aspects affected here are battery life. Everything is contained on a central PCB, improving physical efficiency further. The mechanical systems need to be robust and sourceable. Through the use of an aluminum frame, high end FDM and resin plastics, and (hopefully) casting, we'll be able to create a protective housing for all electrical and computer components. Motors will be mounted directly to the frame with little (or no) geared transmission, depending on the speed and torque output of what motors exist. A small frame is preferred to minimize stresses. Further research into the mechanical engineering of motion mechanisms is needed before a better description can be provided.
 	
-	The greatest risks are addressed in order: computer, electrical, mechanical. The computer model only addresses the function of interdependent components in extremely ideal conditions. A disaster environment won't be perfect, and the rover needs to get itself out of sticky situations if communication is lost or electromechanical systems aren't behaving perfectly. The electrical system could fail to provide stable enough current or voltage, or locales of high power draw could result in heating that leads to failure. It's possible the arrangement of components doesn't permit a long enough battery, or results in excess inefficiencies. The mechanical systems may fail about shafts or joints, and the production of gears (as they'll be printed) may be outside of tolerance.
+	The greatest risks are addressed in order: computer, electrical, and mechanical. The computer model only addresses the function of interdependent components in extremely ideal conditions. A disaster environment won't be perfect, and the rover needs to get itself out of sticky situations if communication is lost or electromechanical systems aren't behaving perfectly. The electrical system could fail to provide stable enough current or voltage, or locales of high power draw could result in heating that leads to failure. It's possible the arrangement of components doesn't permit a long enough battery, or results in excess inefficiencies. The mechanical systems may fail about shafts or joints, and the production of gears (as they'll be printed) may be outside of tolerance.
 	
 	To address the stated risks we need effective testing and redundant systems. Computer models need to simulate circumstances where power delivery or mechanical failure causes issues. Further, boot scripts and backup communication protocols need to exist. Electrical systems have to be tested under every conceivable driven condition, with a focus on clean power. Mechanical systems need to be simulated, constructed with high factors of safety, and modeled physically with test rigs.
  	
@@ -636,12 +664,12 @@ The second part with Xavier for this capstone project is the controller node. Th
  	\textbf{Rover}
  	To address environmental constraints imposed by the context of disaster relief, our rover will have a rubble-resistant chassis design, and encased, centralized electrical PDS. We will also try to achieve modularity mechanically, electrically, and software wise. To achieve mechanical modularity, the drivetrain will be constructed of stock aluminum parts, and the housing will see a tiered system with adjustable mounting and plenty of open space. In addition to these two major rover aspects, we will have a rotational servo actuated Stewart platform that controls our LiDAR camera; all other components on it will be 3D printed.
  	
- 	To achieve electrical modularity the battery connector will be common, connecting into two buck converters. These buck converters are responsible for stepping down voltage to power logical (5V) and power components (12V). The unique property here is any battery with the same connector may be used. The PCB we designed itself is the PDS, providing power to all logical and actuative components. On the PCB we will add extra ports and adjustable buck modules for unanticipated, future modifications, or alternative designs. Though our rover Mimir only uses two motor controllers, the PCB will be designed with four so it may be repurposed for other designs.
+ 	To achieve electrical modularity the battery connector will be common, connecting into two buck converters. These buck converters are responsible for stepping down voltage to power logical (5V) and power components (12V). The unique property here is any battery with the same connector may be used. The PCB we designed itself is the PDS, providing power to all logical and actuative components. On the PCB we will add extra ports and adjustable buck modules for unanticipated, future modifications, or alternative designs. Though our rover only uses two motor controllers, the PCB will be designed with four so it may be repurposed for other designs. 
  	
- 	To achieve software modularity we will be developing our architecture in ROS. Each component, interaction, data processing procedure, etc can be respresented as a modular `node' that can be added or removed from the final build and launch script.
+ 	To achieve software modularity we will be developing our architecture in ROS. Each component, interaction, data processing procedure, etc can be represented as a modular `node' that can be added or removed from the final build and launch script.
  		
  		\subsubsection{EE Circuit Models}
- 		The current Electrical Circuit Models are made to power at any voltage level, providing different modular of power that can power different hardware. Each system will both utilize the same LM2596 Buck Converters, but the Rover PDS will include multitude of components. With this in mind, the more components there are in an electrical system, the more risks of electrical hardware failure can occur. 
+    The current Electrical Circuit Models are made to power at any voltage level, providing different modular of power that can power different hardware. Each system will both utilize the same LM2596 Buck Converters, but the Rover PDS will include multitude of components. With this in mind, the more components there are in an electrical system, the more risks of electrical hardware failure can occur. 
  		
  		\subsubsection*{Puzzle Panel PDS}
 		For the Puzzle Panel PDS and the following components that will be used in the Puzzle Panel are listed here. And also, the risks involve that may entail with solutions that can help mitigate those risks for both electrical systems. 
@@ -661,7 +689,7 @@ The second part with Xavier for this capstone project is the controller node. Th
 
 		\begin{itemize}
 		\item
-		Shown in figure \ref{PDS_of_Puzzle} is the power distribution system of the Puzzle Panel that is designed to provide and distribute power at any voltage level. And provides the option to regulate/adjust the voltage level down to a preferred level. The capabilities this PDS provides can power multitude of different hardware that requires a variety levels of voltage. The PDS is powered by a 14.8V power cord and the entire PDS stepped down the voltage. Depending on each of the buck converter's resistances, one can output 12V, 5V, or 3.3V which are the most commonly used voltage values used in today's hardware.
+		Shown in figure \ref{PDS_of_Puzzle} is the power distribution system of the Puzzle Panel that is designed to provide and distribute power at any voltage level. And provides the option to regulate/adjust the voltage level down to a preferred level. The capabilities this PDS provides can power a multitude of different components that require a variety of different voltages. The PDS is powered by a 14.8V power cord and the entire PDS stepped down the voltage. Depending on each of the buck converter's resistances, one can output 12V, 5V, or 3.3V which are commonly used voltage values in today's hardware.
 
 		\begin{figure} [h]
 			\centering
@@ -670,7 +698,7 @@ The second part with Xavier for this capstone project is the controller node. Th
 		\end{figure}
 
 		\item
-		The LM2596 buck converters are designed to step down or drop down the voltage that is needed by the electrical components to be able to functionally run. And it's adjusted by a potentiometer that controls the voltage level output.
+		The LM2596 buck converters are designed to step down the voltage that is needed by the electrical components to be able to functionally run. And it's adjusted by a potentiometer that controls the voltage level output.
 		\end{itemize}
 
 		\underline{Risk identification}
@@ -680,12 +708,10 @@ The second part with Xavier for this capstone project is the controller node. Th
 		The one major risk for the Puzzle Panel PDS is the probability of the buck modules overheating which will cause a fire hazard. This will cause permanent damage to the buck module itself and possibly cause damage to any of the hardware that is connected and powered directly from it. 
 		\end{itemize}
 
-		The testing of the circuit model will take place within the month of April. Testing will involve stable power/voltage output and monitoring the heat from the buck converters.
-
 		The best mitigation to prevent the overheating of the buck converters is to add heat sinks onto them. Heat sinks are usually made of aluminum alloy which has a high heat capacity and thermal conductivity. Which means, heat sinks will allow to dissipate a lot of heat into the metal of the heat sink itself. This would keep the buck converters and the entire electrical system safe from overheating.
 
- 		\subsubsection*{Rover PDS}
- 		For the Rover PCB and the following components that will be used in the Rover are listed here. And also, the risks involve that may entail with solutions that can help mitigate those risks for both electrical systems. 
+ 		\subsubsection*{Rover PCB}
+ 		For the Rover PCB and the following components that will be used in the Rover are listed here. And also, the risks involved that may entail with solutions that can help mitigate those risks for both electrical systems. 
 
 		\begin{figure} [h]
 			\centering
@@ -698,11 +724,11 @@ The second part with Xavier for this capstone project is the controller node. Th
 
 		\begin{figure} [h]
 			\centering
-			\includegraphics[scale=0.5]{Photos/Arduino Mega}
-			\caption{Arduino Mega}
+			\includegraphics[scale=0.5]{Photos/Raspberry Pi}
+			\caption{Raspberry Pi}
 		\end{figure}
 
-		\item Arduino Mega is a microcontroller that is designed to send command signals from an encoded software to the motor controllers that control the drivetrain to the motors.
+		\item Raspberry Pi is a microcontroller that is designed to send command signals from an encoded software to the motor controllers that control the drivetrain to the motors.
 
 		\begin{figure} [!h]
 			\centering
@@ -734,7 +760,7 @@ The second part with Xavier for this capstone project is the controller node. Th
 			\caption{BTS7960 Motor Controllers}
 		\end{figure}
 
-		\item The motor controller is used to receive signals from the Arduino Mega and delivers the resulting information to the actual motors of the drivetrain.
+		\item The motor controller is used to receive signals from the Raspberry Pi and delivers the resulting information to the actual motors of the drivetrain.
 
 		\begin{figure} [!h]
 			\centering
@@ -742,7 +768,7 @@ The second part with Xavier for this capstone project is the controller node. Th
 			\caption{12V Planetary Gear Motors}
 		\end{figure}
 
-		\item The 12V planetary motors are used to drive the whole rover which are controlled by the BTS7960 motor controller through digital signals from the Arduino Mega.
+		\item The 12V planetary motors are used to drive the whole rover which are controlled by the BTS7960 motor controller through digital signals from the Raspberry Pi.
 		\end{itemize}
 
 
@@ -756,7 +782,7 @@ The second part with Xavier for this capstone project is the controller node. Th
 		The risk of the motors running too much or insufficient torque will cause different amounts of currents to be drawn from the battery. This current spike will cause damage to the electrical hardware that is directly connected to the battery and cause a fire hazard. The mechanical components will also face damage as a result.
 		\end{itemize}
 
-		The electrical circuit or model will be tested with the mechanical models, and the approximate date of testing will take place from the end of April to May. Testing will involve making sure connections are stable and all electrical components are functioning correctly and correspondingly communicate with each other. 
+		The electrical circuit or model will be tested with the mechanical models, and the testing will involve making sure connections are stable and all electrical components are functioning correctly and correspondingly communicate with each other.
 		
 		Future testing of electrical components and their functions:
 		\begin{itemize}
@@ -766,7 +792,7 @@ The second part with Xavier for this capstone project is the controller node. Th
 
 		\item Jetson Nano connection
 
-		\item Arduino Mega and Drivetrain connection
+		\item Raspberry Pi and Drivetrain connection
 
 		\item Battery and power/current performance
 		\end{itemize}
@@ -841,7 +867,7 @@ The second part with Xavier for this capstone project is the controller node. Th
 		\end{figure}
  
  		\subsubsection{Mechanical Models}
- 		Mechanical modelling was completed incrementally and with lots of thought on a day by day basis. Plenty of notes were taken, and it would be a waste to ignore them. That being said, content must be streamlined in the MegaDoc presentation. I present various moodels throughout all the stages.
+ 		Mechanical modeling was completed incrementally and with lots of thought on a day by day basis. Plenty of notes were taken, and it would be a waste to ignore them. That being said, content must be streamlined in the MegaDoc presentation. I present various models throughout all the stages.
  		
  		\subsubsection*{Puzzle Panel}
 		The puzzle panel can be divided into the panel itself and the small components that constitute it. The design rational was mentioned above, so I won't repeat myself. In figure \ref{puzzle_panel_model} is the Fusion360 model of the puzzle panel completed; one instance of the panel was constructed in real life, a photo of it seen in figure \ref{puzzle_panel_real}.
@@ -860,10 +886,10 @@ The second part with Xavier for this capstone project is the controller node. Th
 			\label{puzzle_panel_real}
 		\end{figure}
 		
-		There were a small collection of electromechanical puzzle components that made the cut: (1) button, (2) servo motor, (3) ultrasound sensor, (4) light strip, (5) potentiometer, and (6) wall. The specifics of each and every one isn't particularly important, but what is noteworthy is the manufacturing procedure. Each component selected is Arduino-compatible, purchased in bulk from the internet. A custom, 3D-printed housing is created and then encases the part, enabling it to be attached to the board for student  use. In figure \ref{puzzle_panel_real} is just one example of these components, an ultrasound sensor, modelled in Fusion360, if you inspect the puzzle panel in the previous section, you might notice its use.
+		There were a small collection of electromechanical puzzle components that made the cut: (1) button, (2) servo motor, (3) ultrasound sensor, (4) light strip, (5) potentiometer, and (6) wall. The specifics of each and every one isn't particularly important, but what is noteworthy is the manufacturing procedure. Each component selected is Arduino-compatible, purchased in bulk from the internet. A custom, 3D-printed housing is created and then encases the part, enabling it to be attached to the board for student  use. In figure \ref{puzzle_panel_real} is just one example of these components, an ultrasound sensor, modeled in Fusion360, if you inspect the puzzle panel in the previous section, you might notice its use.
 		
  		\subsubsection*{Rover}
-		The rover can be split into its drive base and component housing. Seen in figure \ref{bottom_parts} is the drivebase without treads, assembled in Fusion360. The drivebase was adopted from the previous year's design, so details of component selection arren't extremely relevant here. Motor were changed, however, as analysis of performance revealed last year's team made poor selection resulting in low efficiency; this analysis is elaborated upon in the methodology section. We swapped out the 612RPM motors for 118RPM motors, seen in figure \ref{motors}; you might believe the speed would drastically decrease, but the 612RPM motors were being run at such poor performance they were already 1/12th their quoted maximum. The 118RPM motors were significantly more efficient and roughly the same speed.
+		The rover can be split into its drive base and component housing. Seen in figure \ref{bottom_parts} is the drivebase without treads, assembled in Fusion360. The drivebase was adopted from the previous year's design, so details of component selection aren't extremely relevant here. Motor were changed, however, as analysis of performance revealed last year's team made poor selection resulting in low efficiency; this analysis is elaborated upon in the methodology section. We swapped out the 612RPM motors for 118RPM motors, seen in figure \ref{motors}; you might believe the speed would drastically decrease, but the 612RPM motors were being run at such poor performance they were already 1/12th their quoted maximum. The 118RPM motors were significantly more efficient and roughly the same speed.
 		
 		\begin{figure} [h]
 			\centering
@@ -1058,19 +1084,19 @@ The second part with Xavier for this capstone project is the controller node. Th
 			\label{speed_test}
 		\end{figure}
 		
-		From the test the rover is traveling 0.25m/s, this is about 2/3rds our conservative estimate; but, this is likely because our weight estimate of 25lbs was off. In reality the weight is nearer to 32lbs. Fortunately the underwhelming speed estimate wasn't 1/12th, as it was in past capstone cycles. Another possibility is the speed was being throttled by the ROS software; Danny did mention that ROS was setting the speed to aa default `1', and that he might somehow be able to adjust it. It's very possible the software was limited the speed.
+		From the test the rover is traveling 0.25m/s, this is about 2/3rds our conservative estimate. This is likely because our weight estimate of 25lbs was incorrect. In reality, the weight is nearer to 32lbs. Fortunately, the underwhelming speed estimate wasn't 1/12th, as it was in past capstone cycles. Another possibility is that the speed was being throttled by the ROS software. Danny mentioned that ROS was setting the speed to a default of `1', and that he may be able to adjust it. It's very possible the software was limiting the speed.
 		
-		Even assuming a maximum of 0.25m/s, we're operating close enough to our 25.29\% efficiency, likely hovering around 20.00\%. This isn't amazing, but it does mean the rover can handle trying situations that press towards it's stall torque. Note also that as you press towards the stall torque, current draw increases vigorously. We did one test where we check current pull while running the rover into the wall, and no smoking or failure occurred, a good omen.
+		Even assuming a maximum of 0.25m/s, we're operating close enough to our 25.29\% efficiency, likely hovering around 20.00\%. This isn't amazing, but it does mean the rover can handle trying situations that press towards it's stall torque. Note also that as you press towards the stall torque, current draw increases vigorously. We did one test where we drove the rover into a wall to simulate a load on the motors and the increase in current can be seen in Figure \ref{Rover Current Performance}.
 	
 	\subsection{Electrical}
 
 	\subsubsection*{Puzzle Panel PDS Performance}	
 
-	The data that we need to collect involves current/power performance when the puzzle panel power distribution system and the entire rover operates. And also, the duration the batteries can last under a full operation by measuring the rate of the current. A special tool called a Clamp Meter is used to measure current values in real time. And it also, doesn't require wire to wire connection to measure as Clamp Meter measures through the magnetic fields from where the current is present. Acquiring the current measurements help determines the overall performance of the rover, its battery life and overall efficiency.
+	The data that we need to collect involves current and power performance when the puzzle panel power distribution system and the entire rover operates. The duration the batteries can last is inversely proportional to the current draw. We use a special type of ammeter called a clamp meter which allows us to measure current without interrupting the wire. Acquiring the current measurements help  us determine the overall performance of the rover, its battery life, and overall efficiency.
 
-	The industry standards used for the Electrical System, is the usage of a professional PCB design program KiCad EDA. KiCad EDA is known for inventing Electrical Engineering projects like Adafruit which is known to design arduinos which are utilized in this project. Digi-Key Electronics is well-known to manufacture standardized and basic electrical components, most are utilized to create the power distribution PCB of the rover.
+    In designing the PCBs for the puzzle panel and the rover, we used the industry standard KiCad EDA. The competitors are generally Altium and Eagle CAD which is owned by Autodesk. All three of these programs are used in the PCB manufacturing industry. Critically, however, KiCad is free and open source. Eagle CAD is \$70 per month and Altium is \$355 per month. KiCad is used by Adafruit who manufacture and distribute Arduino and Raspberry Pi adjacent boards, components, and accessories. KiCad is also used by DigiKey, one of the largest distributors of electronic goods online.
 
-	The testing for the results in measuring current performance and voltage leveling accuracy in the puzzle panel power distribution system was a success. Demonstrating the test, we utilized a stationed multimeter to measure and monitor the output voltage. In the demonstration, we tested one buck converter at a time, as it is time-saving than to test the whole system for current/voltage monitoring. Since, testing the whole system in a trial would require a ton of measuring equipment which we don't have in our disposal. In the picture below of figure \ref{buck_test}, shows a demonstration of output voltage monitoring.  
+    The testing for the results in measuring current performance and voltage leveling accuracy in the puzzle panel power distribution system was a success. Demonstrating the test, we utilized a stationed multimeter to measure and monitor the output voltage. In the demonstration, we tested one buck converter at a time, as it is more time-saving than to test the whole system for current/voltage monitoring. Since testing the whole system in a trial would require a ton of measuring equipment which we don't have at our disposal. In the picture below, figure \ref{buck_test} shows a demonstration of output voltage monitoring.  
 
 		\begin{figure} [!h]
 			\centering
@@ -1079,7 +1105,7 @@ The second part with Xavier for this capstone project is the controller node. Th
 			\label{buck_test}
 		\end{figure}
 
-	To test this method, use the two pair of wire hooks from the power source and latch them onto the input side of the converter. The positive power connector should be clamped onto the input positive and for negative power to input negative. The same would be applied when using the two pair of wire hooks from the multimeter. Positive hook clamped to positive output, negative hook clamped to negative output. With this method, we tested every buck converter. There were many that are broken down most likely due to overuse from past capstone groups. And which we discarded in the waste box, but we desoldered some of the components which we can save for a different project. The ones we found to work, we used them for the final design of the Puzzle Panel power distribution system and for the rover PCB. In the table below, illustrates the results of one of the buck converters working well with a high input voltage and being able to step it down to any voltage lower than the input. And also, it is able to output the stepped down voltage which is essential in powering some of the hardware we have that requires low level voltage.
+	To test this method, use the two pair of wire hooks from the power source and latch them onto the input side of the converter. The positive power connector should be clamped onto the input positive and the negative power to input negative. The same would be applied when using the two pair of wire hooks from the multimeter. Positive hook clamped to positive output, negative hook clamped to negative output. With this method, we tested every buck converter. There were many that were broken, likely due to overuse from past capstone groups. The ones we found to work, we used for the final design of the Puzzle Panel power distribution system and for the rover PCB. The table below illustrates the results of one of the buck converters working well with a high input voltage and being able to step it down to any voltage lower than the input. It is also able to output the stepped down voltage which is essential in powering some of the hardware we have that requires low level voltage.
 
 		\begin{figure} [!h]
 			\centering
@@ -1099,11 +1125,11 @@ The second part with Xavier for this capstone project is the controller node. Th
 			\label{PuzzlePanelPowered}
 		\end{figure}
 
-	We then monitored the power efficiency and delivery of the Puzzle Panel PDS to the puzzle panel elements. The results showed it was successful. Every buck module are able to output the specified voltage based on the adjustment of their potentiometers. And when powering the hardware and the puzzle panel elements, there were no signs of electrical failures. The most number of elements that are connected to the PCB are three and when they operate, they draw 0.3A to 0.5A. With other slots of power and USBs in the PCB that are available, additional hardware or puzzle elements can be powered from the PCB. And with the performance of power not showing signs of failure, we can safely assume the Puzzle Panel PCB can handle powering multiple hardware and components at once.
+	We then monitored the power efficiency and delivery of the Puzzle Panel PDS to the puzzle panel elements. The results showed it was successful. Each buck module was able to output the specified voltage based on the adjustment of their potentiometers. And when powering the hardware and the puzzle panel elements, there were no signs of electrical failures. The most number of elements that are connected to the PCB are three and when they operate, they draw 0.3A to 0.5A. With other slots of power and USBs in the PCB that are available, additional hardware or puzzle elements can be powered from the PCB. And with the performance of power not showing signs of failure, we can safely assume the Puzzle Panel PCB can handle powering multiple hardware and components at once.
 
 \subsubsection*{Rover PDS Performance}	
 
-	Using the same standardized procedure for testing the results from the puzzle panels with the Clamp Meter, measuring the current/power performance of the rover was successful. We monitored the current levels by placing the clamp around 12-gauge wire connected from the batteries to the 12V DC-DC converters and it's demonstrated in the image below of figure \ref{Rover Current Performance}.
+	Using the same standardized procedure for testing the results from the puzzle panels with the clamp meter, measuring the current/power performance of the rover was successful. We monitored the current levels by placing the clamp around 12-gauge wire connected from the batteries to the 12V DC-DC converters and it's demonstrated in the image below of figure \ref{Rover Current Performance}.
 
 \begin{figure} [!h]
 			\centering
@@ -1112,7 +1138,7 @@ The second part with Xavier for this capstone project is the controller node. Th
 			\label{Rover Current Performance}
 		\end{figure}
 
-\begin{figure} [!h]
+		\begin{figure} [!h]
 			\centering
 			\includegraphics[scale=0.8]{Photos/Rover current test}
 			\caption{Rover Current Test Result}
@@ -1121,18 +1147,20 @@ The second part with Xavier for this capstone project is the controller node. Th
 
 	The power going into the motor controllers will run at 12V from the DC-DC converters during a simple operational maneuver. The results are shown in figure \ref{Rover test}. Conditions involved the rover riding on flat ground inside a building. And the rover used around 1.7A to 2.0A when operating on flat ground. 
 	
-	The next test involve operating the rover on dirt ground and driving over uneven terrain. Introducing dirt and uneven terrain would require the rover to draw more current since dirt and uneven terrain cause friction and resistant force for the rover to overcome. The results of the tests are successful with the rover operating over dirt in 2.5A to 2.7A and for uneven terrain, around 3.0A was used. The next major test involve moving the rover against the wall, to test the rover when it meets a maximum physical force. The overall current level reached to 3.4A which is almost twice the amount the rover used normally on smooth surfaces. These values help determine how long the rover perform under each of these environmental conditions. Additionally, there were no electrical hardware failures through each test, which we can conclude that the entire circuit is protected from voltage/current spikes or wire disconnects. And the current used in these conditions, are less than expected so we can safely assume the rover can handle harsher terrain and conditions.
+	The next test involves operating the rover on dirt ground and driving over uneven terrain. Introducing dirt and uneven terrain would require the rover to draw more current since dirt and uneven terrain cause friction and resistant force for the rover to overcome. The results of the tests are successful with the rover operating over dirt in 2.5A to 2.7A and for uneven terrain, around 3.0A was used. The next major test involves moving the rover against the wall, to test the rover when it meets a maximum physical force. The overall current level reached to 3.4A which is almost twice the amount the rover used normally on smooth surfaces. These values help determine how long the rover could perform under each of these environmental conditions. Additionally, there were no electrical hardware failures through each test, which we can conclude that the entire circuit is protected from voltage or current spikes. The current used in these conditions is less than expected so we can safely assume the rover can handle harsher terrain and conditions.
 
     \subsection{Software}
     \subsubsection*{Learning ROS}
     In this section we talk about the process that occurred for the software team to learn, understand, and eventually utilize ROS. This year there was no single member of the software team that had any experience utilizing ROS, nor robotics in general. This created a steep learning curve for the individuals of the software team, and a majority of time was spent working on learning ROS and how it interacts with components. After studying ROS books and guides on the internet, the team chose to utilize ROS Noetic on Linux 20.04. This flavor of ROS was chosen due to the completeness of ROS Noetic as it is considered a ROS 1 architecture. This means that a majority of the APIs that are considered for this project had already been created, and would not have to be created by the software team themselves. 
 
     \subsubsection*{Implementation}
-    After deciding on a ROS flavor, the team started to work on creating software and completing tasks. Tasks such as having a way to control the rover, viewing the LIDAR output, and teleoperation for the motors themselves. The team started by creating a website that is hosted on the NVIDIA Jetson Nano that is hosted a ROS node. Initially the team was unsure if Flask was able to become a ROS node since Flask is a general web framework that is written in Python. Through reserach and testing the team found that ROS Noetic has built in APIs that can interact with Flask code and generate a ROS node as a website. This allowed us to then complete the prior goals in this project. We were able to control the rover through the webserver, since the webserver became interactable to ROS on the Nano itself. The LIDAR live view was another pain point in our process, but through research, testing, and validation we were able to achieve a LIDAR live view that is sent through the image transport ROS pipeline. Meaning that the LIDAR becomes a ROS node and is able to send data through the built in pipeline that ROS builds. 
+    After deciding on a ROS flavor, the team started to work on creating software and completing tasks. Tasks such as having a way to control the rover, viewing the LIDAR output, and teleoperation for the motors themselves. The team started by creating a website that is hosted on the NVIDIA Jetson Nano that is hosted a ROS node. Initially the team was unsure if Flask was able to become a ROS node since Flask is a general web framework that is written in Python. Through research and testing the team found that ROS Noetic has built in APIs that can interact with Flask code and generate a ROS node as a website. This allowed us to then complete the prior goals in this project. We were able to control the rover through the webserver, since the webserver became interactable to ROS on the Nano itself. The LIDAR live view was another pain point in our process, but through research, testing, and validation we were able to achieve a LIDAR live view that is sent through the image transport ROS pipeline. Meaning that the LIDAR becomes a ROS node and is able to send data through the built in pipeline that ROS builds. 
 
     A feature that was added for the LIDAR was having a switch that allowed both live and heat map view for the LIDAR camera output on the webserver. The heatmap is generated using OpenCV which is a Python package for computer vision. Through the OpenCV API we were able to manipulate and generate color maps for the LIDAR. We paired this with Intels provided Python RealSense API that can directly use our own Intel RealSense camera and all of its built in components within the device. We made use of the color and depth stream pipelines from the device to then utilize OpenCV to calculate and generate heatmaps. 
     Lastly we implemented a distance calculation that was made through built in API functions that provide us with distance based off the heatmap. 
     We tested the distance measurements and were able to accurately read distance measurements from up to 8.2 meters, which was different from the 9 meters that Intel advertises. This may be due to environmental conditions as well as the code setup itself. We tested that the depth calculations for distance is based off of the center of the LIDAR camera itself.
+    
+    For SLAM, a crucial decision to consider was which type of SLAM algorithm was best suited for rover and hardware resources. There were multiple types of SLAM packages such as gmapping or hector slam. The unfortunate part was with the short timeline; large amount of custom scripts required; and potentially incompatible hardware rendered many of the choices unfeasible. One of the choices that was reasonable was a Solid-State LiDAR (SSL) SLAM by H. Wang, C. Wang, and L. Xie. Their SLAM used the same L515 LiDAR that we are using and was suppose to be lightweight. This SLAM was a promising choice since the codebase and hardware were already established, which was feasible in our short time schedule, won't require excessive modifications, and was confirmed to be compatible with one of our existing hardware. 
 
     \subsubsection*{Rover Setup and Test}
     When the rover was built, we placed the NVIDIA Jetson Nano into the rover and began testing that all the components that was previously mentioned is able to interact with a physical rover. Prior to the physical rover being built, bench top test were done with a Arduino microcontroller, motor controllers, and one of the rover motors. This allowed us to test that we were able to control the motors through the Jetson Nano to the microcontroller to the motor controllers, and finally to the motors themselves. This also created an opportunity for the electrical team to record current data that the motors pull from the power supplies. 
@@ -1140,6 +1168,9 @@ The second part with Xavier for this capstone project is the controller node. Th
     After the rover was built, we booted the system up with a non-headless display, meaning that we had to plug in a monitor, keyboard, and mouse to the Nano to set up the ROS environment. This became a hassle, therefore the software team chose to create a quick boot up launch script to automatically deploy the rover and set up the environment. Testing was done to ensure that the boot up time had not changed for the rover.
     We found that the average boot up time prior to the launch script was 17.8 seconds. 
     After implementing the launch script, we found the average boot up time to be 30.5 seconds. Which was expected as the launch script contains sleep contains that add approximately 15 seconds of run time to boot up, allowing all environmental components to start up completely prior to completing boot up.
+    
+    Invoking SLAM was straightforward since it involves three command lines on Terminal. With visualizing a point cloud, the main metric of success was being able to recognize the rendered object in real-time. As soon as Rviz visualizer opens and a point cloud begins rendering, a reasonable timeframe for the definition of real-time was being able to recognize the rendered object within 20 seconds. This can be further optimized to reduce the rendering time as one of the future projects.
+    One of the obvious places to test SLAM was the mechanical engineering capstone room since this was the main location of conceptualizing and building the rover. Additionally, the capstone room was contained, full of obstacles, and reasonably small enough to render the room but large enough to investigate its range.
 
 \section{Results and Discussion}
 	
@@ -1150,12 +1181,21 @@ The second part with Xavier for this capstone project is the controller node. Th
 
     \subsection{Software}
     The software team was able to conclude that all goals determined in the beginning of the project to be met by the software team were completed. Control, data view, and modularity goals for the rover to be operational had been all completed through this project by the software team. 
+    
+    SLAM integration with our hardware was a success since it was able to visualize recognizable objects within a reasonable real time of under 20 seconds. \ref{Door Render} is included for clarity of results.
 
+		\begin{figure} [!h]
+			\centering
+			\includegraphics[scale=0.8]{Photos/Capstone Room Door.png}
+			\caption{Render of Capstone Room Door}
+			\label{Door Render}
+		\end{figure}
+		
 \section{Summary, Conclusion, and Future Perspectives}
 In kind with ordering seen in the document so far, we'll summarize our achievements then provide future perspectives.
 
 	\begin{itemize}
-		\item \textbf{Organization and Competition:} A well-ordered, public GitHub containing all our documentation, software, etc for future capstone groups and future teams was created. We gained more attention within the school, increased our size, and diversified the intelligenece of our members.
+		\item \textbf{Organization and Competition:} A well-ordered, public GitHub containing all our documentation, software, etc for future capstone groups and future teams was created. We gained more attention within the school, increased our size, and diversified the intelligence of our members.
 		
 		The competition was made more concrete with better understanding of its proceedings, requirements, and scoring. Work must be done towards the advertising, aesthetic, and flare of the competition, such as through promotional videos, posters, websites, etc.
 		
@@ -1163,12 +1203,12 @@ In kind with ordering seen in the document so far, we'll summarize our achieveme
 		
 		\item \textbf{Rover (Mechanical):} The first iteration of only one physical rover was created. A drive train with two 118RPM motors navigated a housing containing a PDS, Stewart platform (for camera control), microcontrollers for controlling the motors and Stewart platform, a Jetson Nano microcomputer for high level control, and a networking device for interfacing all components within the rover to each other and the microcomputer  with the outside world. Two iterations of the Stewart platform - the second mounting to the rover - were created. Effective documentation was created for everything.
 		
-		\item \textbf{Rover (Electrical):} The first iteration of the PDS was created, it interfaced the supply of power to all driven and logical components. The PDS interfaced motor controllers (which extended to the motors), any stray component that needed USB-based power, and the Arduino Mega which sent motor commands. The power distribution for the Stewart platform was designed and constructed of solderable breadboard. 
+		\item \textbf{Rover (Electrical):} The first iteration of the PDS was created, it interfaced the supply of power to all driven and logical components. The PDS interfaced motor controllers (which extended to the motors), any stray component that needed USB-based power, and the Arduino Mega which sent motor commands. The power distribution for the Stewart platform was designed and constructed of solderable breadboard. Further, the second iteration of the rover PCB was designed and manufactured. It is nearly identical to the previous design except for having the Raspberry Pi mount directly to the board to control the motors instead of the Arduino Mega. It also may be powered by a 12V dc adapter or the battery or both simultaneously.
 		
-		\item \textbf{Rover (Software):} A software architecture in ROS was created, with basic function for the command GUI, LiDAR feedback, teleoperation, and network connectivity. 
+		\item \textbf{Rover (Software):} A software architecture in ROS was created, with basic function for the command GUI, LiDAR feedback, teleoperation, and network connectivity. SLAM integration allows the rover to formally process and visualize its environment and opens up to a greater number of possible interactions that utilize its computer vision.
 	\end{itemize}
 		
-HackRover and HARC is far from completion, and we must press on (ideally with increasing speed). The rover - too - needs major developments if we're ever going to prototype the event, or act as a authoratative source of information for robotic development. Below is a list of the most pressing future developments.
+HackRover and HARC is far from completion, and we must press on (ideally with increasing speed). The rover - too - needs major developments if we're ever going to prototype the event, or act as a authoritative source of information for robotic development. Below is a list of the most pressing future developments.
 
 	\begin{itemize}
 		\item \textbf{Organization and Competition:} The GitHub structure needs to transform into something of a `template' other teams would follow (required for competition participation). We must officially constitute the organization with clear leadership, expectations and methods for membership, and channels of communication.
@@ -1179,13 +1219,13 @@ HackRover and HARC is far from completion, and we must press on (ideally with in
 		
 		\item \textbf{Rover (Mechanical):} Focusing first on the rover, either the weight needs to come down (to improve speed and efficiency) or more motors need to be added. The internal component mounting and wire routing needs to be improved for safety (avoid melting wires) and construction ease (cable access). A note, mostly the concern of electrical, is that the PDS needs to be reshapen to fit nicely into the chassis. Analysis and improvement of airflow should be conducted and improved in any way possible. The placement of the Stewart platform should be improved, as to lower it and make it more compact. Overall the fit of any components should be improved as best as possible.
 		
-		Additional rovers need to be constructed, as to prototype the competition. Thought  should be placed towards a electromechanical, human controlled gear train for taking advantage of torque-speed tranmission. Stair climbing and improved tank tread design is also a high priority.
+		Additional rovers need to be constructed, as to prototype the competition. Thought  should be placed towards a electromechanical, human controlled gear train for taking advantage of torque-speed transmission. Stair climbing and improved tank tread design is also a high priority.
 		
 		The Stewart platform will be a beast of its own. Research into best construction methods, and a plan for improved arrangement and manufacture needs to be developed. The linkages need to be better designed for support and weight; mounting of the servos must be improved.
 		
-		\item \textbf{Rover (Electrical):} The PDS needs to be redesigned to seat more compactly into the chassis, as to make room for other components. Interfacing with a Raspberry Pi for motor control is the most important advancement (currently the PDS interfaces with an Arduino Mega); it's extremely important this RBPi surface mounts to the  actual PDS. The Stewart platform can see a custom, low-profile PCB built, or an off the shelf one bought, whichever works.
+		\item \textbf{Rover (Electrical):} Ideally, the second PCB design will be the last iteration of the PCB which controls the rover.
 		
-		\item \textbf{Rover (Software):} The architecture in ROS needs to be constantly developed with the addition of function-enhancing nodes. The most important nodes are teleoperation, modularized for a variety of control schema; computer vision, for scanning objects and humans; and autonomy, driving based on a model from the input of multiple nodes. Networking with the use of the 3-in-1 Linksys device should be integrated, whether with ROS or without. The Arduino code controlling the Stewart platform must be improved, especially as to integrate it with the Jetson Nano and ROS.  
+		\item \textbf{Rover (Software):} The architecture in ROS needs to be constantly developed with the addition of function-enhancing nodes. The most important nodes are teleoperation, modularized for a variety of control schema; and autonomy, driving based on a model from the input of multiple nodes. Networking with the use of the 3-in-1 Linksys device should be integrated, whether with ROS or without. The Arduino code controlling the Stewart platform must be improved, especially as to integrate it with the Jetson Nano and ROS. With SLAM's formal integration, there's a greater amount of potential projects, such as forming an optimized path planning algorithm; optimizing the computer vision to produce greater imagery and reducing point cloud capturing/publishing latency; object detection for object avoidance; linking motor controls and navigation algorithms together to produce the first-iteration of self-driving autonomy; saving the point cloud map within a rosbag in order to retain a larger map; or possibly even coordinating arm control and the established computer vision. 
 	\end{itemize}
 	
 \section{Acknowledgements}
@@ -1246,12 +1286,14 @@ HackRover and HARC is far from completion, and we must press on (ideally with in
 		\item \textit{Making Things Move} by Dustyn Roberts		
 		
 		\item Infineon Technologies, ``High Current PN Half Bridge'', BTS7960 datasheet, Mar. 2004 [Revised Dec. 2004]
+		
+		\item H. Wang, C. Wang, L. Xie, "Lightweight 3-D Localization and Mapping for Solid-State LiDAR"
 	\end{itemize}	
 
 \section{User Manual}
 	\subsection{Electrical User Manual:}
 
-\textbf{IMPORTANT:} make sure no power source or battery is connected to any electrical system you are handling. Disconnect the battery or power away from the system to prevent electrical failures or accidents which may cause fatal injury and major damage to hardware.  
+\textbf{IMPORTANT:} Make sure no power source or battery is connected to any electrical system you are handling. Disconnect the battery or power away from the system to prevent electrical failures or accidents which may cause fatal injury and major damage to hardware.  
 
 \textbf{Puzzle Panel} - The major components listed are, LM2596 buck converters and a female connector that receives power from a plugged in wall-wart.
 
@@ -1311,6 +1353,16 @@ HackRover and HARC is far from completion, and we must press on (ideally with in
 			\caption{WebServer Tutorial on GithHub}
 			\label{webserver}
 	\end{figure}
+
+	For activating and loading the SLAM package:
+	\begin{enumerate}
+		\item Open a terminal and run "roscore"
+		\item Open another terminal and enter "source /opt/ros/noetic/setup.bash"
+		\item Enter "source \~{}/catkin\_{}ws/devel/setup.bash"
+		\item Run "roslaunch ssl\_{}slam ssl\_{}slam\_{}L515.launch"
+		\item This should open the Rviz visualizer and after \~{}5 seconds of Rviz opening, the depth camera activates (can be confirmed with little red laser on camera) and maps the first batch of point clouds within 20 seconds.
+		\item Rviz can be saved to retain the map of the environment. 
+	\end{enumerate}
 
 
 \end{document}
